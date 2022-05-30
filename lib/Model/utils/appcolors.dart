@@ -20,7 +20,7 @@ class AppColors{
   static Color kRedThird= Color(0xffDE1717);
   static Color bluelight= Color(0xffBAD2E3);
   static Color kCallIcon= Color(0xff38B80C);
-  static Color bluelight = Color(0xffBAD2E3);
+
 
 
 
