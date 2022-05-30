@@ -1,4 +1,5 @@
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
+import 'package:car_pooling_passanger/View/splash_view/splash_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,7 +11,7 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark));
 
   runApp(DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (BuildContext context) =>
    const MyApp()));
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
 
           primarySwatch: Colors.blue,
         ),
-        home: const BottomNavigationScreen(),
+        home: const Splashscreen(),
       ),
 
       designSize: Size(375, 812),
