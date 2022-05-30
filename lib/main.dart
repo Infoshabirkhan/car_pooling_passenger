@@ -1,4 +1,5 @@
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,7 +8,13 @@ import 'View/bottom_navigaion_views/bottom_navigaion_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark));
-  runApp(const MyApp());
+
+  runApp(DevicePreview(
+      enabled: true,
+      builder: (BuildContext context) =>
+   const MyApp()));
+
+//  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -27,7 +34,7 @@ class MyApp extends StatelessWidget {
         home: const BottomNavigationScreen(),
       ),
 
-      designSize: Size(300, 400),
+      designSize: Size(375, 812),
     );
   }
 }
