@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'View/Matched Rides/matched_rides.dart';
 import 'View/bottom_navigaion_views/bottom_navigaion_screen.dart';
+import 'View/bottom_navigaion_views/settings_view/settings_screen.dart';
+import 'View/delivery/delivery.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark));
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
 
           primarySwatch: Colors.blue,
         ),
-        home: const BottomNavigationScreen(),
+        home: const Delivery(),
       ),
 
       designSize: Size(375, 812),
