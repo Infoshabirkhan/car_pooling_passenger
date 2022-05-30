@@ -1,3 +1,4 @@
+import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/settings_view/settings_screen.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,16 +19,16 @@ class BottomNavigationScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         elevation: 0,
         onPressed: (){},
-        child: Icon(Icons.map),
+        child: Icon(AppIcons.travel),
       ),
       bottomNavigationBar: Container(
         height: 60.sp,
         color: Colors.white,
         child: Row(
-          children: const [
-            Expanded(child: Icon(Icons.home)),
+          children:  [
+            Expanded(child: Icon(AppIcons.home)),
             Expanded(child: Align(alignment: Alignment.center,child: Text('Travel'))),
-            Expanded(child: Icon(Icons.settings))
+            Expanded(child: Icon(AppIcons.settings))
           ],
         ),
       ),
