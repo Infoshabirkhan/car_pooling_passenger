@@ -18,6 +18,8 @@ class AppColors{
   static Color kGreyHint = Color(0xffCECECE);
   static Color kRedSecondary = Color(0xffC11313);
   static Color kRedThird= Color(0xffDE1717);
+  static Color kCallIcon= Color(0xff38B80C);
+  static Color bluelight = Color(0xffBAD2E3);
 
 
 

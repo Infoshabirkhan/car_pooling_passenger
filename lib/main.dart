@@ -1,4 +1,5 @@
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
+import 'package:car_pooling_passanger/View/riders_detail_views/rider_detail_scren.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,10 +32,11 @@ class MyApp extends StatelessWidget {
 
           primarySwatch: Colors.blue,
         ),
-        home: const BottomNavigationScreen(),
+        home: const RiderDetailScreen(),
       ),
 
-      designSize: Size(375, 812),
+      designSize: const Size(375, 812),
     );
+
   }
 }
