@@ -1,9 +1,12 @@
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'View/bottom_navigaion_views/bottom_navigaion_screen.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark));
   runApp(const MyApp());
 }
 
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
 
       builder: (BuildContext context, Widget? child) => MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Car pooling',
         theme: ThemeData(
 
           primarySwatch: Colors.blue,
