@@ -28,7 +28,7 @@ class AppIcons {
   static const IconData component_11___1 = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData arrow_back = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData car = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData customer_car = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData customer_care = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData empty_seat = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData arrow_down = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData arrow_up = IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
