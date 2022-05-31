@@ -27,19 +27,18 @@ class MyBottomSheet extends StatelessWidget {
             Expanded(
                 // flex: 0,
 
-                child: Container(
-                  child: Column(
+                child: Column(
               children: [
 
-                  Expanded(
-                    child: InkWell(
+                Expanded(
+                  child: InkWell(
 
-                        onTap: onTap,
-                        child: Icon(currentState == false ? AppIcons.arrow_up : AppIcons.arrow_down)),
-                  ),
+                      onTap: onTap,
+                      child: Icon(currentState == false ? AppIcons.arrow_up : AppIcons.arrow_down)),
+                ),
 
 
-                  Expanded(child: Text('Swipe up for more', textAlign: TextAlign.center,style: TextStyle(fontSize: 12.sp, color: AppColors.kGreyLightest),)),
+                Expanded(child: Text('Swipe up for more', textAlign: TextAlign.center,style: TextStyle(fontSize: 12.sp, color: AppColors.kGreyLightest),)),
 
 
 
@@ -47,8 +46,7 @@ class MyBottomSheet extends StatelessWidget {
 
 
               ],
-            ),
-                )),
+            )),
             Expanded(
               flex: 15,
 

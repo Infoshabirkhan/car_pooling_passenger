@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         home: const Splashscreen(),
       ),
 
-      designSize: Size(375, 812),
+      designSize: const Size(375, 812),
     );
   }
 }

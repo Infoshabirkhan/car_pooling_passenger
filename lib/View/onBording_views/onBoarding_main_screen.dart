@@ -12,7 +12,7 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-        children: [
+        children: const [
           OnBoardingScreenOne(),
           OnBoardingScreenTwo(),
           OnBoardingScreenThree(),
