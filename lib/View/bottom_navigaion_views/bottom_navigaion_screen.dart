@@ -23,27 +23,32 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    bool keyboardIsOpened = MediaQuery.of(context).viewInsets.bottom != 0.0;
+
     return BlocProvider(
       create: (context) => BottomNavigationCubit(0),
       child: Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
-        floatingActionButton: BlocBuilder<BottomNavigationCubit, int>(
+        floatingActionButton: Visibility(
+          visible: keyboardIsOpened ? false : true,
+          child: BlocBuilder<BottomNavigationCubit, int>(
   builder: (context, state) {
     return FloatingActionButton(
 
       backgroundColor: Colors.white,
-        //  elevation: 0,
-          onPressed: () {
-            pageController.jumpToPage(1);
-            context.read<BottomNavigationCubit>().getNextScreen(
-                index: 1);
+          //  elevation: 0,
+            onPressed: () {
+              pageController.jumpToPage(1);
+              context.read<BottomNavigationCubit>().getNextScreen(
+                  index: 1);
 
-          },
-          child: Icon(AppIcons.travel, color: state == 1 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.4),),
-        );
+            },
+            child: Icon(AppIcons.travel, color: state == 1 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.4),),
+          );
   },
 ),
+        ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
             color: Colors.white,

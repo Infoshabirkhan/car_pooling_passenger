@@ -1,5 +1,6 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
+import 'package:car_pooling_passanger/View/riders_detail_views/rider_info_widget.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/my_rating_stars.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class RiderDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -24,14 +26,16 @@ class RiderDetailScreen extends StatelessWidget {
         ),
         elevation: 0,
         foregroundColor: Colors.black,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
       ),
       body: ScrollConfiguration(
-        
         behavior: const ScrollBehavior(),
         child: ListView(
           // physics: NeverScrollableScrollPhysics(),
-          padding: EdgeInsets.only(left: 37.sp, top: 59.5.sp,),
+          padding: EdgeInsets.only(
+            left: 37.sp,
+            top: 59.5.sp,
+          ),
           children: [
             Align(
                 alignment: Alignment.center,
@@ -78,45 +82,19 @@ class RiderDetailScreen extends StatelessWidget {
                         )),
                     Expanded(
                         child: Text(
-                          '4.5',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 12.sp,
-                            color: AppColors.kGreyLight,
-                          ),
-                        )),
-                    Expanded(
-                        flex: 3,
-                        child: MyRatingStars(initailRating: 4.5,),)
-                        // child: Row(
-                        //   children: [
-                        //     Expanded(
-                        //         child: Icon(
-                        //       Icons.star,
-                        //       size: 17.81.sp,
-                        //     )),
-                        //     Expanded(
-                        //         child: Icon(
-                        //       Icons.star,
-                        //       size: 17.81.sp,
-                        //     )),
-                        //     Expanded(
-                        //         child: Icon(
-                        //       Icons.star,
-                        //       size: 17.81.sp,
-                        //     )),
-                        //     Expanded(
-                        //         child: Icon(
-                        //       AppIcons.star_half,
-                        //       size: 13.81.sp,
-                        //     )),
-                        //     Expanded(
-                        //         child: Icon(
-                        //       AppIcons.star_outlined,
-                        //       size: 13.81.sp,
-                        //     )),
-                        //   ],
-                        // )),
+                      '4.5',
+                      style: TextStyle(
+                        fontFamily: 'SF Pro Text',
+                        fontSize: 12.sp,
+                        color: AppColors.kGreyLight,
+                      ),
+                    )),
+                    const Expanded(
+                      flex: 3,
+                      child: MyRatingStars(
+                        initailRating: 4.5,
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -143,203 +121,36 @@ class RiderDetailScreen extends StatelessWidget {
             SizedBox(
               height: 12.sp,
             ),
-            SizedBox(
-              width: 271.sp,
-              height: 35.sp,
-              // color: Colors.green,
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Text(
-                          'Phone No:',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 12.sp,
-                            color: AppColors.kGreySecondary,
-                          ),
-                        )),
-                        Expanded(
-                            child: Text(
-                          textAlign: TextAlign.center,
-                          'Gender:',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 12.sp,
-                            color: AppColors.kGreySecondary,
-                          ),
-                        )),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Text(
-                          '+92-8995323',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 15.sp,
-                            color: AppColors.kblackSecondary,
-                          ),
-                        )),
-                        Expanded(
-                            child: Text(
-                          textAlign: TextAlign.center,
-                          'Male',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 15.sp,
-                            color: AppColors.kblackSecondary,
-                          ),
-                        )),
-                      ],
-                    ),
-                  ),
-
-
-                ],
-              ),
-            ),
-
-
+            const RiderInformation(
+                heading1: 'Phone No : ',
+                heading2: 'Gender',
+                headingDetail1: '+92-8995323',
+                headingDetail2: 'Male'),
             SizedBox(
               height: 17.5.sp,
             ),
             Padding(
-              padding:  EdgeInsets.only(left: 5.sp,right: 48.5.sp),
+              padding: EdgeInsets.only(left: 5.sp, right: 48.5.sp),
               child: Divider(
-
                 color: AppColors.kGreySecondary,
               ),
             ),
             SizedBox(
               height: 17.5.sp,
             ),
-            SizedBox(
-              width: 271.sp,
-              height: 35.sp,
-        //       color: Colors.green,
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Text(
-                          'Model:',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 12.sp,
-                            color: AppColors.kGreySecondary,
-                          ),
-                        )),
-                        Expanded(
-                            child: Text(
-                          textAlign: TextAlign.center,
-                          'Plate No:',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 12.sp,
-                            color: AppColors.kGreySecondary,
-                          ),
-                        )),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Text(
-                          'Alto VXR',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 15.sp,
-                            color: AppColors.kblackSecondary,
-                          ),
-                        )),
-                        Expanded(
-                            child: Text(
-                          textAlign: TextAlign.center,
-                          'DH-233R',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 15.sp,
-                            color: AppColors.kblackSecondary,
-                          ),
-                        )),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const RiderInformation(
+                heading1: 'Model : ',
+                heading2: 'Plate No: ',
+                headingDetail1: 'Alto VXR',
+                headingDetail2: 'DH-233R'),
             SizedBox(
               height: 12.sp,
             ),
-            SizedBox(
-              width: 271.sp,
-              height: 35.sp,
-              // color: Colors.green,
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Text(
-                          'Smoking:',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 12.sp,
-                            color: AppColors.kGreySecondary,
-                          ),
-                        )),
-                        Expanded(
-                            child: Text(
-                          textAlign: TextAlign.center,
-                          'AC:',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 12.sp,
-                            color: AppColors.kGreySecondary,
-                          ),
-                        )),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Text(
-                          'Allowed',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 15.sp,
-                            color: AppColors.kblackSecondary,
-                          ),
-                        )),
-                        Expanded(
-                            child: Text(
-                          textAlign: TextAlign.center,
-                          'Yes',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            fontSize: 15.sp,
-                            color: AppColors.kblackSecondary,
-                          ),
-                        )),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const RiderInformation(
+                heading1: 'Smoking : ',
+                heading2: 'AC: ',
+                headingDetail1: 'Allowed',
+                headingDetail2: 'Yes'),
             SizedBox(
               height: 23.sp,
             ),

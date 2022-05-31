@@ -12,7 +12,7 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(statusBarColor: Colors.white, statusBarIconBrightness: Brightness.dark, ));
 
   runApp(DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (BuildContext context) =>
    const MyApp()));
 
