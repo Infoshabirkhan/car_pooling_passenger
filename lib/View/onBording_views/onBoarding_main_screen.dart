@@ -3,7 +3,7 @@ import 'package:car_pooling_passanger/View/onBording_views/onBoarding_screen_two
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'onBoarding_screen_three.dart';
+import 'login_screen.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class OnBoardingScreen extends StatelessWidget {
         children: [
           OnBoardingScreenOne(),
           OnBoardingScreenTwo(),
-          OnBoardingScreenThree(),
+          LoginScreen(),
         ],
       ),
     );
