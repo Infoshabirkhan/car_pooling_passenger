@@ -11,7 +11,7 @@ class MatchedRides extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(
           'Matched Rides',
