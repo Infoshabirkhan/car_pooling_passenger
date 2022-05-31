@@ -1,15 +1,11 @@
 import 'dart:async';
-
-import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/my_bottom_sheet.dart';
-import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/my_riders_cards.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../../Controller/cubits/travel_views_cubits/bottom_sheet_cubit.dart';
-import '../../../Model/utils/appicons.dart';
 
 void main() => runApp(const TravelScreen());
 
@@ -17,20 +13,20 @@ class TravelScreen extends StatefulWidget {
   const TravelScreen({Key? key}) : super(key: key);
 
   @override
-  _TravelScreenState createState() => _TravelScreenState();
+  TravelScreenState createState() => TravelScreenState();
 }
 
-class _TravelScreenState extends State<TravelScreen> {
+class TravelScreenState extends State<TravelScreen> {
 
   // final CameraPosition _initialCameraPosition = const CameraPosition(
   //     target: LatLng(24.903623, 67.198367));
 
-  Completer<GoogleMapController> _controller = Completer();
+  Completer<GoogleMapController> controller = Completer();
 
   static const LatLng _center = LatLng(34.025917, 71.560135);
 
-  void _onMapCreated(GoogleMapController controller) {
-    _controller.complete(controller);
+  void _onMapCreated(GoogleMapController mapControls) {
+    controller.complete(mapControls);
 
   //
   // Completer<GoogleMapController> _controller = Completer();
@@ -55,9 +51,9 @@ class _TravelScreenState extends State<TravelScreen> {
 
             GoogleMap(
               onMapCreated: _onMapCreated,
-              initialCameraPosition: const CameraPosition(
+              initialCameraPosition:  CameraPosition(
                 target: _center,
-                zoom: 15.0,
+                zoom: 15.sp,
 
               ),
               mapType: MapType.normal,
