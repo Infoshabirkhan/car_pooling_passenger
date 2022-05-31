@@ -27,7 +27,7 @@ class OnBoardingScreenTwo extends StatelessWidget {
                         alignment: Alignment.center,
                         child: Text("Car Pooling",
                             style: TextStyle(
-                                color: AppColors.Kblack,
+                                color: AppColors.kBlack,
                                 fontSize: 35.sp,
                                 fontWeight: FontWeight.bold)),
                       )),

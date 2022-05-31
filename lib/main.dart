@@ -1,5 +1,6 @@
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
 import 'package:car_pooling_passanger/View/splash_view/splash_screen.dart';
+import 'package:car_pooling_passanger/View/verification_code_view/verification_code_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

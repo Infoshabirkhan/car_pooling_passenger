@@ -33,7 +33,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     return FloatingActionButton(
           elevation: 0,
           onPressed: () {
-            pageController.jumpToPage(2);
+            pageController.jumpToPage(1);
             context.read<BottomNavigationCubit>().getNextScreen(
                 index: 1);
             

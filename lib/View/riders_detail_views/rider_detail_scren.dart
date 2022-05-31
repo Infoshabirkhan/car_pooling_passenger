@@ -17,7 +17,7 @@ class RiderDetailScreen extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'SF Pro Text',
             fontSize: 20.sp,
-            color: AppColors.Kblack,
+            color: AppColors.kBlack,
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -51,7 +51,7 @@ class RiderDetailScreen extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'SF Pro Text',
                   fontSize: 15.sp,
-                  color: AppColors.Kblack,
+                  color: AppColors.kBlack,
                   fontWeight: FontWeight.w700,
                 ),
               ),
