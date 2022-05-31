@@ -1,18 +1,26 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
+import 'package:car_pooling_passanger/View/utils/custom_widgets/elevated_button.dart';
+import 'package:car_pooling_passanger/View/verification_code_view/verification_code_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../bottom_navigaion_views/bottom_navigaion_screen.dart';
 
-class OnBoardingScreenThree extends StatelessWidget {
-  const OnBoardingScreenThree({Key? key}) : super(key: key);
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+
+
       body: Stack(
         children: [
+
+
+
           Container(
             width: 1.sw,
             height: 1.sh,
@@ -26,10 +34,13 @@ class OnBoardingScreenThree extends StatelessWidget {
             color: AppColors.kBlue.withOpacity(0.5),
           ),
 
+
           ListView(
-            padding: EdgeInsets.only(left: 40.sp,right: 40.sp),
+            padding: EdgeInsets.only(left: 40.sp, right: 40.sp),
             children: [
-              SizedBox(height: 120.sp,),
+              SizedBox(
+                height: 120.h,
+              ),
               Center(
                 child: Text(
                   "Login",
@@ -39,15 +50,24 @@ class OnBoardingScreenThree extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height: 27.7.sp,),
-              Container(height:159.58.sp,child: Image.asset("assets/images/phone_anim_one.png",)),
-              SizedBox(height: 22.8.sp,),
+              SizedBox(
+                height: 27.7.h,
+              ),
               Container(
-                height: 41.sp,
+                  height: 159.58.h,
+                  child: Image.asset(
+                    "assets/images/phone_anim_one.png",
+                  )),
+              SizedBox(
+                height: 22.8.h,
+              ),
+              Container(
+                height: 41.h,
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Email or Phone Number",
-                    hintStyle:  TextStyle(color: AppColors.kWhite,fontSize: 15.sp),
+                    hintStyle:
+                        TextStyle(color: AppColors.kWhite, fontSize: 15.sp),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(6.r),
                     ),
@@ -62,36 +82,21 @@ class OnBoardingScreenThree extends StatelessWidget {
                       borderRadius: BorderRadius.circular(6.r),
                     ),
                     contentPadding:
-                    EdgeInsets.only(left: 20.sp, top: 10.sp, bottom: 12.sp),
-
+                        EdgeInsets.only(left: 20.sp, top: 10.sp, bottom: 12.sp),
                   ),
                 ),
               ),
-              SizedBox(height: 259.sp,),
-       ElevatedButton(
-    style: ElevatedButton.styleFrom(
-        fixedSize: Size(296.sp, 51.sp),
-    primary: AppColors.kBlue,
-    shape:
-    RoundedRectangleBorder(borderRadius: BorderRadius.circular(6.r)),
-    ),
-    onPressed: () {
-      Navigator.of(context).push(MaterialPageRoute(builder: (_){
-        return BottomNavigationScreen();
-      }));
-    },
-    child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-    Expanded(
-    child: Text(
-    "Login",
-    textAlign: TextAlign.center,
-    style: TextStyle(
-    fontSize: 20.sp,
-    color: Colors.white,
-    ),
-    ),
-    ),
-    ])),
+              SizedBox(
+                height: 200.h,
+              ),
+              MyElevatedButton(
+                buttonName: "Login",
+                onPress: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                    return VerificationCodeScreen();
+                  }));
+                },
+              ),
             ],
           ),
         ],

@@ -9,14 +9,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../Model/utils/appcolors.dart';
 
-class Delivery extends StatefulWidget {
-  const Delivery({Key? key}) : super(key: key);
+class  DeliveryScreen extends StatefulWidget {
+  const DeliveryScreen({Key? key}) : super(key: key);
 
   @override
-  State<Delivery> createState() => _DeliveryState();
+  State<DeliveryScreen> createState() => _DeliveryScreenState();
 }
 
-class _DeliveryState extends State<Delivery> {
+class _DeliveryScreenState extends State<DeliveryScreen> {
 
 
   @override

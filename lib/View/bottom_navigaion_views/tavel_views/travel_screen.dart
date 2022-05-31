@@ -1,8 +1,15 @@
-
 import 'dart:async';
 
+import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/my_bottom_sheet.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/my_riders_cards.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import '../../../Controller/cubits/travel_views_cubits/bottom_sheet_cubit.dart';
+import '../../../Model/utils/appicons.dart';
 
 void main() => runApp(const TravelScreen());
 
@@ -14,40 +21,92 @@ class TravelScreen extends StatefulWidget {
 }
 
 class _TravelScreenState extends State<TravelScreen> {
+
+  // final CameraPosition _initialCameraPosition = const CameraPosition(
+  //     target: LatLng(24.903623, 67.198367));
+
   Completer<GoogleMapController> _controller = Completer();
 
-  static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 14.4746,
-  );
+  static const LatLng _center = LatLng(34.025917, 71.560135);
 
-  static final CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
+  void _onMapCreated(GoogleMapController controller) {
+    _controller.complete(controller);
+
+  //
+  // Completer<GoogleMapController> _controller = Completer();
+  //
+  // static const LatLng _center = LatLng(45.521563, -122.677433);
+  //
+  // void _onMapCreated(GoogleMapController controller) {
+  //   _controller.complete(controller);
+
+  }
+  // MapType _currentMapType = MapType.hybrid;
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: GoogleMap(
-        mapType: MapType.hybrid,
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _goToTheLake,
-        label: Text('To the lake!'),
-        icon: Icon(Icons.directions_boat),
+    return BlocProvider(
+
+      create: (context) => BottomSheetCubit(false),
+      child: Scaffold(
+        body: Stack(
+          children: [
+
+
+            GoogleMap(
+              onMapCreated: _onMapCreated,
+              initialCameraPosition: const CameraPosition(
+                target: _center,
+                zoom: 15.0,
+
+              ),
+              mapType: MapType.normal,
+            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(16.0),
+            //   child: Align(
+            //     alignment: Alignment.topRight,
+            //     child: FloatingActionButton(
+            //       onPressed: () {
+            //         setState(() {
+            //           _currentMapType = _currentMapType == MapType.hybrid
+            //               ? MapType.terrain
+            //               : MapType.terrain;
+            //         });
+            //
+            //       },
+            //       materialTapTargetSize: MaterialTapTargetSize.padded,
+            //       backgroundColor: Colors.green,
+            //       child: const Icon(Icons.map, size: 36.0),
+            //     ),
+            //   ),
+            // ),
+
+
+            BlocBuilder<BottomSheetCubit, bool>(
+              builder: (context, state) {
+                return MyBottomSheet(currentState: state, onTap: (){
+                  context.read<BottomSheetCubit>().adjustHeight(isExpand: !state);
+                });
+              },
+            ),
+
+
+
+          ],
+        ),
       ),
     );
-
   }
 
-  Future<void> _goToTheLake() async {
-    final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
-  }
 }
+// body: Container(
+// // color: Colors.blue,
+// child: GoogleMap(
+//
+// initialCameraPosition: _initialCameraPosition,
+// mapType: MapType.normal,
+//
+//
+// ),
+// ),

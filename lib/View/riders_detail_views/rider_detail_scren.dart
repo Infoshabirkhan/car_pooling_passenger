@@ -1,6 +1,7 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.dart';
+import 'package:car_pooling_passanger/View/utils/custom_widgets/my_rating_stars.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,11 +18,13 @@ class RiderDetailScreen extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'SF Pro Text',
             fontSize: 20.sp,
-            color: AppColors.Kblack,
+            color: AppColors.kBlack,
             fontWeight: FontWeight.w700,
           ),
         ),
-        backgroundColor: AppColors.kWhite,
+        elevation: 0,
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.transparent,
       ),
       body: ScrollConfiguration(
         
@@ -51,7 +54,7 @@ class RiderDetailScreen extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'SF Pro Text',
                   fontSize: 15.sp,
-                  color: AppColors.Kblack,
+                  color: AppColors.kBlack,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -83,36 +86,37 @@ class RiderDetailScreen extends StatelessWidget {
                           ),
                         )),
                     Expanded(
-                        flex: 2,
-                        child: Row(
-                          children: [
-                            Expanded(
-                                child: Icon(
-                              Icons.star,
-                              size: 17.81.sp,
-                            )),
-                            Expanded(
-                                child: Icon(
-                              Icons.star,
-                              size: 17.81.sp,
-                            )),
-                            Expanded(
-                                child: Icon(
-                              Icons.star,
-                              size: 17.81.sp,
-                            )),
-                            Expanded(
-                                child: Icon(
-                              AppIcons.star_half,
-                              size: 13.81.sp,
-                            )),
-                            Expanded(
-                                child: Icon(
-                              AppIcons.star_outlined,
-                              size: 13.81.sp,
-                            )),
-                          ],
-                        )),
+                        flex: 3,
+                        child: MyRatingStars(initailRating: 4.5,),)
+                        // child: Row(
+                        //   children: [
+                        //     Expanded(
+                        //         child: Icon(
+                        //       Icons.star,
+                        //       size: 17.81.sp,
+                        //     )),
+                        //     Expanded(
+                        //         child: Icon(
+                        //       Icons.star,
+                        //       size: 17.81.sp,
+                        //     )),
+                        //     Expanded(
+                        //         child: Icon(
+                        //       Icons.star,
+                        //       size: 17.81.sp,
+                        //     )),
+                        //     Expanded(
+                        //         child: Icon(
+                        //       AppIcons.star_half,
+                        //       size: 13.81.sp,
+                        //     )),
+                        //     Expanded(
+                        //         child: Icon(
+                        //       AppIcons.star_outlined,
+                        //       size: 13.81.sp,
+                        //     )),
+                        //   ],
+                        // )),
                   ],
                 ),
               ),

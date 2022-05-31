@@ -130,7 +130,7 @@ class CustomMatched{
                     child: Container(
                       margin: EdgeInsets.only(left: 20.sp),
                       child: Row(
-                        children: [
+                        children: const [
                           Expanded(
                             flex:3,
                             child: Align(
