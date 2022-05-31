@@ -4,154 +4,146 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Model/utils/appcolors.dart';
 import '../../../Model/utils/appicons.dart';
+import '../../utils/custom_widgets/my_rating_stars.dart';
 
 
 class MyRidersCard extends StatelessWidget {
-  const MyRidersCard({Key? key}) : super(key: key);
+  final VoidCallback? onTap;
+
+  const MyRidersCard({Key? key,  this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-
-      margin: EdgeInsets.only(top: 5.sp, bottom: 20.sp),
-
-      height: 156.sp,
-      decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 5)
-          ]
-
-      ),
-      child: Column(
-        children: [
-          Expanded(
-              flex: 2,
-              child: Container(
-                //color: Colors.brown,
-                child: Row(
-                  children: [
-                    Expanded(child: Icon(AppIcons.account_person, color: Color(0xff57A3DE), size: 40.sp,)),
-
-                    Expanded(
-                        flex: 3,
-                        child: Container(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(child: Container(
-                                child: Row(
-                                  children: [
-                                    Expanded(child: Text('John Doe', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),)),
-
-                                    Expanded(child: Column(
-                                      children: [
-                                        Expanded(child: Align(
-                                            alignment: Alignment.center,
-                                            child: Text("Rating 4.5", style: TextStyle(color: AppColors.kGreyLight),)),),
-
-                                        Expanded(
-                                            child: RatingBar.builder(
-                                              initialRating: 4.5,
-                                              itemSize: 16.sp,
-                                              minRating: 1,
-                                              direction: Axis.horizontal,
-                                              allowHalfRating: true,
-                                              itemCount: 5,
-                                              itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                                              itemBuilder: (context, _) => const Icon(
-                                                Icons.star,
-                                                color: Colors.black,
-                                              ),
-                                              onRatingUpdate: (rating) {
-                                                print(rating);
-                                              },
-                                            )
-                                        )
-
-                                      ],
-                                    ),),
-
-                                  ],
-                                ),
+    return InkWell(
+      onTap: onTap,
+      child: Container(
 
 
-                              )),
-                              Expanded(child: Container(
+        margin: EdgeInsets.only(top: 5.sp, bottom: 20.sp, right: 15.sp),
 
+        height: 156.sp,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 5)
+            ]
 
-
-
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-
-                                    children: [
-
-                                      Expanded(child: Align(
-                                          alignment: Alignment.centerLeft,
-                                          child: Text('Location', style: TextStyle(fontSize: 12.sp),))),
-                                      Expanded(child: Text('Demo location , street demo ', style: TextStyle(fontSize: 15.sp),)),
-                                    ],
-                                  )
-                              )),
-
-                            ],
-                          ),
-                        )),
-
-                  ],
-                ),
-
-              )),
-          Expanded(child: Container(
-
-
-            child: Row(
-              children: [
-                Expanded(
-
-                    child: Container(
-                      margin: EdgeInsets.only(left: 30.sp),
-
-
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                              flex: 2,
-                              child: Row(
-
-                                children: [
-                                  Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                  Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                  Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                  Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                ],
-                              )),
-                          Expanded(child: Text('Seats Available: 2',style: TextStyle(fontSize: 12.sp, color: Colors.white),))
-                        ],
-                      ),
-                    )),
-
-                Spacer(),
-                Expanded(child: Container(
-
-                  child: Column(
+        ),
+        child: Column(
+          children: [
+            Expanded(
+                flex: 2,
+                child: Container(
+                  //color: Colors.brown,
+                  child: Row(
                     children: [
+                      Expanded(child: Icon(AppIcons.account_person, color: Color(0xff57A3DE), size: 40.sp,)),
 
-                      Expanded(child: Align(
-                          alignment: Alignment.center,
-                          child: Text('RS. 200', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),))),
-                      Expanded(child: Text('Cost per Seat', style: TextStyle(fontSize: 12.sp,),))
+                      Expanded(
+                          flex: 3,
+                          child: Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(child: Container(
+                                  child: Row(
+                                    children: [
+                                      Expanded(child: Text('John Doe', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),)),
+
+                                      Expanded(child: Column(
+                                        children: [
+                                          Expanded(child: Align(
+                                              alignment: Alignment.center,
+                                              child: Text("Rating 4.5", style: TextStyle(color: AppColors.kGreyLight),)),),
+
+                                          Expanded(
+                                              child: MyRatingStars(initailRating: 4.5,)
+                                          )
+
+                                        ],
+                                      ),),
+
+                                    ],
+                                  ),
+
+
+                                )),
+                                Expanded(child: Container(
+
+
+
+
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+
+                                      children: [
+
+                                        Expanded(child: Align(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text('Location', style: TextStyle(fontSize: 12.sp),))),
+                                        Expanded(child: Text('Demo location , street demo ', style: TextStyle(fontSize: 15.sp),)),
+                                      ],
+                                    )
+                                )),
+
+                              ],
+                            ),
+                          )),
+
                     ],
                   ),
-                )),
-              ],
-            ),
-          )),
-        ],
-      ),
 
+                )),
+            Expanded(child: Container(
+
+
+              child: Row(
+                children: [
+                  Expanded(
+
+                      child: Container(
+                        margin: EdgeInsets.only(left: 25.sp),
+
+
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                                // flex: 2,
+                                child: Row(
+
+                                  children: [
+                                    Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                    Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                    Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                    Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                  ],
+                                )),
+                            Expanded(child: Text('Seats Available: 2',style: TextStyle(fontSize: 12.sp,),))
+                          ],
+                        ),
+                      )),
+
+                  Spacer(),
+                  Expanded(child: Container(
+
+                    child: Column(
+                      children: [
+
+                        Expanded(child: Align(
+                            alignment: Alignment.center,
+                            child: Text('RS. 200', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),))),
+                        Expanded(child: Text('Cost per Seat', style: TextStyle(fontSize: 12.sp,),))
+                      ],
+                    ),
+                  )),
+                ],
+              ),
+            )),
+          ],
+        ),
+
+      ),
     );
   }
 }

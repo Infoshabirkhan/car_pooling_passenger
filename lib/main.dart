@@ -9,10 +9,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'View/bottom_navigaion_views/bottom_navigaion_screen.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(statusBarColor: Colors.white, statusBarIconBrightness: Brightness.dark));
+  SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(statusBarColor: Colors.white, statusBarIconBrightness: Brightness.dark, ));
 
   runApp(DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (BuildContext context) =>
    const MyApp()));
 
@@ -27,7 +27,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
 
-      builder: (BuildContext context, Widget? child) => MaterialApp(
+      builder: (BuildContext context, Widget? child)
+      => MaterialApp(
+
+
+        debugShowCheckedModeBanner: false,
         title: 'Car pooling',
         theme: ThemeData(
 
