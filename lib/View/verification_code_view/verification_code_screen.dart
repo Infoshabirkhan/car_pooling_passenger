@@ -1,10 +1,9 @@
-import 'dart:ui';
 
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/elevated_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../user_profile_view/user_profile_screen.dart';
 
@@ -36,48 +35,58 @@ class VerificationCodeScreen extends StatelessWidget {
                 child: Text(
               "We have sent a verification code\nto your phone number",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 15.sp, color: Color(0xFF9A9A9A)),
+              style: TextStyle(fontSize: 15.sp, color: const Color(0xFF9A9A9A)),
             )),
             SizedBox(
               height: 101.sp,
             ),
-            Row(
-              children: [
-                Expanded(
-                    child: Container(
-                        margin: EdgeInsets.only(right: 15.sp),
-                        width: 51.sp,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          textInputAction: TextInputAction.next,
-                        ))),
-                Expanded(
-                    child: Container(
-                        margin: EdgeInsets.only(right: 15.sp),
-                        child: const TextField(
-                          keyboardType: TextInputType.number,
-                          textInputAction: TextInputAction.next,
-                        ))),
-                Expanded(
-                    child: Container(
-                        margin: EdgeInsets.only(right: 15.sp),
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          textInputAction: TextInputAction.next,
-                        ))),
-                Expanded(
-                    child: Container(
-                        margin: EdgeInsets.only(right: 15.sp),
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          textInputAction: TextInputAction.next,
-                        ))),
-              ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15.sp),
+              child: PinCodeTextField(
+
+                  textStyle: const TextStyle(color: Colors.black),
+                  keyboardType: TextInputType.number,
+                  pinTheme: PinTheme(
+                    selectedColor: Colors.green,
+                    inactiveColor: AppColors.kGreySecondary,
+                    activeColor: Colors.green,
+                  ),
+                  appContext: context,
+                  length: 4,
+                  onChanged: (value) {
+
+                  }),
             ),
+
+            // Row(
+            //   children: [
+            //     // Expanded(
+            //     //     child: Container(
+            //     //   margin: EdgeInsets.only(right: 15.sp),
+            //     //   width: 51.sp,
+            //     //   child: const CodeTextFieldWidget(),
+            //     // )),
+            //     // Expanded(
+            //     //     child: Container(
+            //     //   margin: EdgeInsets.only(right: 15.sp),
+            //     //   child: const CodeTextFieldWidget(),
+            //     // )),
+            //     // Expanded(
+            //     //     child: Container(
+            //     //   margin: EdgeInsets.only(right: 15.sp),
+            //     //   child: const CodeTextFieldWidget(),
+            //     // )),
+            //     // Expanded(
+            //     //     child: Container(
+            //     //   margin: EdgeInsets.only(right: 15.sp),
+            //     //   child: const CodeTextFieldWidget(),
+            //     // )),
+            //   ],
+            // ),
             SizedBox(
               height: 23.sp,
             ),
-            Center(
+            const Center(
                 child: Text(
               "4 digit",
               style: TextStyle(color: Color(0xFF9A9A9A)),
@@ -89,7 +98,7 @@ class VerificationCodeScreen extends StatelessWidget {
               buttonName: "Verify",
               onPress: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                  return UserProfileScreen();
+                  return const UserProfileScreen();
                 }));
               },
             ),

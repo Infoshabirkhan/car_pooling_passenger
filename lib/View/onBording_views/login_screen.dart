@@ -7,14 +7,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../bottom_navigaion_views/bottom_navigaion_screen.dart';
 
-class OnBoardingScreenThree extends StatelessWidget {
-  const OnBoardingScreenThree({Key? key}) : super(key: key);
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+
+
       body: Stack(
         children: [
+
+
+
           Container(
             width: 1.sw,
             height: 1.sh,
@@ -27,11 +33,13 @@ class OnBoardingScreenThree extends StatelessWidget {
             height: 1.sh,
             color: AppColors.kBlue.withOpacity(0.5),
           ),
+
+
           ListView(
             padding: EdgeInsets.only(left: 40.sp, right: 40.sp),
             children: [
               SizedBox(
-                height: 120.sp,
+                height: 120.h,
               ),
               Center(
                 child: Text(
@@ -43,18 +51,18 @@ class OnBoardingScreenThree extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 27.7.sp,
+                height: 27.7.h,
               ),
               Container(
-                  height: 159.58.sp,
+                  height: 159.58.h,
                   child: Image.asset(
                     "assets/images/phone_anim_one.png",
                   )),
               SizedBox(
-                height: 22.8.sp,
+                height: 22.8.h,
               ),
               Container(
-                height: 41.sp,
+                height: 41.h,
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Email or Phone Number",
@@ -79,7 +87,7 @@ class OnBoardingScreenThree extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 259.sp,
+                height: 200.h,
               ),
               MyElevatedButton(
                 buttonName: "Login",

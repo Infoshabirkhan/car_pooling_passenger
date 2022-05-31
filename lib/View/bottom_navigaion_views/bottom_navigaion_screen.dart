@@ -31,20 +31,29 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         floatingActionButton: BlocBuilder<BottomNavigationCubit, int>(
   builder: (context, state) {
     return FloatingActionButton(
-          elevation: 0,
+
+      backgroundColor: Colors.white,
+        //  elevation: 0,
           onPressed: () {
             pageController.jumpToPage(1);
             context.read<BottomNavigationCubit>().getNextScreen(
                 index: 1);
-            
+
           },
-          child: Icon(AppIcons.travel),
+          child: Icon(AppIcons.travel, color: state == 1 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.4),),
         );
   },
 ),
         bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+
+            boxShadow: [
+              BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 2)
+            ]
+
+          ),
           height: 88.sp,
-          color: Colors.white,
           child: BlocBuilder<BottomNavigationCubit, int>(
             builder: (context, state) {
               return Row(
@@ -61,8 +70,8 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                         children: [
                           Expanded(
                               flex: 2,
-                              child: Icon(AppIcons.home, color: state == 0 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.6),)),
-                          Expanded(child: Text('Home',style: TextStyle(color: state == 0 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.6))))
+                              child: Icon(AppIcons.home, color: state == 0 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.4),)),
+                          Expanded(child: Text('Home',style: TextStyle(color: state == 0 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.4))))
                         ],
                       ))),
                   Expanded(child: Align(
@@ -73,7 +82,13 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                         context.read<BottomNavigationCubit>().getNextScreen(
                             index: 1);
                       },
-                      child: Text('Travel', style: TextStyle(color: state == 0 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.6)),)))),
+                      child: Column(
+                        children: [
+                          Spacer(flex: 2,),
+
+                          Expanded(child: Text('Travel', style: TextStyle(color: state == 1 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.4)),)),
+                        ],
+                      )))),
                   Expanded(child: InkWell(
                     onTap: () {
                       pageController.jumpToPage(2);
@@ -84,9 +99,9 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                       children: [
                         Expanded(
                             flex: 2,
-                            child: Icon(AppIcons.settings,color: state == 2 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.6))),
+                            child: Icon(AppIcons.settings,color: state == 2 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.4))),
 
-                        Expanded(child: Text('Settings',style: TextStyle(color: state == 2 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.6)))),
+                        Expanded(child: Text('Settings',style: TextStyle(color: state == 2 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.4)))),
                       ],
                     ),
                   ))
