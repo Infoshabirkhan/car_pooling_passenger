@@ -27,7 +27,7 @@ class UserProfileScreen extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20.sp,
-                    color: AppColors.KBlack),
+                    color: AppColors.kBlack),
               ),
             ),
             SizedBox(
@@ -64,7 +64,7 @@ class UserProfileScreen extends StatelessWidget {
               style: TextStyle(
                   fontSize: 15.sp,
                   fontWeight: FontWeight.bold,
-                  color: AppColors.KBlack),
+                  color: AppColors.kBlack),
             ),
             SizedBox(
               height: 3.sp,

@@ -12,15 +12,15 @@ class TextFieldWidget extends StatelessWidget {
       body: TextFormField(
           keyboardType: TextInputType.name,
           textInputAction: TextInputAction.next,
-          cursorColor: AppColors.KBlack,
+          cursorColor: AppColors.kBlack,
           decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(
-              borderSide:  BorderSide(color: AppColors.kborderFieldColor),
+              borderSide:  BorderSide(color: AppColors.kBorderFieldColor),
               borderRadius: BorderRadius.circular(6.r),
             ),
             enabledBorder: OutlineInputBorder(
               borderSide:  BorderSide(
-                  color: AppColors.kborderFieldColor
+                  color: AppColors.kBorderFieldColor
               ),
               borderRadius: BorderRadius.circular(6.r),
             ),

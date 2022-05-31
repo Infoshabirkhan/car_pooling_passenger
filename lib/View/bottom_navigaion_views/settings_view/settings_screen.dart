@@ -41,7 +41,7 @@ class SettingsScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
-                color: AppColors.KBlack,
+                color: AppColors.kBlack,
               ),
             ),
           ),
@@ -125,7 +125,7 @@ class SettingsScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 15.sp,
               fontWeight: FontWeight.bold,
-              color: AppColors.KBlack,
+              color: AppColors.kBlack,
             ),
           ),
           SizedBox(
@@ -135,7 +135,7 @@ class SettingsScreen extends StatelessWidget {
             'john12@gmial.com',
             style: TextStyle(
               fontSize: 15.sp,
-              color: AppColors.KBlack,
+              color: AppColors.kBlack,
             ),
           ),
           SizedBox(
@@ -146,7 +146,7 @@ class SettingsScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 15.sp,
               fontWeight: FontWeight.bold,
-              color: AppColors.KBlack,
+              color: AppColors.kBlack,
             ),
           ),
           SizedBox(
@@ -156,7 +156,7 @@ class SettingsScreen extends StatelessWidget {
             'demo address here, street',
             style: TextStyle(
               fontSize: 15.sp,
-              color: AppColors.KBlack,
+              color: AppColors.kBlack,
             ),
           ),
           SizedBox(
