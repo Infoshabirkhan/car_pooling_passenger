@@ -25,16 +25,23 @@ class _TravelScreenState extends State<TravelScreen> {
   // final CameraPosition _initialCameraPosition = const CameraPosition(
   //     target: LatLng(24.903623, 67.198367));
 
-
   Completer<GoogleMapController> _controller = Completer();
 
-  static const LatLng _center = LatLng(45.521563, -122.677433);
+  static const LatLng _center = LatLng(34.025917, 71.560135);
 
   void _onMapCreated(GoogleMapController controller) {
     _controller.complete(controller);
 
-  }
+  //
+  // Completer<GoogleMapController> _controller = Completer();
+  //
+  // static const LatLng _center = LatLng(45.521563, -122.677433);
+  //
+  // void _onMapCreated(GoogleMapController controller) {
+  //   _controller.complete(controller);
 
+  }
+  // MapType _currentMapType = MapType.hybrid;
 
   @override
   Widget build(BuildContext context) {
@@ -44,21 +51,36 @@ class _TravelScreenState extends State<TravelScreen> {
       child: Scaffold(
         body: Stack(
           children: [
-            Container(
-              height: 1.sh,
-              width: 1.sw,
-              // color: Colors.blue,
-              child:  GoogleMap(
-                onMapCreated: _onMapCreated,
-                initialCameraPosition: CameraPosition(
-                  target: _center,
-                  zoom: 11.0,
 
-                ),
-                mapType: MapType.normal,
+
+            GoogleMap(
+              onMapCreated: _onMapCreated,
+              initialCameraPosition: const CameraPosition(
+                target: _center,
+                zoom: 15.0,
+
               ),
-
+              mapType: MapType.normal,
             ),
+            // Padding(
+            //   padding: const EdgeInsets.all(16.0),
+            //   child: Align(
+            //     alignment: Alignment.topRight,
+            //     child: FloatingActionButton(
+            //       onPressed: () {
+            //         setState(() {
+            //           _currentMapType = _currentMapType == MapType.hybrid
+            //               ? MapType.terrain
+            //               : MapType.terrain;
+            //         });
+            //
+            //       },
+            //       materialTapTargetSize: MaterialTapTargetSize.padded,
+            //       backgroundColor: Colors.green,
+            //       child: const Icon(Icons.map, size: 36.0),
+            //     ),
+            //   ),
+            // ),
 
 
             BlocBuilder<BottomSheetCubit, bool>(
@@ -67,7 +89,10 @@ class _TravelScreenState extends State<TravelScreen> {
                   context.read<BottomSheetCubit>().adjustHeight(isExpand: !state);
                 });
               },
-            )
+            ),
+
+
+
           ],
         ),
       ),
