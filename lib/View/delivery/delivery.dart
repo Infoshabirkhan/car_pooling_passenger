@@ -10,6 +10,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../Model/utils/appcolors.dart';
+import '../Matched Rides/matched_rides.dart';
+import '../utils/custom_widgets/custom_button.dart';
 
 class DeliveryScreen extends StatefulWidget {
   const DeliveryScreen({Key? key}) : super(key: key);
@@ -262,20 +264,34 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                 SizedBox(
                   height: 20.sp,
                 ),
-                Container(
-                  margin: EdgeInsets.only(left: 20.sp, right: 20.sp),
-                  height: 51.sp,
-                  width: 296.sp,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.r),
-                    color: AppColors.kBlue,
-                  ),
-                  child: Center(
-                      child: Text(
-                        'Find Rides',
-                        style: TextStyle(
-                            color: AppColors.kWhite, fontSize: 20.sp),
-                      )),
+
+
+
+                // Container(
+                //   margin: EdgeInsets.only(left: 20.sp, right: 20.sp),
+                //   height: 51.sp,
+                //   width: 296.sp,
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(10.r),
+                //     color: AppColors.kBlue,
+                //   ),
+                //   child: Center(
+                //       child: Text(
+                //         'Find Rides',
+                //         style: TextStyle(
+                //             color: AppColors.kWhite, fontSize: 20.sp),
+                //       )),
+                // ),
+
+                Center(
+                  child: CustomButton(ontap: (){
+
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                      
+                      return MatchedRides();
+                    }));
+
+                  }, color: AppColors.kBlue, text: 'Find Rides',),
                 ),
               ],
             ),

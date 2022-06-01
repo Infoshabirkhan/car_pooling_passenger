@@ -10,8 +10,12 @@ class MatchedRides extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+
+      elevation: 0,
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
           'Matched Rides',
@@ -22,43 +26,15 @@ class MatchedRides extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView(
-        padding: EdgeInsets.only(right: 20.sp),
-        children: [
-          SizedBox(
-            height: 10.sp,
-          ),
-          CustomMatched.getCard(),
-          SizedBox(
-            height: 20.sp,
-          ),
-          CustomMatched.getCard(),
-          SizedBox(
-            height: 20.sp,
-          ),
-          CustomMatched.getCard(),
-          SizedBox(
-            height: 20.sp,
-          ),
-          CustomMatched.getCard(),
-          SizedBox(
-            height: 20.sp,
-          ),
-          CustomMatched.getCard(),
-          SizedBox(
-            height: 20.sp,
-          ),
-          CustomMatched.getCard(),
-          SizedBox(
-            height: 20.sp,
-          ),
-          CustomMatched.getCard(),
-          SizedBox(
-            height: 20.sp,
-          ),
-          CustomMatched.getCard(),
-        ],
-      ),
+      body: ListView.builder(
+
+        padding: EdgeInsets.only(left: 16.sp, right: 16.sp),
+
+          itemCount: 10,
+          itemBuilder: (context, index){
+
+        return CustomMatched.getCard();
+      })
     );
   }
 }

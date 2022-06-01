@@ -67,7 +67,7 @@ class PickedUpCard extends StatelessWidget {
                                               children: [
                                                 Expanded(child: Align(
                                                     alignment: Alignment.center,
-                                                    child: Icon(AppIcons.phone_call,color: AppColors.kCallIcon,size: 32.sp,)),),
+                                                    child: Icon(AppIcons.phone_call,color: AppColors.kGreen,size: 32.sp,)),),
 
                                                 Expanded(
                                                     child: Text(
@@ -75,7 +75,7 @@ class PickedUpCard extends StatelessWidget {
                                                       style: TextStyle(
                                                         fontFamily: 'SF Pro Text',
                                                         fontSize: 12.sp,
-                                                        color:  AppColors.kCallIcon,
+                                                        color:  AppColors.kGreen,
                                                       ),
                                                     )
                                                 )

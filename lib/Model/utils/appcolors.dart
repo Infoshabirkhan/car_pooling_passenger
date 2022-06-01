@@ -19,7 +19,7 @@ class AppColors{
   static Color kRedSecondary = const Color(0xffC11313);
   static Color kRedThird= const Color(0xffDE1717);
   static Color bluelight= Color(0xffBAD2E3);
-  static Color kCallIcon= Color(0xff38B80C);
+  static Color kGreen= Color(0xff38B80C);
   static Color kBlueIcon= Color(0xff57A3DE);
   static Color kBorderFieldColor= Color(0xffBAD2E3);
   static Color kGreyFourth= Color(0xff9A9A9A);

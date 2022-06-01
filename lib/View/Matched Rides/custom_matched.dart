@@ -8,6 +8,7 @@ class CustomMatched{
 
  static Widget getCard(){
    return Container(
+     margin: EdgeInsets.only(top: 10.sp, bottom: 10.sp),
       height: 156.sp,
       width: 344.sp,
       decoration: BoxDecoration(
@@ -112,16 +113,26 @@ class CustomMatched{
                     flex:2,
                     child: Row(
                       children: [
-                        Expanded(child: Align(
-                            alignment:Alignment.bottomCenter,
-                            child: Text('Location')),),
+                        Expanded(child: Container(
+                          margin: EdgeInsets.only(left: 20.sp),
+                          child: Align(
+                              alignment:Alignment.bottomCenter,
+                              child: Row(
+                                children: [
+                                Expanded(child: Icon(AppIcons.seat_booked, color: AppColors.kBlueIcon,)),
+                                Expanded(child: Icon(AppIcons.seat_booked, color: AppColors.kBlueIcon,)),
+                                Expanded(child: Icon(AppIcons.empty_seat, color: AppColors.kBlueIcon,)),
+                                Expanded(child: Icon(AppIcons.empty_seat, color: AppColors.kBlueIcon,))
+                                ],
+                              )),
+                        ),),
                         Expanded(
-                          flex: 3,
+                          flex: 2,
                           child: Align(
                               alignment: Alignment.bottomRight,
                               child: Container(
                                   margin: EdgeInsets.only(right: 10.sp),
-                                  child: Text('RS. 200 '))),),
+                                  child: Text('RS. 200 ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.sp),))),),
                       ],
                     ),
                   ),
@@ -135,10 +146,10 @@ class CustomMatched{
                             flex:3,
                             child: Align(
                                 alignment:Alignment.topLeft,
-                                child: Text('Demo location , street demo ')),),
+                                child: Text('Seat Available: 2')),),
                           Expanded(child: Align(
                               alignment: Alignment.topCenter,
-                              child: Text('Cost')),),
+                              child: Text('Cost per seat')),),
                         ],
                       ),
                     ),

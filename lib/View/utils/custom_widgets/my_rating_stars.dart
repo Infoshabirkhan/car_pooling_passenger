@@ -4,22 +4,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class MyRatingStars extends StatelessWidget {
+  final double? itemSize;
   final double initailRating;
-  const MyRatingStars({Key? key, required this.initailRating}) : super(key: key);
+  final Color? color;
+   const MyRatingStars({Key? key, required this.initailRating, this.color = Colors.black, this.itemSize = 16}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return RatingBar.builder(
       initialRating: initailRating,
-      itemSize: 16.sp,
+      itemSize: itemSize!.sp,
       minRating: 1,
       direction: Axis.horizontal,
       allowHalfRating: true,
       itemCount: 5,
       itemPadding: EdgeInsets.symmetric(horizontal: 1.sp),
-      itemBuilder: (context, _) => const Icon(
+      itemBuilder: (context, _) =>  Icon(
         Icons.star,
-        color: Colors.black,
+        color: color,
       ),
       onRatingUpdate: (rating) {
         print(rating);

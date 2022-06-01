@@ -5,6 +5,7 @@ import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accept
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/request_accepted_card.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/rider_arrived_card.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/toward_direction_card.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/my_static_properites.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/search_rides_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -125,8 +126,8 @@ class RequestAcceptedScreenState extends State<RequestAcceptedScreen> {
                   return Visibility(
                     visible: state == 4 ? true : false,
                     child: TowardDirectionCard(onTap: (){
-                      context.read<FindRidersCubit>().ridersScreen(number: 5);
 
+                      MyBottomNavigation.pageController.jumpToPage(5);
                     },),
                   );
                 },

@@ -83,7 +83,7 @@ class RiderDetailScreen extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Icon(
                               AppIcons.phone_call,
-                              color: AppColors.kCallIcon,
+                              color: AppColors.kGreen,
                               size: 36.57.sp,
                             ),
                           )),
@@ -169,7 +169,7 @@ class RiderDetailScreen extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'SF Pro Text',
                     fontSize: 30.sp,
-                    color: AppColors.kCallIcon,
+                    color: AppColors.kGreen,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
