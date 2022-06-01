@@ -1,7 +1,10 @@
 import 'dart:async';
 
 import 'package:car_pooling_passanger/Controller/cubits/travel_views_cubits/find_riders_cubit.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/picked_up_card.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/request_accepted_card.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/rider_arrived_card.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/toward_direction_card.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/search_rides_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,13 +47,11 @@ class RequestAcceptedScreenState extends State<RequestAcceptedScreen> {
   // MapType _currentMapType = MapType.hybrid;
   @override
   Widget build(BuildContext context) {
-
     return MultiBlocProvider(
 
       providers: [
 
-        BlocProvider<BottomSheetCubit>(
-            create: (context) => BottomSheetCubit(false)),
+
         BlocProvider<FindRidersCubit>(create: (context) => FindRidersCubit(1)),
 
 
@@ -72,15 +73,62 @@ class RequestAcceptedScreenState extends State<RequestAcceptedScreen> {
               ),
 
 
+              BlocBuilder<FindRidersCubit, int>(
+                builder: (context, state) {
+                  return Visibility(
+                    visible: state == 1 ? true : false,
+                    child: Positioned(
+                        bottom: 0.sp,
+                        child: Container(
 
-              Positioned(
-                  bottom: 0.sp,
-                  child: Container(
+                            width: 1.sw,
+                            height: 200.h,
+                            child: RequestAcceptedCard(onTap: (){
+                              context.read<FindRidersCubit>().ridersScreen(number: 2);
+                            },))),
+                  );
+                },
+              ),
 
-                      width: 1.sw,
-                      height: 200.h,
-                      child: RequestAcceptedCard())),
 
+              BlocBuilder<FindRidersCubit, int>(
+                builder: (context, state) {
+                  return Visibility(
+                    visible: state == 2 ? true : false,
+                    child: RiderArrivedCard(onTap: (){
+                      context.read<FindRidersCubit>().ridersScreen(number: 3);
+
+                    },),
+                  );
+                },
+              ),
+
+
+
+
+     BlocBuilder<FindRidersCubit, int>(
+                builder: (context, state) {
+                  return Visibility(
+                    visible: state == 3 ? true : false,
+                    child: PickedUpCard(onTap: (){
+                      context.read<FindRidersCubit>().ridersScreen(number: 4);
+
+                    },),
+                  );
+                },
+              ),
+
+  BlocBuilder<FindRidersCubit, int>(
+                builder: (context, state) {
+                  return Visibility(
+                    visible: state == 4 ? true : false,
+                    child: TowardDirectionCard(onTap: (){
+                      context.read<FindRidersCubit>().ridersScreen(number: 5);
+
+                    },),
+                  );
+                },
+              ),
 
 
             ],
