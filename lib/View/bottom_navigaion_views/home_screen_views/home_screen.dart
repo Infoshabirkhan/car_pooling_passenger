@@ -125,9 +125,10 @@ class HomeScreen extends StatelessWidget {
               itemCount: 10,
               itemBuilder: (ctx, index) {
                 return BookRideWidget(
+                  currentIndex: index,
                     myIcon: index % 2 == 0
                         ? AppIcons.seat_booked
-                        : AppIcons.seat_booked,
+                        : AppIcons.bucket,
                     name: index % 2 == 0 ? "Booked Seats: 2" : "Delivery");
               })
         ],

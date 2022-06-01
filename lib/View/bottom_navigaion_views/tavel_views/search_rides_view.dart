@@ -1,3 +1,4 @@
+import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -47,37 +48,52 @@ class SearchRidesView extends StatelessWidget {
                   children: [
 
 
-                    const MyTextField(
-                      label: 'Select a pick up location',
-                      suffixIcon: Icon(CupertinoIcons.search),),
+                    const Expanded(
 
-                    SizedBox(height: 15.h,),
-
-                    const MyTextField(
-                      label: 'Select your destination',
-                      suffixIcon: Icon(CupertinoIcons.search),),
-                    SizedBox(height: 9.h,),
-
-                    Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text('Seats',
-                          style: TextStyle(fontSize: 15.sp),)),
-
-                    SizedBox(height: 5.h,),
-
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: SizedBox(
-                        height: 42.sp,
-                        width: 87.sp,
-                        child: const MyTextField(
-
-                          keyboardType: TextInputType.number,
-                          label: '1',
-                        ),
-                      ),
+                      child: MyTextField(
+                        label: 'Select a pick up location',
+                        suffixIcon: Icon(AppIcons.search, color: Colors.black,),),
                     ),
 
+
+                    const Expanded(
+
+                      child:  MyTextField(
+                        label: 'Select your destination',
+                        suffixIcon: Icon(AppIcons.search, color: Colors.black,),),
+                    ),
+
+
+
+                    Expanded(
+                        flex: 2,
+                        child: Column(
+                      children: [
+                        Expanded(
+                          child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('Seats',
+                                style: TextStyle(fontSize: 15.sp),)),
+                        ),
+
+
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: SizedBox(
+                              height: 42.sp,
+                              width: 87.sp,
+                              child: const MyTextField(
+
+                                keyboardType: TextInputType.number,
+                                label: '1',
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ))
                   ],
                 ),
               ),
@@ -86,7 +102,7 @@ class SearchRidesView extends StatelessWidget {
 
             Positioned(
                 bottom: 27.sp,
-                // right: 40.sp,
+                 right: 10.sp,
                 left: 40.sp,
 
                 child: CustomButton(

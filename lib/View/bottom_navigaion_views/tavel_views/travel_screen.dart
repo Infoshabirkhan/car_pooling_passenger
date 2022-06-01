@@ -1,17 +1,12 @@
 import 'dart:async';
 
 import 'package:car_pooling_passanger/Controller/cubits/travel_views_cubits/find_riders_cubit.dart';
-import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/search_rides_view.dart';
-import 'package:car_pooling_passanger/View/utils/custom_widgets/my_text_field.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../../Controller/cubits/travel_views_cubits/bottom_sheet_cubit.dart';
-import '../../utils/custom_widgets/custom_button.dart';
 import 'my_bottom_sheet.dart';
 
 void main() => runApp(const TravelScreen());

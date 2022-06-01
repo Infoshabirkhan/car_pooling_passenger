@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Model/utils/appcolors.dart';
@@ -33,112 +32,89 @@ class MyRidersCard extends StatelessWidget {
           children: [
             Expanded(
                 flex: 2,
-                child: Container(
-                  //color: Colors.brown,
-                  child: Row(
-                    children: [
-                      Expanded(child: Icon(AppIcons.account_person, color: Color(0xff57A3DE), size: 40.sp,)),
+                child: Row(
+                  children: [
+                    Expanded(child: Icon(AppIcons.account_person, color: const Color(0xff57A3DE), size: 40.sp,)),
 
-                      Expanded(
-                          flex: 3,
-                          child: Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(child: Container(
-                                  child: Row(
-                                    children: [
-                                      Expanded(child: Text('John Doe', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),)),
-
-                                      Expanded(child: Column(
-                                        children: [
-                                          Expanded(child: Align(
-                                              alignment: Alignment.center,
-                                              child: Text("Rating 4.5", style: TextStyle(color: AppColors.kGreyLight),)),),
-
-                                          Expanded(
-                                              child: MyRatingStars(initailRating: 4.5,)
-                                          )
-
-                                        ],
-                                      ),),
-
-                                    ],
-                                  ),
-
-
-                                )),
-                                Expanded(child: Container(
-
-
-
-
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-
-                                      children: [
-
-                                        Expanded(child: Align(
-                                            alignment: Alignment.centerLeft,
-                                            child: Text('Location', style: TextStyle(fontSize: 12.sp),))),
-                                        Expanded(child: Text('Demo location , street demo ', style: TextStyle(fontSize: 15.sp),)),
-                                      ],
-                                    )
-                                )),
-
-                              ],
-                            ),
-                          )),
-
-                    ],
-                  ),
-
-                )),
-            Expanded(child: Container(
-
-
-              child: Row(
-                children: [
-                  Expanded(
-
-                      child: Container(
-                        margin: EdgeInsets.only(left: 25.sp),
-
-
+                    Expanded(
+                        flex: 3,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(
-                                // flex: 2,
-                                child: Row(
+                            Expanded(child: Row(
+                              children: [
+                                Expanded(child: Text('John Doe', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),)),
 
+                                Expanded(child: Column(
                                   children: [
-                                    Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                    Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                    Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                    Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                    Expanded(child: Align(
+                                        alignment: Alignment.center,
+                                        child: Text("Rating 4.5", style: TextStyle(color: AppColors.kGreyLight),)),),
+
+                                    const Expanded(
+                                        child: MyRatingStars(initailRating: 4.5,)
+                                    )
+
                                   ],
-                                )),
-                            Expanded(child: Text('Seats Available: 2',style: TextStyle(fontSize: 12.sp,),))
+                                ),),
+
+                              ],
+                            )),
+                            Expanded(child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+
+                              children: [
+
+                                Expanded(child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text('Location', style: TextStyle(fontSize: 12.sp),))),
+                                Expanded(child: Text('Demo location , street demo ', style: TextStyle(fontSize: 15.sp),)),
+                              ],
+                            )),
+
                           ],
-                        ),
-                      )),
+                        )),
 
-                  Spacer(),
-                  Expanded(child: Container(
+                  ],
+                )),
+            Expanded(child: Row(
+              children: [
+                Expanded(
 
-                    child: Column(
-                      children: [
+                    child: Container(
+                      margin: EdgeInsets.only(left: 25.sp),
 
-                        Expanded(child: Align(
-                            alignment: Alignment.center,
-                            child: Text('RS. 200', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),))),
-                        Expanded(child: Text('Cost per Seat', style: TextStyle(fontSize: 12.sp,),))
-                      ],
-                    ),
-                  )),
-                ],
-              ),
+
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                              // flex: 2,
+                              child: Row(
+
+                                children: [
+                                  Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                  Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                  Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                  Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                ],
+                              )),
+                          Expanded(child: Text('Seats Available: 2',style: TextStyle(fontSize: 12.sp,),))
+                        ],
+                      ),
+                    )),
+
+                const Spacer(),
+                Expanded(child: Column(
+                  children: [
+
+                    Expanded(child: Align(
+                        alignment: Alignment.center,
+                        child: Text('RS. 200', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),))),
+                    Expanded(child: Text('Cost per Seat', style: TextStyle(fontSize: 12.sp,),))
+                  ],
+                )),
+              ],
             )),
           ],
         ),

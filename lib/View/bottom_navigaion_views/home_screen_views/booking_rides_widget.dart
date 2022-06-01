@@ -7,9 +7,11 @@ import '../../../Model/utils/appicons.dart';
 
 class BookRideWidget extends StatelessWidget {
   final IconData myIcon;
+  final int currentIndex;
   final String name;
 
-  const BookRideWidget({Key? key, required this.myIcon, required this.name})
+  const BookRideWidget({Key? key, required this.myIcon, required this.name, required this.currentIndex
+  })
       : super(key: key);
 
   @override
@@ -97,12 +99,12 @@ class BookRideWidget extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
-                        width: 50.sp,
+                        width: 80.sp,
                         child: Row(
                           children: [
                             Expanded(
                                 child: Align(
-                                    alignment: Alignment.centerRight,
+                                    alignment: Alignment.centerLeft,
                                     child: Icon(
                                       myIcon,
                                       color: AppColors.kBlueIcon,

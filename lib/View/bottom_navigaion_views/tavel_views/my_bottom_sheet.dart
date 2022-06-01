@@ -57,15 +57,14 @@ class MyBottomSheet extends StatelessWidget {
                 Expanded(
                   // flex: 0,
 
-                    child: Container(
+                    child: InkWell(
+                      onTap: onTap,
+
                       child: Column(
                         children: [
 
                           Expanded(
-                            child: InkWell(
-
-                                onTap: onTap,
-                                child: Icon(currentState == false ? AppIcons.arrow_up : AppIcons.arrow_down)),
+                            child: Icon(currentState == false ? AppIcons.arrow_up : AppIcons.arrow_down),
                           ),
 
 
@@ -83,10 +82,10 @@ class MyBottomSheet extends StatelessWidget {
 
 
                 Expanded(
-                  flex: 15,
+                  flex: 14,
                   child: ListView.builder(
 
-                      physics: currentState == false ? NeverScrollableScrollPhysics() : ClampingScrollPhysics(),
+                      physics: currentState == false ? const NeverScrollableScrollPhysics() : const ClampingScrollPhysics(),
                       padding: EdgeInsets.only(left: 15.sp, right: 15.sp, top: 5.sp, bottom: 200.sp),
                       itemCount: 9,
                       itemBuilder: (context, index){
@@ -95,7 +94,7 @@ class MyBottomSheet extends StatelessWidget {
 
                           Navigator.of(context).push(MaterialPageRoute(builder: (context){
 
-                            return RiderDetailScreen();
+                            return const RiderDetailScreen();
                           }));
                         });
                       }),
