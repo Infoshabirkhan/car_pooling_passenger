@@ -123,7 +123,8 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           children: const [
             HomeScreen(),
             TravelScreen(),
-            SettingsScreen()
+            SettingsScreen(),
+
           ],
         ),
       ),

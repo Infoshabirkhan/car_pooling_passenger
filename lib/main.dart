@@ -1,4 +1,4 @@
-import 'package:car_pooling_passanger/View/bookkings_views/booking_cubit/booking_cubit.dart';
+
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
 import 'package:car_pooling_passanger/View/splash_view/splash_screen.dart';
 import 'package:device_preview/device_preview.dart';
@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'View/bottom_navigaion_views/bookkings_views/booking_cubit/booking_cubit.dart';
 import 'View/bottom_navigaion_views/bottom_navigaion_screen.dart';
 import 'View/delivery/cubits/time_cubit.dart';
 import 'View/delivery/delivery.dart';
