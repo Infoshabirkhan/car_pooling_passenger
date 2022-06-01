@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../delivery/delivery.dart';
 
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -41,9 +42,6 @@ class HomeScreen extends StatelessWidget {
                 child: Card(
                     child: InkWell(
                         onTap: () {
-                          /*  Navigator.of(context).push(MaterialPageRoute(builder: (_){
-                  return
-                }));*/
                         },
                         child: Container(
                           margin: EdgeInsets.only(right: 5.sp),
@@ -69,35 +67,41 @@ class HomeScreen extends StatelessWidget {
                         ))),
               ),
               Expanded(
-                child: Card(
-                    child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                            MaterialPageRoute(builder: (_) {
-                              return DeliveryScreen();
-                            }));
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(left: 5.sp),
-                    height: 105.sp,
-                    child: Column(
-                      children: [
-                        Expanded(
-                            flex: 2,
-                            child:
-                                Image.asset("assets/images/pic_two.png")),
-                        Expanded(
-                            child: Text(
-                          "Make Delivery",
-                          style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.kBlack),
-                        )),
-                      ],
+
+
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)
+
+                      {
+                        return DeliveryScreen();
+                      }
+                      ));
+                    },
+                    child: Card(
+                      child: Container(
+                      margin: EdgeInsets.only(left: 5.sp),
+                      height: 105.sp,
+                      child: Column(
+                        children: [
+                          Expanded(
+                              flex: 2,
+                              child:
+                                  Image.asset("assets/images/pic_two.png")),
+                          Expanded(
+                              child: Text(
+                            "Make Delivery",
+                            style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.kBlack),
+                          )),
+                        ],
+                      ),
+                    ),
                     ),
                   ),
-                )),
+
               ),
               const Spacer(),
             ],
