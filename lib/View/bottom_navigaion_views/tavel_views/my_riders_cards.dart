@@ -19,7 +19,7 @@ class MyRidersCard extends StatelessWidget {
       child: Container(
 
 
-        margin: EdgeInsets.only(top: 5.sp, bottom: 20.sp, right: 15.sp),
+        margin: EdgeInsets.only(top: 5.sp, bottom: 20.sp,),
 
         height: 156.sp,
         decoration: BoxDecoration(
