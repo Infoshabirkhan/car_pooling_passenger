@@ -17,7 +17,7 @@ class CustomMatched{
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.16),
-            offset: Offset(0, 3.0),
+            offset: const Offset(0, 3.0),
             blurRadius: 6.0,
           ),
         ],
@@ -53,7 +53,7 @@ class CustomMatched{
                   flex: 2,
                   child: Container(
                     margin: EdgeInsets.only(left: 30.sp),
-                    child: Align(
+                    child: const Align(
                         alignment: Alignment.center, child: Text('4.5')),
                   ),
                 ),
@@ -141,15 +141,17 @@ class CustomMatched{
                     child: Container(
                       margin: EdgeInsets.only(left: 20.sp),
                       child: Row(
-                        children: const [
-                          Expanded(
+                        children:  [
+                           const Expanded(
                             flex:3,
-                            child: Align(
-                                alignment:Alignment.topLeft,
-                                child: Text('Seat Available: 2')),),
-                          Expanded(child: Align(
-                              alignment: Alignment.topCenter,
-                              child: Text('Cost per seat')),),
+                            child: Text('Seat Available: 2'),),
+                          Expanded(
+                            flex: 2,
+                            child: Container(
+                              alignment: Alignment.centerRight,
+                             // color: Colors.red,
+                              margin: EdgeInsets.only(right: 12.sp),
+                              child: const Text('Cost per seat')),),
                         ],
                       ),
                     ),

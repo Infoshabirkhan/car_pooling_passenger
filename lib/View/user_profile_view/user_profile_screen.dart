@@ -2,7 +2,6 @@ import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/elevated_button.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/my_text_field.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -95,7 +94,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                 height: 5.h,
               ),
 
-              SizedBox(height: 42.h, child: MyTextField()),
+              SizedBox(height: 42.h, child: const MyTextField()),
               SizedBox(
                 height: 18.h,
               ),
@@ -106,7 +105,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               SizedBox(
                 height: 5.h,
               ),
-              SizedBox(height: 42.h, child: MyTextField()),
+              SizedBox(height: 42.h, child: const MyTextField()),
               SizedBox(
                 height: 18.h,
               ),
@@ -117,7 +116,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               SizedBox(
                 height: 5.sp,
               ),
-              SizedBox(height: 42.h, child: MyTextField()),
+              SizedBox(height: 42.h, child: const MyTextField()),
               SizedBox(
                 height: 18.h,
               ),
@@ -168,7 +167,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               ),
               MyElevatedButton(buttonName: "Save", onPress: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                  return BottomNavigationScreen();
+                  return const BottomNavigationScreen();
                 }));
               },),
               SizedBox(

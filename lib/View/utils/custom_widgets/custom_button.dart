@@ -1,5 +1,4 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

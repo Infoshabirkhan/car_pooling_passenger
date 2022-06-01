@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Model/utils/appcolors.dart';
-import '../../bottom_navigaion_views/bottom_navigaion_screen.dart';
+
 
 class MyElevatedButton extends StatelessWidget {
 
@@ -11,7 +10,7 @@ class MyElevatedButton extends StatelessWidget {
   final String buttonName;
   final VoidCallback onPress;
 
-  MyElevatedButton({required this.buttonName,required this.onPress});
+  const MyElevatedButton({super.key, required this.buttonName,required this.onPress});
 
   @override
   Widget build(BuildContext context) {

@@ -82,7 +82,7 @@ class BookingScreen extends StatelessWidget {
                             border: Border.all(
                                 color: AppColors.bluelight, width: 1.5.sp),
                           ),
-                          child: CustomDeliveryWidget.DateTextField(space: 20),
+                          child: CustomDeliveryWidget.dateTextField(space: 20),
                         ),
                       ),
                       Expanded(
@@ -135,7 +135,7 @@ class BookingScreen extends StatelessWidget {
                                 ),
                                 child: Center(
                                     child: Text(
-                                        '${state.format(context).toString()}')),
+                                        state.format(context).toString())),
                               );
                             },
                           ),

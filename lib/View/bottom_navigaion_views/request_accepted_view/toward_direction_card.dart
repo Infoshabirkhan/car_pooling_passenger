@@ -1,5 +1,4 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
-import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -93,24 +92,21 @@ class TowardDirectionCard extends StatelessWidget {
                             ),
                           ),
                           Expanded(
-                            child: Container(
-                              // color: Colors.red,
-                              child: Column(
-                                children: [
-                                  Expanded(child: Image.asset('assets/images/customer_care.png')),
-                                  Expanded(
+                            child: Column(
+                              children: [
+                                Expanded(child: Image.asset('assets/images/customer_care.png')),
+                                Expanded(
 
-                                      child: Text(
-                                    'Emergency Call',
-                                    style: TextStyle(
-                                      fontFamily: 'SF Pro Text',
-                                      fontSize: 12.sp,
-                                      color: AppColors.kRedSecondary,
-                                    ),
-                                  )),
+                                    child: Text(
+                                  'Emergency Call',
+                                  style: TextStyle(
+                                    fontFamily: 'SF Pro Text',
+                                    fontSize: 12.sp,
+                                    color: AppColors.kRedSecondary,
+                                  ),
+                                )),
 
-                                ],
-                              ),
+                              ],
                             ),
                           ),
 

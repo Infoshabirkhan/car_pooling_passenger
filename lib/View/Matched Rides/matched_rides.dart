@@ -1,5 +1,3 @@
-import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
-import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:car_pooling_passanger/View/Matched%20Rides/custom_matched.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,5 +1,4 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
-import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/dropdown_month_cubit.dart';
 import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/month_dropdown_cubit.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +13,7 @@ class CustomDeliveryWidget {
 
 
 
-  static Widget DateTextField({required int space}) {
+  static Widget dateTextField({required int space}) {
     return TextFormField(
       maxLength: 2,
 
@@ -33,7 +32,7 @@ class CustomDeliveryWidget {
   }
 
   //time text field
-  static Widget TimeTextfield() {
+  static Widget timeTextField() {
     return TextFormField(
       inputFormatters: [FilteringTextInputFormatter.singleLineFormatter],
       keyboardType: TextInputType.number,
@@ -59,7 +58,7 @@ class CustomDeliveryWidget {
         ),
         decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Color(0xffBAD2E3)),
+              borderSide: const BorderSide(color: Color(0xffBAD2E3)),
               borderRadius: BorderRadius.circular(10.r),
             ),
             focusedBorder: OutlineInputBorder(
@@ -74,7 +73,6 @@ class CustomDeliveryWidget {
   }
 
   static Widget dropdownAm() {
-    String Intailvalue = 'PM';
     List<String> month = [
       'AM',
       'PM',
@@ -82,8 +80,8 @@ class CustomDeliveryWidget {
     return BlocBuilder<AmPmDropDownCubit, String>(
       builder: (context, state) {
         return DropdownButton<String>(
-            underline: SizedBox(),
-            icon: Visibility(visible: false, child: Icon(Icons.arrow_downward)),
+            underline: const SizedBox(),
+            icon: const Visibility(visible: false, child: Icon(Icons.arrow_downward)),
             value: state,
             items: month.map((String items) {
               return DropdownMenuItem(
@@ -99,7 +97,6 @@ class CustomDeliveryWidget {
   }
 
   static Widget dropDownWi(BuildContext context) {
-    String? Intailvalue = 'KG';
     List<String> month = [
       'KG',
       'G',
@@ -107,8 +104,8 @@ class CustomDeliveryWidget {
     return BlocBuilder<WhightDropDown, String>(
       builder: (context, state) {
         return DropdownButton<String>(
-            underline: SizedBox(),
-            icon: Visibility(visible: false, child: Icon(Icons.arrow_downward)),
+            underline: const SizedBox(),
+            icon: const Visibility(visible: false, child: Icon(Icons.arrow_downward)),
             value: state,
             items: month.map((String items) {
               return DropdownMenuItem(
@@ -142,8 +139,8 @@ class CustomDeliveryWidget {
     return BlocBuilder<MonthDropDown, String>(
       builder: (context, state) {
         return DropdownButton(
-            underline: SizedBox(),
-            icon: Visibility(visible: false, child: Icon(Icons.arrow_downward)),
+            underline: const SizedBox(),
+            icon: const Visibility(visible: false, child: Icon(Icons.arrow_downward)),
             value: state,
             items: month.map((items) {
               return DropdownMenuItem(

@@ -24,7 +24,7 @@ class MyRatingStars extends StatelessWidget {
         color: color,
       ),
       onRatingUpdate: (rating) {
-        print(rating);
+
       },
     );
   }

@@ -24,7 +24,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    String intilaValue = '';
+
     return BlocProvider(
       create: (context) => AmPmDropDownCubit('PM'),
       child: BlocProvider(
@@ -95,7 +95,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                           border:
                           Border.all(color: AppColors.bluelight, width: 1.5.sp),
                         ),
-                        child: CustomDeliveryWidget.DateTextField(space: 20),
+                        child: CustomDeliveryWidget.dateTextField(space: 20),
                       ),
                     ),
                     Expanded(
@@ -146,7 +146,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                                     color: AppColors.bluelight, width: 1.5.sp),
                               ),
                               child: Center(child: Text(
-                                  '${state.format(context).toString()}')),
+                                  state.format(context).toString())),
                             );
                           },
                         ),
@@ -191,7 +191,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                                 color: AppColors.bluelight, width: 1.5.sp),
                             borderRadius: BorderRadius.circular(10.r)),
                         child: Center(
-                            child: CustomDeliveryWidget.DateTextField(
+                            child: CustomDeliveryWidget.dateTextField(
                                 space: 30)),
                       ),
                     ),
@@ -288,7 +288,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
 
                     Navigator.of(context).push(MaterialPageRoute(builder: (context){
                       
-                      return MatchedRides();
+                      return const MatchedRides();
                     }));
 
                   }, color: AppColors.kBlue, text: 'Find Rides',),

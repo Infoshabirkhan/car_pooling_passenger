@@ -1,5 +1,4 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,13 +10,13 @@ class OnBoardingScreenOne extends StatelessWidget {
     return Scaffold(
         body: Stack(
       children: [
-        Container(
+        SizedBox(
           width: 1.sw,
           height: 1.sh,
           child: Image.asset("assets/images/pageview_pic_one.png",
               fit: BoxFit.cover),
         ),
-        Container(
+        SizedBox(
           width: 1.sw,
           height: 1.sh,
           child: Column(
@@ -32,7 +31,7 @@ class OnBoardingScreenOne extends StatelessWidget {
                         fontSize: 35.sp,
                         fontWeight: FontWeight.bold)),
               )),
-              Spacer(),
+              const Spacer(),
               Expanded(
                   child: Container(
                 alignment: Alignment.center,

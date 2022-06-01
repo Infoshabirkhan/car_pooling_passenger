@@ -1,11 +1,9 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/elevated_button.dart';
 import 'package:car_pooling_passanger/View/verification_code_view/verification_code_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../bottom_navigaion_views/bottom_navigaion_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -53,7 +51,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: 27.7.h,
               ),
-              Container(
+              SizedBox(
                   height: 159.58.h,
                   child: Image.asset(
                     "assets/images/phone_anim_one.png",
@@ -61,7 +59,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: 22.8.h,
               ),
-              Container(
+              SizedBox(
                 height: 41.h,
                 child: TextField(
                   decoration: InputDecoration(
@@ -93,7 +91,7 @@ class LoginScreen extends StatelessWidget {
                 buttonName: "Login",
                 onPress: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                    return VerificationCodeScreen();
+                    return const VerificationCodeScreen();
                   }));
                 },
               ),

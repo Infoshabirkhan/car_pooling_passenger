@@ -8,17 +8,17 @@ class Splashscreen extends StatefulWidget {
   const Splashscreen({Key? key}) : super(key: key);
 
   @override
-  _SplashscreenState createState() => _SplashscreenState();
+  SplashscreenState createState() => SplashscreenState();
 }
 
-class _SplashscreenState extends State<Splashscreen> {
+class SplashscreenState extends State<Splashscreen> {
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     Timer(const Duration(seconds: 3), () {
       Navigator.pushAndRemoveUntil(context,
-          MaterialPageRoute(builder: (_) => OnBoardingScreen()), (route) => false);
+          MaterialPageRoute(builder: (_) => const OnBoardingScreen()), (route) => false);
     });
   }
 
