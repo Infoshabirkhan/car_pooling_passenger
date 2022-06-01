@@ -10,11 +10,16 @@ import 'View/bottom_navigaion_views/bottom_navigaion_screen.dart';
 import 'View/delivery/cubits/time_cubit.dart';
 import 'View/delivery/delivery.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark));
 
+   SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(DevicePreview(
       enabled: false,
       builder: (BuildContext context) =>
@@ -35,6 +40,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => TimeCubit(TimeOfDay(hour: 8, minute: 33)),
             child: MaterialApp(
+              debugShowCheckedModeBanner: false,
               title: 'Car pooling',
               theme: ThemeData(
                 primarySwatch: Colors.blue,
