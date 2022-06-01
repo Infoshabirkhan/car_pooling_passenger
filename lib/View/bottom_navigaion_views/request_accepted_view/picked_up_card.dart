@@ -1,5 +1,4 @@
 import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.dart';
-import 'package:car_pooling_passanger/View/utils/custom_widgets/my_cancel_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +14,7 @@ class PickedUpCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 1.sw,
       height: 1.sh,
       child: Stack(
@@ -93,47 +92,39 @@ class PickedUpCard extends StatelessWidget {
                             ],
                           )),
 
-                      Expanded(child: Container(
-
-                      child: Row(
+                      Expanded(child: Row(
                         children: [
-                          Expanded(child: Container(
+                          Expanded(child: Row(
+                            children: [
 
-                            child: Row(
-                              children: [
-
-                                Expanded(child: Column(
-                                  children: [
-                                    Expanded(child: Align(
-                                        alignment: Alignment.bottomCenter,
-                                        child: Text('Car Model:', style: TextStyle(color: AppColors.kGreySecondary, fontSize: 12.sp),)),),
-                                    Expanded(child: Text('Alto VXR', style: TextStyle(fontSize: 15.sp),),)
-                                  ],
-                                )),
+                              Expanded(child: Column(
+                                children: [
+                                  Expanded(child: Align(
+                                      alignment: Alignment.bottomCenter,
+                                      child: Text('Car Model:', style: TextStyle(color: AppColors.kGreySecondary, fontSize: 12.sp),)),),
+                                  Expanded(child: Text('Alto VXR', style: TextStyle(fontSize: 15.sp),),)
+                                ],
+                              )),
 
 
 
-                                Expanded(child: Column(
-                                  children: [
-                                    Expanded(child: Align(
-                                        alignment: Alignment.bottomCenter,
-                                        child: Text('Car Model', style: TextStyle(color: AppColors.kGreySecondary, fontSize: 12.sp),)),),
-                                    Expanded(child: Text('DH-233R', style: TextStyle(fontSize: 15.sp),),)
-                                  ],
-                                ))
+                              Expanded(child: Column(
+                                children: [
+                                  Expanded(child: Align(
+                                      alignment: Alignment.bottomCenter,
+                                      child: Text('Car Model', style: TextStyle(color: AppColors.kGreySecondary, fontSize: 12.sp),)),),
+                                  Expanded(child: Text('DH-233R', style: TextStyle(fontSize: 15.sp),),)
+                                ],
+                              ))
 
-                              ],
-                            ),
+                            ],
                           )),
 
 
-                          Spacer(),
+                          const Spacer(),
                         ],
-                      ),
                       )),
-                      Expanded(child: Container(
-
-                      child: Column(
+                      Expanded(child: Column(
 
                         children: [
                           Expanded(child: Text('Did you got picked up?', style: TextStyle(fontSize: 15.sp),),),
@@ -161,8 +152,6 @@ class PickedUpCard extends StatelessWidget {
 
 
                         ],
-                      ),
-
                       )),
                     ],
                   ),

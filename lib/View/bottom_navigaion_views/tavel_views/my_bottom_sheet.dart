@@ -3,9 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Model/utils/appcolors.dart';
 import '../../../Model/utils/appicons.dart';
-import '../../riders_detail_views/rider_detail_scren.dart';
 import 'my_riders_cards.dart';
-import 'my_static_properites.dart';
+import '../my_static_properites.dart';
 
 
 class MyBottomSheet extends StatelessWidget {

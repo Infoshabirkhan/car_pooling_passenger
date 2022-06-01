@@ -5,14 +5,12 @@ import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accept
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/request_accepted_card.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/rider_arrived_card.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/toward_direction_card.dart';
-import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/my_static_properites.dart';
-import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/search_rides_view.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/my_static_properites.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../../../Controller/cubits/travel_views_cubits/bottom_sheet_cubit.dart';
 
 void main() => runApp(const RequestAcceptedScreen());
 
@@ -80,7 +78,7 @@ class RequestAcceptedScreenState extends State<RequestAcceptedScreen> {
                     visible: state == 1 ? true : false,
                     child: Positioned(
                         bottom: 0.sp,
-                        child: Container(
+                        child: SizedBox(
 
                             width: 1.sw,
                             height: 200.h,

@@ -3,7 +3,7 @@ import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/rate_rider_screen/rate_rider_screen.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/request_accepted_screen.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/settings_view/settings_screen.dart';
-import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/my_static_properites.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/my_static_properites.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
 import 'package:car_pooling_passanger/View/riders_detail_views/rider_detail_scren.dart';
 import 'package:flutter/material.dart';

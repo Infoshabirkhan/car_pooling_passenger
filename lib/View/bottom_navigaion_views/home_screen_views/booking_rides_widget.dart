@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Model/utils/appcolors.dart';
-import '../../../Model/utils/appicons.dart';
 
 class BookRideWidget extends StatelessWidget {
   final IconData myIcon;
@@ -98,7 +96,7 @@ class BookRideWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      child: Container(
+                      child: SizedBox(
                         width: 80.sp,
                         child: Row(
                           children: [
@@ -153,7 +151,7 @@ class BookRideWidget extends StatelessWidget {
                         fontSize: 12.sp,
                       ),
                     )),
-                    Spacer(),
+                    const Spacer(),
                   ],
                 ),
               ),
