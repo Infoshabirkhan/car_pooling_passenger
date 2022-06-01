@@ -25,29 +25,31 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print('------------>>>>');
     return BlocProvider(
       create: (context) => GenderCubit('Male'),
       child: Scaffold(
-        backgroundColor: AppColors.kWhite,
+        backgroundColor:AppColors.kWhite,
+        appBar: AppBar(
+          backgroundColor: AppColors.kWhite,
+          elevation: 0.sp,
+          centerTitle: true,
+          title:   Text(
+            "User Profile",
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20.sp,
+                color: AppColors.kBlack),
+          ),
+        ),
+
         body: Padding(
           padding: EdgeInsets.only(left: 27.sp, right: 26.sp),
           child: ListView(
             children: [
+
+
               SizedBox(
-                height: 22.sp,
-              ),
-              Center(
-                child: Text(
-                  "User Profile",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.sp,
-                      color: AppColors.kBlack),
-                ),
-              ),
-              SizedBox(
-                height: 51.3.sp,
+                height: 51.h,
               ),
               Stack(
                 clipBehavior: Clip.none,
@@ -64,8 +66,8 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                       left: 178.sp,
                       child: Center(
                           child: Container(
-                              width: 29.25.sp,
-                              height: 29.25.sp,
+                              width: 29.25.w,
+                              height: 29.25.h,
                               decoration: BoxDecoration(
                                   color: AppColors.kBlue,
                                   borderRadius: BorderRadius.circular(30.r)),
@@ -73,7 +75,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                 ],
               ),
               SizedBox(
-                height: 33.3.sp,
+                height: 33.3.h,
               ),
               Text(
                 "Personal Information",
@@ -83,29 +85,29 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     color: AppColors.kBlack),
               ),
               SizedBox(
-                height: 3.sp,
+                height: 3.h,
               ),
               Text(
                 "Name",
                 style: TextStyle(fontSize: 15.sp, color: AppColors.kGreyFourth),
               ),
               SizedBox(
-                height: 5.sp,
+                height: 5.h,
               ),
-              SizedBox(height: 42.sp, child: TextFieldWidget()),
+              SizedBox(height: 42.h, child: TextFieldWidget()),
               SizedBox(
-                height: 18.sp,
+                height: 18.h,
               ),
               Text(
                 "Email address",
                 style: TextStyle(fontSize: 15.sp, color: AppColors.kGreyFourth),
               ),
               SizedBox(
-                height: 5.sp,
+                height: 5.h,
               ),
-              SizedBox(height: 42.sp, child: TextFieldWidget()),
+              SizedBox(height: 42.h, child: TextFieldWidget()),
               SizedBox(
-                height: 18.sp,
+                height: 18.h,
               ),
               Text(
                 "Address",
@@ -114,18 +116,18 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               SizedBox(
                 height: 5.sp,
               ),
-              SizedBox(height: 42.sp, child: TextFieldWidget()),
+              SizedBox(height: 42.h, child: TextFieldWidget()),
               SizedBox(
-                height: 18.sp,
+                height: 18.h,
               ),
               Text(
                 "Gender",
                 style: TextStyle(fontSize: 15.sp, color: AppColors.kGreyFourth),
               ),
               SizedBox(
-                height: 5.sp,
+                height: 5.h,
               ),
-              Container(height: 42.sp,
+              Container(height: 42.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(6.r),
                       border: Border.all(
@@ -134,9 +136,13 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                   ),
                   child: BlocBuilder<GenderCubit, String>(
                     builder: (context, state) {
-                      return DropdownButton(
+                      return DropdownButtonFormField(
 
-                          underline: const SizedBox(),
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(left: 10.sp),
+
+                          border: InputBorder.none,
+                        ),
                           isExpanded: true,
                           value: state,
 
@@ -157,7 +163,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     },
                   )),
               SizedBox(
-                height: 60.sp,
+                height: 60.h,
               ),
               MyElevatedButton(buttonName: "Save", onPress: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (_) {
@@ -165,7 +171,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                 }));
               },),
               SizedBox(
-                height: 14.sp,
+                height: 14.h,
               ),
               TextButton(
                   onPressed: () {},

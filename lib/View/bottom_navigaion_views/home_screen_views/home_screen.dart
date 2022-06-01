@@ -125,7 +125,7 @@ class HomeScreen extends StatelessWidget {
                         ? AppIcons.seat_booked
                         : AppIcons.seat_booked,
                     name: index % 2 == 0 ? "Booked Seats: 2" : "Delivery");
-              })
+              }),
         ],
       ),
     );
