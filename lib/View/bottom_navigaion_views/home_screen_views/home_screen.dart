@@ -1,5 +1,6 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
+import 'package:car_pooling_passanger/View/bookkings_views/booking_view.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/home_screen_views/booking_rides_widget.dart';
 import 'package:car_pooling_passanger/View/onBording_views/onBoarding_screen_one.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +43,9 @@ class HomeScreen extends StatelessWidget {
                 child: Card(
                     child: InkWell(
                         onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                            return BookingScreen();
+                          }));
                         },
                         child: Container(
                           margin: EdgeInsets.only(right: 5.sp),
@@ -67,8 +71,6 @@ class HomeScreen extends StatelessWidget {
                         ))),
               ),
               Expanded(
-
-
                   child: InkWell(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)
