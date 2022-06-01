@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'View/bottom_navigaion_views/bookkings_views/booking_cubit/booking_cubit.dart';
+import 'View/bookkings_views/booking_cubit/booking_cubit.dart';
 import 'View/bottom_navigaion_views/bottom_navigaion_screen.dart';
 import 'View/delivery/cubits/time_cubit.dart';
 import 'View/delivery/delivery.dart';
