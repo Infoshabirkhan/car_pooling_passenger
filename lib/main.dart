@@ -1,3 +1,4 @@
+import 'package:car_pooling_passanger/View/bookkings_views/booking_cubit/booking_cubit.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
 import 'package:car_pooling_passanger/View/splash_view/splash_screen.dart';
 import 'package:device_preview/device_preview.dart';
@@ -10,11 +11,16 @@ import 'View/bottom_navigaion_views/bottom_navigaion_screen.dart';
 import 'View/delivery/cubits/time_cubit.dart';
 import 'View/delivery/delivery.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark));
 
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(DevicePreview(
       enabled: false,
       builder: (BuildContext context) =>
@@ -34,12 +40,16 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, Widget? child) =>
           BlocProvider(
             create: (context) => TimeCubit(TimeOfDay(hour: 8, minute: 33)),
-            child: MaterialApp(
-              title: 'Car pooling',
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
+            child: BlocProvider(
+              create: (context) => BookingTimeCubit(TimeOfDay(hour: 8, minute: 33)),
+              child: MaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: 'Car pooling',
+                theme: ThemeData(
+                  primarySwatch: Colors.blue,
+                ),
+                home: Splashscreen(),
               ),
-              home: Splashscreen(),
             ),
           ),
 

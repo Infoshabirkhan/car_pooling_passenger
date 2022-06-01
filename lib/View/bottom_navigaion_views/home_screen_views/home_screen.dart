@@ -1,11 +1,13 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
+import 'package:car_pooling_passanger/View/bookkings_views/booking_view.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/home_screen_views/booking_rides_widget.dart';
 import 'package:car_pooling_passanger/View/onBording_views/onBoarding_screen_one.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../delivery/delivery.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -41,9 +43,9 @@ class HomeScreen extends StatelessWidget {
                 child: Card(
                     child: InkWell(
                         onTap: () {
-                          /*  Navigator.of(context).push(MaterialPageRoute(builder: (_){
-                  return
-                }));*/
+                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                            return BookingScreen();
+                          }));
                         },
                         child: Container(
                           margin: EdgeInsets.only(right: 5.sp),
@@ -69,35 +71,39 @@ class HomeScreen extends StatelessWidget {
                         ))),
               ),
               Expanded(
-                child: Card(
-                    child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                            MaterialPageRoute(builder: (_) {
-                              return DeliveryScreen();
-                            }));
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(left: 5.sp),
-                    height: 105.sp,
-                    child: Column(
-                      children: [
-                        Expanded(
-                            flex: 2,
-                            child:
-                                Image.asset("assets/images/pic_two.png")),
-                        Expanded(
-                            child: Text(
-                          "Make Delivery",
-                          style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.kBlack),
-                        )),
-                      ],
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)
+
+                      {
+                        return DeliveryScreen();
+                      }
+                      ));
+                    },
+                    child: Card(
+                      child: Container(
+                      margin: EdgeInsets.only(left: 5.sp),
+                      height: 105.sp,
+                      child: Column(
+                        children: [
+                          Expanded(
+                              flex: 2,
+                              child:
+                                  Image.asset("assets/images/pic_two.png")),
+                          Expanded(
+                              child: Text(
+                            "Make Delivery",
+                            style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.kBlack),
+                          )),
+                        ],
+                      ),
+                    ),
                     ),
                   ),
-                )),
+
               ),
               const Spacer(),
             ],
