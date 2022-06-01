@@ -42,9 +42,6 @@ class HomeScreen extends StatelessWidget {
                 child: Card(
                     child: InkWell(
                         onTap: () {
-                          /*  Navigator.of(context).push(MaterialPageRoute(builder: (_){
-                  return
-                }));*/
                         },
                         child: Container(
                           margin: EdgeInsets.only(right: 5.sp),
