@@ -110,7 +110,9 @@ class RequestAcceptedScreenState extends State<RequestAcceptedScreen> {
                 builder: (context, state) {
                   return Visibility(
                     visible: state == 3 ? true : false,
-                    child: PickedUpCard(onTap: (){
+                    child: PickedUpCard(
+
+                      onTap: (){
                       context.read<FindRidersCubit>().ridersScreen(number: 4);
 
                     },),
