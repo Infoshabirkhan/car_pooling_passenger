@@ -1,3 +1,4 @@
+import 'package:car_pooling_passanger/View/bookkings_views/booking_cubit/booking_cubit.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
 import 'package:car_pooling_passanger/View/splash_view/splash_screen.dart';
 import 'package:device_preview/device_preview.dart';
@@ -16,7 +17,7 @@ Future<void> main() async {
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark));
 
-   SystemChrome.setPreferredOrientations([
+  SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
@@ -39,13 +40,16 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, Widget? child) =>
           BlocProvider(
             create: (context) => TimeCubit(TimeOfDay(hour: 8, minute: 33)),
-            child: MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'Car pooling',
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
+            child: BlocProvider(
+              create: (context) => BookingTimeCubit(TimeOfDay(hour: 8, minute: 33)),
+              child: MaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: 'Car pooling',
+                theme: ThemeData(
+                  primarySwatch: Colors.blue,
+                ),
+                home: Splashscreen(),
               ),
-              home: Splashscreen(),
             ),
           ),
 

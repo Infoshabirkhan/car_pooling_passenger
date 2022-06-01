@@ -10,6 +10,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.kWhite,
       appBar: AppBar(
           centerTitle: true,
           title: const Text(
@@ -22,7 +23,7 @@ class SettingsScreen extends StatelessWidget {
         padding: EdgeInsets.only(left: 20.sp, right: 20.sp),
         children: [
           SizedBox(
-            height: 40.sp,
+            height: 40.h,
           ),
           Center(
               child: Align(
@@ -32,7 +33,7 @@ class SettingsScreen extends StatelessWidget {
             size: 100.sp,
           ))),
           SizedBox(
-            height: 5.sp,
+            height: 5.h,
           ),
           Align(
             alignment: Alignment.center,
@@ -46,7 +47,7 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 8.sp,
+            height: 8.h,
           ),
           Align(
             alignment: Alignment.center,
@@ -60,7 +61,7 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 40.sp,
+            height: 40.h,
           ),
           Row(
             children: [
@@ -90,7 +91,7 @@ class SettingsScreen extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 4.sp,
+            height: 4.h,
           ),
           Row(
             children: [
@@ -118,7 +119,7 @@ class SettingsScreen extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 20.sp,
+            height: 20.h,
           ),
           Text(
             'Email Adress',
@@ -129,7 +130,7 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 8.sp,
+            height: 8.h,
           ),
           Text(
             'john12@gmial.com',
@@ -139,7 +140,7 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 15.sp,
+            height: 15.h,
           ),
           Text(
             'Adress',
@@ -150,7 +151,7 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 10.sp,
+            height: 10.h,
           ),
           Text(
             'demo address here, street',
@@ -160,27 +161,27 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 40.sp,
+            height: 40.h,
           ),
           Container(
             margin: EdgeInsets.only(left: 50.sp,right: 50.sp),
-            height: 48.sp,
-            width: 173.sp,
-            color: Color(0xffF3F3F3),
+            height: 48.h,
+            width: 173.w,
+            color: const Color(0xffF3F3F3),
             child: Center(
               child: Text('Switch to Rider',style: TextStyle(
-                color: Color(0xff57A3DE),
+                color: const Color(0xff57A3DE),
                 fontSize: 15.sp,
                 fontWeight: FontWeight.bold,
               ),),
             ),
           ),
           SizedBox(
-            height: 30.sp,
+            height: 30.h,
           ),
           SizedBox(
-              height: 50.sp,
-              width: 50.sp,
+              height: 50.h,
+              width: 50.w,
               child: Image.asset('assets/images/customer.png'),),
           Align(
             alignment: Alignment.center,
