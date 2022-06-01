@@ -1,7 +1,10 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/request_accepted_screen.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/settings_view/settings_screen.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/my_static_properites.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
+import 'package:car_pooling_passanger/View/riders_detail_views/rider_detail_scren.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +22,6 @@ class BottomNavigationScreen extends StatefulWidget {
 
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
 
-  PageController pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       backgroundColor: Colors.white,
           //  elevation: 0,
             onPressed: () {
-              pageController.jumpToPage(1);
+              MyBottomNavigation.pageController.jumpToPage(1);
               context.read<BottomNavigationCubit>().getNextScreen(
                   index: 1);
 
@@ -66,7 +68,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                   Expanded(child: InkWell(
 
                       onTap: () {
-                        pageController.jumpToPage(0);
+                        MyBottomNavigation.pageController.jumpToPage(0);
                         context.read<BottomNavigationCubit>().getNextScreen(
                             index: 0);
                       },
@@ -83,7 +85,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                       alignment: Alignment.center, child: InkWell(
 
                       onTap: () {
-                        pageController.jumpToPage(1);
+                        MyBottomNavigation.pageController.jumpToPage(1);
                         context.read<BottomNavigationCubit>().getNextScreen(
                             index: 1);
                       },
@@ -96,7 +98,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                       )))),
                   Expanded(child: InkWell(
                     onTap: () {
-                      pageController.jumpToPage(2);
+                      MyBottomNavigation.pageController.jumpToPage(2);
                       context.read<BottomNavigationCubit>().getNextScreen(
                           index: 2);
                     },
@@ -118,13 +120,14 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
 
 
         body: PageView(
-          controller: pageController,
+          controller: MyBottomNavigation.pageController,
           physics: NeverScrollableScrollPhysics(),
           children: const [
             HomeScreen(),
             TravelScreen(),
             SettingsScreen(),
-
+            RiderDetailScreen(),
+            RequestAcceptedScreen()
           ],
         ),
       ),
