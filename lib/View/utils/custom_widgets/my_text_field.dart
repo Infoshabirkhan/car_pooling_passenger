@@ -5,13 +5,14 @@ import '../../../Model/utils/appcolors.dart';
 
 
 class MyTextField extends StatelessWidget {
+  final TextEditingController? controller;
   final String? label;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final TextInputType? keyboardType;
 
 
-  const MyTextField({super.key, this.label, this.suffixIcon, this.prefixIcon , this.keyboardType = TextInputType.name});
+  const MyTextField({super.key, this.controller,this.label, this.suffixIcon, this.prefixIcon , this.keyboardType = TextInputType.name});
 
   @override
   Widget build(BuildContext context) {

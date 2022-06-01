@@ -1,6 +1,6 @@
 import 'package:car_pooling_passanger/View/bookkings_views/booking_cubit/booking_cubit.dart';
-import 'package:car_pooling_passanger/View/delivery/cubits/am_pm_dropdown_dart.dart';
-import 'package:car_pooling_passanger/View/delivery/cubits/month_dropdown_cubit.dart';
+import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/am_pm_dropdown_dart.dart';
+import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/month_dropdown_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +20,7 @@ class BookingScreen extends StatelessWidget {
         child: Scaffold(
               backgroundColor: Colors.white,
               appBar: AppBar(
+                foregroundColor: Colors.black,
                 elevation: 0,
                 backgroundColor: Colors.white,
                 title: Text(

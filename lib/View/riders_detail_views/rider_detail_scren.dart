@@ -1,5 +1,6 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/my_static_properites.dart';
 import 'package:car_pooling_passanger/View/riders_detail_views/my_request_dialog.dart';
 import 'package:car_pooling_passanger/View/riders_detail_views/rider_info_widget.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.dart';
@@ -197,7 +198,9 @@ class RiderDetailScreen extends StatelessWidget {
                       text: state == false ? 'Send Request' : 'Cancel Request',
 
                       ontap: state == true ? (){
-                        Navigator.of(context).pop();
+
+                        MyBottomNavigation.pageController.jumpToPage(4);
+
                       }: () {
                     showDialog(context: (context), builder: ( context) {
                       return MyRequestDialog(onConfirm: () {

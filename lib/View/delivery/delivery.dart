@@ -1,9 +1,10 @@
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
-import 'package:car_pooling_passanger/View/delivery/cubits/am_pm_dropdown_dart.dart';
-import 'package:car_pooling_passanger/View/delivery/cubits/dropdown_month_cubit.dart';
-import 'package:car_pooling_passanger/View/delivery/cubits/time_cubit.dart';
+import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/am_pm_dropdown_dart.dart';
+import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/dropdown_month_cubit.dart';
+import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/time_cubit.dart';
 import 'package:car_pooling_passanger/View/delivery/delivery_custom_widget.dart';
-import 'package:car_pooling_passanger/View/delivery/cubits/month_dropdown_cubit.dart';
+import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/month_dropdown_cubit.dart';
+import 'package:car_pooling_passanger/View/utils/custom_widgets/my_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,8 +59,8 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                 SizedBox(
                   height: 5.sp,
                 ),
-                CustomDeliveryWidget.getTextField(
-                    hint: "Select a pick up location", icon: Icons.search),
+
+                const MyTextField(label: 'Select a pick up location', suffixIcon: Icon(AppIcons.search, color: Colors.black,), ),
                 SizedBox(
                   height: 20.sp,
                 ),
@@ -67,8 +68,8 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                 SizedBox(
                   height: 5.sp,
                 ),
-                CustomDeliveryWidget.getTextField(
-                    hint: "Select your destination", icon: Icons.search),
+                const MyTextField(label: 'Select a pick up location', suffixIcon: Icon(AppIcons.search, color: Colors.black,), ),
+
                 SizedBox(
                   height: 20.sp,
                 ),

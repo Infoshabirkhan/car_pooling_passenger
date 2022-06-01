@@ -5,6 +5,7 @@ import '../../../Model/utils/appcolors.dart';
 import '../../../Model/utils/appicons.dart';
 import '../../riders_detail_views/rider_detail_scren.dart';
 import 'my_riders_cards.dart';
+import 'my_static_properites.dart';
 
 
 class MyBottomSheet extends StatelessWidget {
@@ -92,10 +93,12 @@ class MyBottomSheet extends StatelessWidget {
 
                         return MyRidersCard(onTap: currentState == false ? null : (){
 
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context){
 
-                            return const RiderDetailScreen();
-                          }));
+                          MyBottomNavigation.pageController.jumpToPage(3);
+                          // Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                          //
+                          //   return const RiderDetailScreen();
+                          // }));
                         });
                       }),
                 ),
