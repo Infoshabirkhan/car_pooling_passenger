@@ -55,7 +55,7 @@ class RiderDetailScreen extends StatelessWidget {
                     ),
                   )),
               SizedBox(
-                height: 12.5.sp,
+                height: 12.5.h,
               ),
               Padding(
                 padding: EdgeInsets.only(right: 37.sp),
@@ -72,8 +72,8 @@ class RiderDetailScreen extends StatelessWidget {
               ),
               Center(
                 child: SizedBox(
-                  width: 232.92.sp,
-                  height: 36.64.sp,
+                  width: 232.92.w,
+                  height: 36.64.h,
                   //     color: Colors.black87,
                   child: Row(
                     children: [
@@ -107,7 +107,7 @@ class RiderDetailScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 19.sp,
+                height: 19.h,
               ),
               Text(
                 'Location',
@@ -126,7 +126,7 @@ class RiderDetailScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 12.sp,
+                height: 12.h,
               ),
               const RiderInformation(
                   heading1: 'Phone No : ',
@@ -134,7 +134,7 @@ class RiderDetailScreen extends StatelessWidget {
                   headingDetail1: '+92-8995323',
                   headingDetail2: 'Male'),
               SizedBox(
-                height: 17.5.sp,
+                height: 17.5.h,
               ),
               Padding(
                 padding: EdgeInsets.only(left: 5.sp, right: 48.5.sp),
@@ -143,7 +143,7 @@ class RiderDetailScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 17.5.sp,
+                height: 17.5.h,
               ),
               const RiderInformation(
                   heading1: 'Model : ',
@@ -151,7 +151,7 @@ class RiderDetailScreen extends StatelessWidget {
                   headingDetail1: 'Alto VXR',
                   headingDetail2: 'DH-233R'),
               SizedBox(
-                height: 12.sp,
+                height: 12.h,
               ),
               const RiderInformation(
                   heading1: 'Smoking : ',
@@ -159,7 +159,7 @@ class RiderDetailScreen extends StatelessWidget {
                   headingDetail1: 'Allowed',
                   headingDetail2: 'Yes'),
               SizedBox(
-                height: 23.sp,
+                height: 23.h,
               ),
               Padding(
                 padding: EdgeInsets.only(right: 37.sp),
@@ -187,7 +187,7 @@ class RiderDetailScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 17.sp,
+                height: 17.h,
               ),
               BlocBuilder<BookRideCubit, bool>(
                 builder: (context, state) {

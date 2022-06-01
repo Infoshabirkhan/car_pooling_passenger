@@ -3,13 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Model/utils/appcolors.dart';
 import '../../../Model/utils/appicons.dart';
-import '../../utils/custom_widgets/my_rating_stars.dart';
 
 
 class RequestAcceptedCard extends StatelessWidget {
   final VoidCallback? onTap;
 
-  const RequestAcceptedCard({Key? key,  this.onTap}) : super(key: key);
+  const RequestAcceptedCard({Key? key, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +17,9 @@ class RequestAcceptedCard extends StatelessWidget {
       child: Container(
 
 
-        margin: EdgeInsets.only(top: 5.sp, ),
+        margin: EdgeInsets.only(top: 5.sp,),
 
-        height: 156.sp,
+        height: 156.h,
         decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [
@@ -28,13 +27,26 @@ class RequestAcceptedCard extends StatelessWidget {
             ]
 
         ),
+
+        // child: Column(
+        //   children: [
+        //     Expanded(
+        //         flex: 2,
+        //         child: Container(color: Colors.red,)),
+        //     Expanded(
+        //         flex: 3,
+        //         child: Container(color: Colors.green,)),
+        //   ],
+        // ),
         child: Column(
           children: [
             Expanded(
                 flex: 2,
                 child: Row(
                   children: [
-                    Expanded(child: Icon(AppIcons.account_person, color: const Color(0xff57A3DE), size: 40.sp,)),
+                    Expanded(child: Icon(
+                      AppIcons.account_person, color: const Color(0xff57A3DE),
+                      size: 52.sp,)),
 
                     Expanded(
                         flex: 3,
@@ -43,32 +55,33 @@ class RequestAcceptedCard extends StatelessWidget {
                           children: [
                             Expanded(child: Row(
                               children: [
-                                Expanded(child: Text('John Doe', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),)),
+                                Expanded(child: Text('John Doe',
+                                  style: TextStyle(fontSize: 15.sp,
+                                      fontWeight: FontWeight.bold),)),
 
-                                Expanded(child: Column(
-                                  children: [
-                                    Expanded(child: Align(
-                                        alignment: Alignment.center,
-                                        child: Text("Rating 4.5", style: TextStyle(color: AppColors.kGreyLight),)),),
+                                Expanded(child: Padding(
+                                  padding:  EdgeInsets.only(top: 23.sp),
+                                  child: Column(
+                                    children: [
+                                      Expanded(child: Align(
+                                          alignment: Alignment.center,
+                                          child: Icon(AppIcons.phone_call,color: AppColors.kCallIcon,size: 32.sp,)),),
 
-                                    const Expanded(
-                                        child: MyRatingStars(initailRating: 4.5,)
-                                    )
+                                       Expanded(
+                                          child: Text(
+                                            'Make Call',
+                                            style: TextStyle(
+                                              fontFamily: 'SF Pro Text',
+                                              fontSize: 12.sp,
+                                              color:  AppColors.kCallIcon,
+                                            ),
+                                          )
+                                      )
 
-                                  ],
+                                    ],
+                                  ),
                                 ),),
 
-                              ],
-                            )),
-                            Expanded(child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-
-                              children: [
-
-                                Expanded(child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: Text('Location', style: TextStyle(fontSize: 12.sp),))),
-                                Expanded(child: Text('Demo location , street demo ', style: TextStyle(fontSize: 15.sp),)),
                               ],
                             )),
 
@@ -77,49 +90,89 @@ class RequestAcceptedCard extends StatelessWidget {
 
                   ],
                 )),
-            Expanded(child: Row(
+
+            Expanded(child: Padding(
+              padding:  EdgeInsets.only(left: 36.sp),
+              child: Column(
+
+                crossAxisAlignment: CrossAxisAlignment.start,
+
+                children: [
+
+                  Expanded(child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('Location',
+                        style: TextStyle(fontSize: 12.sp,color: AppColors.kGreySecondary),))),
+                  Expanded(child: Text(
+                    'Demo location , street demo ',
+                    style: TextStyle(fontSize: 15.sp),)),
+                ],
+              ),
+            )),
+
+         Expanded(
+           child: Padding(
+             padding:  EdgeInsets.only(left:36.sp),
+             child: Column(
               children: [
                 Expanded(
-
-                    child: Container(
-                      margin: EdgeInsets.only(left: 25.sp),
-
-
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            // flex: 2,
-                              child: Row(
-
-                                children: [
-                                  Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                  Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                  Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                  Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                ],
-                              )),
-                          Expanded(child: Text('Seats Available: 2',style: TextStyle(fontSize: 12.sp,),))
-                        ],
-                      ),
-                    )),
-
-                const Spacer(),
-                Expanded(child: Column(
-                  children: [
-
-                    Expanded(child: Align(
-                        alignment: Alignment.center,
-                        child: Text('RS. 200', style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),))),
-                    Expanded(child: Text('Cost per Seat', style: TextStyle(fontSize: 12.sp,),))
-                  ],
-                )),
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: Text(
+                            'Distance',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Text',
+                              fontSize: 12.sp,
+                              color: AppColors.kGreySecondary,
+                            ),
+                          )),
+                      Expanded(
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'Time to Reach',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Text',
+                              fontSize: 12.sp,
+                              color: AppColors.kGreySecondary,
+                            ),
+                          )),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: Text(
+                            '2.6 km',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Text',
+                              fontSize: 15.sp,
+                              color: AppColors.kblackSecondary,
+                            ),
+                          )),
+                      Expanded(
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            '15 min',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Text',
+                              fontSize: 15.sp,
+                              color: AppColors.kblackSecondary,
+                            ),
+                          )),
+                    ],
+                  ),
+                ),
               ],
-            )),
-          ],
         ),
+           ),
+         ),
 
+]
       ),
+    ),
     );
   }
 }
