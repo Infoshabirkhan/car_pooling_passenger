@@ -16,7 +16,7 @@ class MyRequestDialog extends StatelessWidget {
 
 
       child: SizedBox(
-        height: 205.sp,
+        height: 205.h,
         child: Column(
           children: [
 
@@ -27,10 +27,17 @@ class MyRequestDialog extends StatelessWidget {
               children: [
                 Expanded(child: Column(
                   children: [
-                    const Expanded(child: Text('Seats')),
-                    Expanded(child: SizedBox(
-                        width: 87.sp,
-                        child: const MyTextField(label: '1',))),
+                     Expanded(child: Container(
+                       padding: EdgeInsets.only(left: 35.w),
+                      child: const Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('Seats',)),
+                    )),
+                    Expanded(
+                        flex: 2,
+                        child: SizedBox(
+                        width: 87.w,
+                        child: const MyTextField(label: '1',keyboardType: TextInputType.number,textAlignment: TextAlign.center,))),
                   ],
                 ),),
 
@@ -42,7 +49,7 @@ class MyRequestDialog extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Text('Rs. 200', style: TextStyle(fontSize: 15.sp, color: Colors.green, fontWeight: FontWeight.bold),))),
                     Expanded(child: SizedBox(
-                        width: 87.sp,
+                        width: 87.w,
                         child: const Align(
                             alignment: Alignment.topCenter,
                             child: Text('Total')))),

@@ -26,7 +26,7 @@ class SettingsScreen extends StatelessWidget {
           padding: EdgeInsets.only(left: 20.sp, right: 20.sp),
           children: [
             SizedBox(
-              height: 40.h,
+              height: 37.h,
             ),
             Center(
                 child: Align(
@@ -50,7 +50,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 8.h,
+              height: 6.h,
             ),
             Align(
               alignment: Alignment.center,
@@ -64,7 +64,7 @@ class SettingsScreen extends StatelessWidget {
                 onPressed: (){
                   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
 
-                    return  UserProfileScreen();
+                    return  const UserProfileScreen();
                   }));
                 },
               ),

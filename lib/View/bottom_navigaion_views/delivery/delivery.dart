@@ -3,7 +3,6 @@ import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/am_
 import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/dropdown_month_cubit.dart';
 import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/time_cubit.dart';
 import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/month_dropdown_cubit.dart';
-import 'package:car_pooling_passanger/View/bottom_navigaion_views/Matched%20Rides/matched_rides.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/delivery/delivery_custom_widget.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/my_text_field.dart';
 import 'package:flutter/material.dart';
@@ -47,244 +46,255 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                 ),
               ),
             ),
-            body: ListView(
-              padding: EdgeInsets.only(left: 27.sp, right: 27.sp),
-              children: [
-                SizedBox(
-                  height: 22.sp,
-                ),
-                Text(
-                  'Pickup',
-                  style: TextStyle(
-                    fontSize: 15.sp,
+            body: ScrollConfiguration(
+              behavior: const ScrollBehavior(),
+              child: ListView(
+                padding: EdgeInsets.only(left: 27.sp, right: 27.sp),
+                children: [
+                  SizedBox(
+                    height: 20.h,
                   ),
-                ),
-                SizedBox(
-                  height: 5.sp,
-                ),
+                  Text(
+                    'Pickup',
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
 
-                const MyTextField(label: 'Select a pick up location', suffixIcon: Icon(AppIcons.search, color: Colors.black,), ),
-                SizedBox(
-                  height: 20.sp,
-                ),
-                const Text('Destination'),
-                SizedBox(
-                  height: 5.sp,
-                ),
-                const MyTextField(label: 'Select a pick up location', suffixIcon: Icon(AppIcons.search, color: Colors.black,), ),
+                  SizedBox(
+                      height: 42.h,
+                      child: const MyTextField(label: 'Select a pick up location', suffixIcon: Icon(AppIcons.search, color: Colors.black,), )),
+                  SizedBox(
+                    height: 18.h,
+                  ),
+                  const Text('Destination'),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  SizedBox(
+                      height: 42.h,
+                      child: const MyTextField(label: 'Select a pick up location', suffixIcon: Icon(AppIcons.search, color: Colors.black,), )),
 
-                SizedBox(
-                  height: 20.sp,
-                ),
-                Text(
-                  'Date and Time',
-                  style:
-                  TextStyle(fontSize: 15.sp, color: AppColors.kblackSecondary),
-                ),
-                SizedBox(
-                  height: 10.sp,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        height: 52.sp,
-                        width: 56.sp,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.r),
-                          border:
-                          Border.all(color: AppColors.bluelight, width: 1.5.sp),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Text(
+                    'Date and Time',
+                    style:
+                    TextStyle(fontSize: 15.sp, color: AppColors.kblackSecondary),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          height: 52.h,
+                          width: 56.w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.r),
+                            border:
+                            Border.all(color: AppColors.bluelight, width: 1.5.sp),
+                          ),
+                          child: CustomDeliveryWidget.dateTextField(space: 20),
                         ),
-                        child: CustomDeliveryWidget.dateTextField(space: 20),
                       ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: BlocBuilder<TimeCubit, TimeOfDay>(
-                        builder: (context, state) {
-                          state = state;
-                          return Container(
-                            alignment: Alignment.topRight,
-                            margin: EdgeInsets.only(left: 8.sp, right: 5.sp),
-                            height: 46.sp,
-                            width: 56.sp,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.r),
-                              border: Border.all(
-                                  color: AppColors.bluelight, width: 1.5.sp),
-                            ),
-                            child: Center(
-                                child: CustomDeliveryWidget.dropdownMon(
-                                    context)),
-                          );
-                        },
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: InkWell(
-                        onTap: () {
-                          showTimePicker(
-                            context: context,
-                            initialTime: TimeOfDay.now(),)
-                          .then((value) {
-                            return context
-                                .read<TimeCubit>()
-                                .getTime(state: value);
-                          });
-                        },
+                      Expanded(
+                        flex: 1,
                         child: BlocBuilder<TimeCubit, TimeOfDay>(
                           builder: (context, state) {
+                            state = state;
                             return Container(
-                              margin: EdgeInsets.only(
-                                  right: 10.sp, left: 20.sp),
-                              height: 52.sp,
-                              width: 100.sp,
+                              alignment: Alignment.topRight,
+                              margin: EdgeInsets.only(left: 8.sp, right: 5.sp),
+                              height: 46.h,
+                              width: 56.w,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.r),
                                 border: Border.all(
                                     color: AppColors.bluelight, width: 1.5.sp),
                               ),
-                              child: Center(child: Text(
-                                  state.format(context).toString())),
+                              child: Center(
+                                  child: CustomDeliveryWidget.dropdownMon(
+                                      context)),
                             );
                           },
                         ),
                       ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        margin: EdgeInsets.only(right: 10.sp),
-                        height: 42.sp,
-                        width: 56.sp,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: AppColors.bluelight, width: 1.5.sp),
-                            borderRadius: BorderRadius.circular(10.r)),
-                        child: Center(child: CustomDeliveryWidget.dropdownAm()),
+                      Expanded(
+                        flex: 2,
+                        child: InkWell(
+                          onTap: () {
+                            showTimePicker(
+                              context: context,
+                              initialTime: TimeOfDay.now(),)
+                            .then((value) {
+                              return context
+                                  .read<TimeCubit>()
+                                  .getTime(state: value);
+                            });
+                          },
+                          child: BlocBuilder<TimeCubit, TimeOfDay>(
+                            builder: (context, state) {
+                              return Container(
+                                margin: EdgeInsets.only(
+                                    right: 10.sp, left: 20.sp),
+                                height: 52.h,
+                                width: 100.w,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                  border: Border.all(
+                                      color: AppColors.bluelight, width: 1.5.sp),
+                                ),
+                                child: Center(child: Text(
+                                    state.format(context).toString())),
+                              );
+                            },
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 18.sp,
-                ),
-                Text(
-                  'Package weight',
-                  style: TextStyle(
-                    fontSize: 15.sp,
-                    color: AppColors.kblackSecondary,
-                  ),
-                ),
-                SizedBox(
-                  height: 5.sp,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        margin: EdgeInsets.only(right: 10.sp),
-                        height: 52.sp,
-                        width: 106.sp,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: AppColors.bluelight, width: 1.5.sp),
-                            borderRadius: BorderRadius.circular(10.r)),
-                        child: Center(
-                            child: CustomDeliveryWidget.dateTextField(
-                                space: 30)),
-                      ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Container(
-                        margin: EdgeInsets.only(right: 156.sp),
-                        height: 42.sp,
-                        width: 100.sp,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: AppColors.bluelight, width: 1.5.sp),
-                            borderRadius: BorderRadius.circular(10.r)),
-                        child:
-                        Center(child: CustomDeliveryWidget.dropDownWi(context)),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 18.sp,
-                ),
-                Text(
-                  'Receiver Information',
-                  style: TextStyle(
-                    color: AppColors.kblackSecondary,
-                    fontSize: 15.sp,
-                  ),
-                ),
-                SizedBox(
-                  height: 8.sp,
-                ),
-                Text.rich(
-                  TextSpan(
-                    text: 'Name',
-                    children: [
-                      TextSpan(
-                        text: '*',
-                        style: TextStyle(
-                          color: AppColors.kRed,
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.only(right: 10.sp),
+                          height: 42.h,
+                          width: 56.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: AppColors.bluelight, width: 1.5.sp),
+                              borderRadius: BorderRadius.circular(10.r)),
+                          child: Center(child: CustomDeliveryWidget.dropdownAm()),
                         ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 8.h,
-                ),
-
-                const MyTextField(),
-                SizedBox(
-                  height: 15.h,
-                ),
-                Text.rich(
-                  TextSpan(
-                    text: 'Phone No',
+                  SizedBox(
+                    height: 18.h,
+                  ),
+                  Text(
+                    'Package weight',
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                      color: AppColors.kblackSecondary,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Row(
                     children: [
-                      TextSpan(
-                        text: '*',
-                        style: TextStyle(
-                          color: AppColors.kRed,
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.only(right: 10.sp),
+                          height: 52.h,
+                          width: 106.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: AppColors.bluelight, width: 1.5.sp),
+                              borderRadius: BorderRadius.circular(10.r)),
+                          child: Center(
+                              child: CustomDeliveryWidget.dateTextField(
+                                  space: 30)),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Container(
+                          margin: EdgeInsets.only(right: 156.sp),
+                          height: 42.h,
+                          width: 100.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: AppColors.bluelight, width: 1.5.sp),
+                              borderRadius: BorderRadius.circular(10.r)),
+                          child:
+                          Center(child: CustomDeliveryWidget.dropDownWi(context)),
                         ),
                       ),
                     ],
                   ),
-                ),
-                SizedBox(
-                  height: 7.h,
-                ),
+                  SizedBox(
+                    height: 18.h,
+                  ),
+                  Text(
+                    'Receiver Information',
+                    style: TextStyle(
+                      color: AppColors.kblackSecondary,
+                      fontSize: 15.sp,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      text: 'Name',
+                      children: [
+                        TextSpan(
+                          text: '*',
+                          style: TextStyle(
+                            color: AppColors.kRed,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
 
-               const  MyTextField(),
+                  SizedBox(
+                      height: 42.h,
+                      child: const MyTextField()),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      text: 'Phone No',
+                      children: [
+                        TextSpan(
+                          text: '*',
+                          style: TextStyle(
+                            color: AppColors.kRed,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 7.h,
+                  ),
 
-                SizedBox(
-                  height: 20.sp,
-                ),
+                 SizedBox(
+                     height: 42.h,
+                     child: const  MyTextField()),
+
+                  SizedBox(
+                    height: 20.h,
+                  ),
 
 
 
 
 
-                Center(
-                  child: CustomButton(ontap: (){
+                  Center(
+                    child: CustomButton(ontap: (){
 
 
-                    /// It will navigate it to the Match rider Screen
-                    /// Match rider is on index 7 in bottom navigation
+                      /// It will navigate it to the Match rider Screen
+                      /// Match rider is on index 7 in bottom navigation
 
-                    MyBottomNavigation.pageController.jumpToPage(7);
+                      MyBottomNavigation.pageController.jumpToPage(7);
 
-                  }, color: AppColors.kBlue, text: 'Find Rides',),
-                ),
-              ],
+                    }, color: AppColors.kBlue, text: 'Find Rides',),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

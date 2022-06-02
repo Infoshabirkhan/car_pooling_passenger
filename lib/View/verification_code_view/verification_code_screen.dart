@@ -12,9 +12,10 @@ class VerificationCodeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.only(left: 63.5, right: 62.5.sp),
+      body: ScrollConfiguration(
+        behavior: const ScrollBehavior(),
         child: ListView(
+          padding: EdgeInsets.only(left: 63.5, right: 62.5.sp),
           children: [
             SizedBox(
               height: 166.sp,
@@ -67,31 +68,7 @@ class VerificationCodeScreen extends StatelessWidget {
                   }),
             ),
 
-            // Row(
-            //   children: [
-            //     // Expanded(
-            //     //     child: Container(
-            //     //   margin: EdgeInsets.only(right: 15.sp),
-            //     //   width: 51.sp,
-            //     //   child: const CodeTextFieldWidget(),
-            //     // )),
-            //     // Expanded(
-            //     //     child: Container(
-            //     //   margin: EdgeInsets.only(right: 15.sp),
-            //     //   child: const CodeTextFieldWidget(),
-            //     // )),
-            //     // Expanded(
-            //     //     child: Container(
-            //     //   margin: EdgeInsets.only(right: 15.sp),
-            //     //   child: const CodeTextFieldWidget(),
-            //     // )),
-            //     // Expanded(
-            //     //     child: Container(
-            //     //   margin: EdgeInsets.only(right: 15.sp),
-            //     //   child: const CodeTextFieldWidget(),
-            //     // )),
-            //   ],
-            // ),
+
             SizedBox(
               height: 23.sp,
             ),
