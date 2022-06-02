@@ -1,11 +1,14 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/Matched%20Rides/matched_rides.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/bookkings_views/booking_view.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/delivery/delivery.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/rate_rider_screen/rate_rider_screen.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/request_accepted_screen.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/riders_detail_views/rider_detail_scren.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/settings_view/settings_screen.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/my_static_properites.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/travel_screen.dart';
-import 'package:car_pooling_passanger/View/riders_detail_views/rider_detail_scren.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -124,12 +127,17 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           controller: MyBottomNavigation.pageController,
           physics: NeverScrollableScrollPhysics(),
           children: const [
-            HomeScreen(),
-            TravelScreen(),
-            SettingsScreen(),
-            RiderDetailScreen(),
-            RequestAcceptedScreen(),
-            RateRiderScreen(),
+
+
+            HomeScreen(),              // index 0
+            TravelScreen(),            // index 1
+            SettingsScreen(),          // index 2
+            RiderDetailScreen(),       // index 3
+            RequestAcceptedScreen(),   // index 4
+            RateRiderScreen(),         // index 5
+            DeliveryScreen(),          // index 6
+            MatchedRides(),            // index 7
+            BookingScreen(),           // index 8
           ],
         ),
       ),

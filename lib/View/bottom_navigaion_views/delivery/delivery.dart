@@ -2,16 +2,17 @@ import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/am_pm_dropdown_dart.dart';
 import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/dropdown_month_cubit.dart';
 import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/time_cubit.dart';
-import 'package:car_pooling_passanger/View/delivery/delivery_custom_widget.dart';
 import 'package:car_pooling_passanger/Controller/cubits/delivery_view_cubits/month_dropdown_cubit.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/Matched%20Rides/matched_rides.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/delivery/delivery_custom_widget.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/my_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../Model/utils/appcolors.dart';
-import '../Matched Rides/matched_rides.dart';
-import '../utils/custom_widgets/custom_button.dart';
+import '../../../Model/utils/appcolors.dart';
+import '../../utils/custom_widgets/custom_button.dart';
+import '../my_static_properites.dart';
 
 class DeliveryScreen extends StatefulWidget {
   const DeliveryScreen({Key? key}) : super(key: key);
@@ -261,6 +262,9 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                   height: 7.sp,
                 ),
                 CustomDeliveryWidget.getTextField(hint: ''),
+
+
+//                CustomDeliveryWidget
                 SizedBox(
                   height: 20.sp,
                 ),
@@ -286,10 +290,11 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                 Center(
                   child: CustomButton(ontap: (){
 
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                      
-                      return const MatchedRides();
-                    }));
+
+                    // It will navigate it to the Match rider Screen
+                    // Match rider is on index 7 in bottom navigation
+
+                    MyBottomNavigation.pageController.jumpToPage(7);
 
                   }, color: AppColors.kBlue, text: 'Find Rides',),
                 ),

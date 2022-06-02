@@ -1,15 +1,15 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/my_static_properites.dart';
-import 'package:car_pooling_passanger/View/riders_detail_views/my_request_dialog.dart';
-import 'package:car_pooling_passanger/View/riders_detail_views/rider_info_widget.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/riders_detail_views/rider_info_widget.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/my_rating_stars.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../Controller/cubits/rider_detail_view_cubits/book_ride_cubit.dart';
+import '../../../Controller/cubits/rider_detail_view_cubits/book_ride_cubit.dart';
+import 'my_request_dialog.dart';
 
 class RiderDetailScreen extends StatelessWidget {
   const RiderDetailScreen({Key? key}) : super(key: key);

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../bottom_navigaion_views/bottom_navigaion_screen.dart';
 import '../user_profile_view/user_profile_screen.dart';
 
 class VerificationCodeScreen extends StatelessWidget {
@@ -55,6 +56,16 @@ class VerificationCodeScreen extends StatelessWidget {
                   length: 4,
                   onChanged: (value) {
 
+
+                    if(value.length ==4){
+
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        return BottomNavigationScreen();
+                      }));
+                    }else{
+
+                    }
+
                   }),
             ),
 
@@ -94,14 +105,14 @@ class VerificationCodeScreen extends StatelessWidget {
             SizedBox(
               height: 170.sp,
             ),
-            MyElevatedButton(
-              buttonName: "Verify",
-              onPress: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                  return const UserProfileScreen();
-                }));
-              },
-            ),
+            // MyElevatedButton(
+            //   buttonName: "Verify",
+            //   onPress: () {
+            //     Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+            //       return const UserProfileScreen();
+            //     }));
+            //   },
+            // ),
           ],
         ),
       ),
