@@ -146,7 +146,7 @@ class RiderDetailScreen extends StatelessWidget {
                 height: 17.5.h,
               ),
               const RiderInformation(
-                  heading1: 'Model : ',
+                  heading1: 'model : ',
                   heading2: 'Plate No: ',
                   headingDetail1: 'Alto VXR',
                   headingDetail2: 'DH-233R'),

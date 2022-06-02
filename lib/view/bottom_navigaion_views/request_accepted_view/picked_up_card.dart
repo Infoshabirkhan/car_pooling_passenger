@@ -103,7 +103,7 @@ class PickedUpCard extends StatelessWidget {
                                 children: [
                                   Expanded(child: Align(
                                       alignment: Alignment.bottomCenter,
-                                      child: Text('Car Model:', style: TextStyle(color: AppColors.kGreySecondary, fontSize: 12.sp),)),),
+                                      child: Text('Car model:', style: TextStyle(color: AppColors.kGreySecondary, fontSize: 12.sp),)),),
                                   Expanded(child: Text('Alto VXR', style: TextStyle(fontSize: 15.sp),),)
 
 
@@ -116,7 +116,7 @@ class PickedUpCard extends StatelessWidget {
                                 children: [
                                   Expanded(child: Align(
                                       alignment: Alignment.bottomCenter,
-                                      child: Text('Car Model', style: TextStyle(color: AppColors.kGreySecondary, fontSize: 12.sp),)),),
+                                      child: Text('Car model', style: TextStyle(color: AppColors.kGreySecondary, fontSize: 12.sp),)),),
                                   Expanded(child: Text('DH-233R', style: TextStyle(fontSize: 15.sp),),)
                                 ],
                               ))

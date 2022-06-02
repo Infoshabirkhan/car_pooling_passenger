@@ -1,4 +1,3 @@
-
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,7 +42,6 @@ class VerificationCodeScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.sp),
               child: PinCodeTextField(
-
                   textStyle: const TextStyle(color: Colors.black),
                   keyboardType: TextInputType.number,
                   pinTheme: PinTheme(
@@ -54,20 +52,14 @@ class VerificationCodeScreen extends StatelessWidget {
                   appContext: context,
                   length: 4,
                   onChanged: (value) {
-
-
-                    if(value.length ==4){
-
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                    if (value.length == 4) {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
                         return const BottomNavigationScreen();
                       }));
-                    }else{
-
-                    }
-
+                    } else {}
                   }),
             ),
-
 
             SizedBox(
               height: 23.h,
