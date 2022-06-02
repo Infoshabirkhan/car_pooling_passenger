@@ -1,11 +1,10 @@
 
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
-import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../user_profile_view/user_profile_screen.dart';
+import '../bottom_navigaion_views/bottom_navigaion_screen.dart';
 
 class VerificationCodeScreen extends StatelessWidget {
   const VerificationCodeScreen({Key? key}) : super(key: key);
@@ -55,6 +54,16 @@ class VerificationCodeScreen extends StatelessWidget {
                   length: 4,
                   onChanged: (value) {
 
+
+                    if(value.length ==4){
+
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                        return const BottomNavigationScreen();
+                      }));
+                    }else{
+
+                    }
+
                   }),
             ),
 
@@ -102,13 +111,6 @@ class VerificationCodeScreen extends StatelessWidget {
             //     }));
             //   },
             // ),
-            CustomButton(text: 'Verify', ontap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)
-              {
-                return const UserProfileScreen();
-              }
-              ));
-            }, color: AppColors.kBlue)
           ],
         ),
       ),

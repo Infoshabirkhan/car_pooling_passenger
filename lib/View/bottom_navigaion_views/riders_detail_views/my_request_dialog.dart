@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../Model/utils/appcolors.dart';
-import '../utils/custom_widgets/my_text_field.dart';
+import '../../../Model/utils/appcolors.dart';
+import '../../utils/custom_widgets/my_text_field.dart';
 
 
 

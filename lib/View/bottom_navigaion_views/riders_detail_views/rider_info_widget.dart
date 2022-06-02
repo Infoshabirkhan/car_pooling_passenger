@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../Model/utils/appcolors.dart';
+import '../../../Model/utils/appcolors.dart';
 
 
 class RiderInformation extends StatelessWidget {

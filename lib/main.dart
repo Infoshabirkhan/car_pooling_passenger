@@ -27,7 +27,7 @@ Future<void> main() async {
     DeviceOrientation.portraitDown,
   ]);
   runApp(DevicePreview(
-      enabled: false,
+      enabled: true,
       builder: (BuildContext context) =>
       const MyApp()));
 

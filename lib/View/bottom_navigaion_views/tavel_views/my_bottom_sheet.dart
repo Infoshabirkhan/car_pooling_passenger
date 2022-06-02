@@ -43,11 +43,15 @@ class MyBottomSheet extends StatelessWidget {
             )),
 
         AnimatedPositioned(
-          bottom: currentState == false ? -0.55.sh : -0.2.sh,
+          left: 0.sp,
+          right: 0.sp,
+         // bottom: currentState == false ? -0.55.sh : -0.2.sh,
+          bottom: currentState == false ? -580.h : -400.h,
           duration: const Duration(milliseconds: 200),
           child: Container(
-            height: 0.8.sh,
-            width: 1.sw,
+           // height: 0.8.sh,
+            height: 800.h,
+           // width: 1.sw,
             color: Colors.white,
 
             child: Column(
