@@ -1,6 +1,6 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
-import 'package:car_pooling_passanger/View/utils/custom_widgets/elevated_button.dart';
+import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/my_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -165,11 +165,19 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               SizedBox(
                 height: 60.h,
               ),
-              MyElevatedButton(buttonName: "Save", onPress: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+              // MyElevatedButton(buttonName: "Save", onPress: () {
+              //   Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+              //     return const BottomNavigationScreen();
+              //   }));
+              // },),
+              CustomButton(text: 'Save', ontap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+
+                {
                   return const BottomNavigationScreen();
-                }));
-              },),
+                }
+                ));
+              }, color: AppColors.kBlue),
               SizedBox(
                 height: 14.h,
               ),

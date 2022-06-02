@@ -36,7 +36,7 @@ class PickedUpCard extends StatelessWidget {
                     ]
 
                   ),
-                  width: 200,
+                  width: 200.w,
                     height: 274.h,
                   child: Column(
                     children: [
@@ -64,7 +64,9 @@ class PickedUpCard extends StatelessWidget {
                                             padding:  EdgeInsets.only(top: 23.sp),
                                             child: Column(
                                               children: [
-                                                Expanded(child: Align(
+                                                Expanded(
+                                                  flex:3,
+                                                  child: Align(
                                                     alignment: Alignment.center,
                                                     child: Icon(AppIcons.phone_call,color: AppColors.kGreen,size: 32.sp,)),),
 
@@ -103,6 +105,8 @@ class PickedUpCard extends StatelessWidget {
                                       alignment: Alignment.bottomCenter,
                                       child: Text('Car Model:', style: TextStyle(color: AppColors.kGreySecondary, fontSize: 12.sp),)),),
                                   Expanded(child: Text('Alto VXR', style: TextStyle(fontSize: 15.sp),),)
+
+
                                 ],
                               )),
 
@@ -133,19 +137,20 @@ class PickedUpCard extends StatelessWidget {
                             margin: EdgeInsets.only(left: 20.sp),
                             child: Row(
                               children: [
-
-
+                                const Spacer(),
                                 Expanded(child: Align(
 
                                     alignment: Alignment.centerRight,
                                     child: CustomButton(text: 'No', color: AppColors.kBlue, ontap: () { },))),
+
+                              const Spacer(),
                                 Expanded(child: Align(
                                     alignment: Alignment.center,
 
                                     child: CustomButton(text: 'Yes', color: AppColors.kBlue, ontap: () { },)))
 
 
-
+                               , const Spacer(),
                               ],
                             ),
                           ))
@@ -153,9 +158,13 @@ class PickedUpCard extends StatelessWidget {
 
                         ],
                       )),
+                    SizedBox(
+                      height: 10.h,
+                    )
                     ],
                   ),
                 )),
+
           ),
         ],
       ),

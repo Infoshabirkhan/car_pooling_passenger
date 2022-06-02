@@ -1,7 +1,6 @@
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../Model/utils/appcolors.dart';
 import '../../utils/custom_widgets/custom_button.dart';
 import '../../utils/custom_widgets/my_text_field.dart';
@@ -65,10 +64,11 @@ class SearchRidesView extends StatelessWidget {
 
 
                     Expanded(
-                        flex: 2,
+                        // flex: 2,
                         child: Column(
                       children: [
                         Expanded(
+
                           child: Align(
                               alignment: Alignment.centerLeft,
                               child: Text('Seats',
@@ -77,12 +77,15 @@ class SearchRidesView extends StatelessWidget {
 
 
                         Expanded(
+                          flex: 2,
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: SizedBox(
-                              height: 42.sp,
-                              width: 87.sp,
+                              height: 42.h,
+                              width: 87.w,
                               child: const MyTextField(
+                                textAlignment: TextAlign.center,
+
 
                                 keyboardType: TextInputType.number,
                                 label: '1',
@@ -90,7 +93,7 @@ class SearchRidesView extends StatelessWidget {
                             ),
                           ),
                         ),
-
+                        SizedBox(height: 10.h,)
                       ],
                     ))
                   ],
@@ -101,7 +104,7 @@ class SearchRidesView extends StatelessWidget {
 
             Positioned(
                 bottom: 27.sp,
-                 right: 10.sp,
+                 right: 40.sp,
                 left: 40.sp,
 
                 child: CustomButton(

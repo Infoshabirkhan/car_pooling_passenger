@@ -17,36 +17,32 @@ class _CustomButtonState extends State<CustomButton> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: widget.ontap,
-      child: Padding(
+      child: Container(
 
-        padding: EdgeInsets.only(left: 3.sp,right: 39.sp),
-        child: Container(
-
-            width: 296.sp,
-            height: 51.sp,
-          decoration: BoxDecoration(
-            color: widget.color,
-            borderRadius: BorderRadius.circular(6.r),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.kblackSecondary.withOpacity(0.16),
-                offset: const Offset(0, 3.0),
-                blurRadius: 6.r,
-              ),
-            ],
-
-          ),
-          child: Center(
-            child: Text(
-              widget.text,
-              style: TextStyle(
-                fontFamily: 'SF Pro Text',
-                fontSize: 20.sp,
-                color: AppColors.kWhite,
-              ),
+          width: 296.sp,
+          height: 51.sp,
+        decoration: BoxDecoration(
+          color: widget.color,
+          borderRadius: BorderRadius.circular(6.r),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.kblackSecondary.withOpacity(0.16),
+              offset: const Offset(0, 3.0),
+              blurRadius: 6.r,
             ),
-          )
+          ],
+
         ),
+        child: Center(
+          child: Text(
+            widget.text,
+            style: TextStyle(
+              fontFamily: 'SF Pro Text',
+              fontSize: 20.sp,
+              color: AppColors.kWhite,
+            ),
+          ),
+        )
       ),
     );
   }

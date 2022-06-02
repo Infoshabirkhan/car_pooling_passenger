@@ -42,6 +42,7 @@ class RiderDetailScreen extends StatelessWidget {
             padding: EdgeInsets.only(
               left: 37.sp,
               top: 59.5.sp,
+
             ),
             children: [
               Align(
@@ -194,26 +195,29 @@ class RiderDetailScreen extends StatelessWidget {
 
                   var rides = context.read<BookRideCubit>();
 
-                  return CustomButton(
-                      text: state == false ? 'Send Request' : 'Cancel Request',
+                  return Padding(
+                    padding:  EdgeInsets.only(right: 39.sp),
+                    child: CustomButton(
+                        text: state == false ? 'Send Request' : 'Cancel Request',
 
-                      ontap: state == true ? (){
+                        ontap: state == true ? (){
 
-                        MyBottomNavigation.pageController.jumpToPage(4);
+                          MyBottomNavigation.pageController.jumpToPage(4);
 
-                      }: () {
-                    showDialog(context: (context), builder: ( context) {
-                      return MyRequestDialog(onConfirm: () {
+                        }: () {
+                      showDialog(context: (context), builder: ( context) {
+                        return MyRequestDialog(onConfirm: () {
 
-                        Navigator.of(context).pop();
+                          Navigator.of(context).pop();
 
 
-                        rides.manageBooking(isCancel: !state);
-                        // context.read<BookRideCubit>().manageBooking(isCancel: !state);
+                          rides.manageBooking(isCancel: !state);
+                          // context.read<BookRideCubit>().manageBooking(isCancel: !state);
 
+                        });
                       });
-                    });
-                  }, color: state == false ? AppColors.kBlue : AppColors.kRed);
+                    }, color: state == false ? AppColors.kBlue : AppColors.kRed),
+                  );
                 },
               ),
             ],
