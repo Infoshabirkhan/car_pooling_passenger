@@ -132,9 +132,9 @@ class CustomDeliveryWidget {
       'Jul',
       'Aug',
       'Sep',
-      'Act',
+      'Oct',
       'Nov',
-      'Des',
+      'Dec',
     ];
 
     return BlocBuilder<MonthDropDown, String>(

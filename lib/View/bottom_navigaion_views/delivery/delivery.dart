@@ -239,11 +239,12 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 8.sp,
+                  height: 8.h,
                 ),
-                CustomDeliveryWidget.getTextField(hint: ''),
+
+                const MyTextField(),
                 SizedBox(
-                  height: 15.sp,
+                  height: 15.h,
                 ),
                 Text.rich(
                   TextSpan(
@@ -259,40 +260,25 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 7.sp,
+                  height: 7.h,
                 ),
-                CustomDeliveryWidget.getTextField(hint: ''),
 
+               const  MyTextField(),
 
-//                CustomDeliveryWidget
                 SizedBox(
                   height: 20.sp,
                 ),
 
 
 
-                // Container(
-                //   margin: EdgeInsets.only(left: 20.sp, right: 20.sp),
-                //   height: 51.sp,
-                //   width: 296.sp,
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(10.r),
-                //     color: AppColors.kBlue,
-                //   ),
-                //   child: Center(
-                //       child: Text(
-                //         'Find Rides',
-                //         style: TextStyle(
-                //             color: AppColors.kWhite, fontSize: 20.sp),
-                //       )),
-                // ),
+
 
                 Center(
                   child: CustomButton(ontap: (){
 
 
-                    // It will navigate it to the Match rider Screen
-                    // Match rider is on index 7 in bottom navigation
+                    /// It will navigate it to the Match rider Screen
+                    /// Match rider is on index 7 in bottom navigation
 
                     MyBottomNavigation.pageController.jumpToPage(7);
 

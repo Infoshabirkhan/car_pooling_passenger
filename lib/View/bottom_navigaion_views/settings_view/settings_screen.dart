@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Model/utils/appicons.dart';
+import '../../user_profile_view/user_profile_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -53,13 +54,19 @@ class SettingsScreen extends StatelessWidget {
             ),
             Align(
               alignment: Alignment.center,
-              child: Text(
-                'Edit Profile',
-                style: TextStyle(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.kBlue,
-                ),
+              child: TextButton(
+                child: Text('Edit Profile',
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.kBlue,
+                    )),
+                onPressed: (){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context){
+
+                    return  UserProfileScreen();
+                  }));
+                },
               ),
             ),
             SizedBox(

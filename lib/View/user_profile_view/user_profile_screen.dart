@@ -1,5 +1,4 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
-import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/my_text_field.dart';
 import 'package:flutter/material.dart';
@@ -41,37 +40,58 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           ),
         ),
 
-        body: Padding(
-          padding: EdgeInsets.only(left: 27.sp, right: 26.sp),
+        body: ScrollConfiguration(
+          behavior: const  ScrollBehavior(),
           child: ListView(
+            padding: EdgeInsets.only(left: 27.sp, right: 26.sp),
+
             children: [
 
 
               SizedBox(
-                height: 51.h,
+                height: 40.h,
               ),
-              Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Center(
-                    child: Icon(
-                      AppIcons.account_person,
-                      size: 97.sp,
-                      color: const Color(0xFFBAD2E3),
-                    ),
+              Center(
+                child: SizedBox(
+                  height: 100.h,
+                  width: 90.h,
+                  child: Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+
+
+                      Container(
+
+                        decoration: const BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle
+
+
+                        ),
+                        height: 100.h,
+                        width: 90.h,
+                        child: const CircleAvatar(
+                          backgroundImage: AssetImage('assets/images/user_profile.png'),
+                        ),
+
+                      ),
+                      Positioned(
+                          bottom: 0.sp,
+                          right: 0.sp,
+                          child: InkWell(
+                            onTap: (){},
+                            child: Center(
+                                child: Container(
+                                    width: 29.25.w,
+                                    height: 29.25.h,
+                                    decoration: BoxDecoration(
+                                        color: AppColors.kBlue,
+                                        borderRadius: BorderRadius.circular(30.r)),
+                                    child: const Icon(Icons.add, color: Colors.white))),
+                          )),
+                    ],
                   ),
-                  Positioned(
-                      top: 76.sp,
-                      left: 178.sp,
-                      child: Center(
-                          child: Container(
-                              width: 29.25.w,
-                              height: 29.25.h,
-                              decoration: BoxDecoration(
-                                  color: AppColors.kBlue,
-                                  borderRadius: BorderRadius.circular(30.r)),
-                              child: const Icon(Icons.add)))),
-                ],
+                ),
               ),
               SizedBox(
                 height: 33.3.h,
