@@ -61,6 +61,8 @@ class TravelScreenState extends State<TravelScreen> {
 
 
               GoogleMap(
+
+               zoomControlsEnabled: false,
                 onMapCreated: _onMapCreated,
                 initialCameraPosition: const CameraPosition(
                   target: _center,
