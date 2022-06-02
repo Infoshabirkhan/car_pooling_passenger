@@ -31,8 +31,8 @@ class SettingsScreen extends StatelessWidget {
             Center(
                 child: Align(
                     child: Icon(
-              AppIcons.account_person,
-              color: AppColors.bluelight,
+              AppIcons.accountPerson,
+              color: AppColors.kBlueLight,
               size: 100.sp,
             ))),
             SizedBox(

@@ -37,7 +37,7 @@ class BookingScreen extends StatelessWidget {
               body: Stack(
                 children: [
                   ScrollConfiguration(
-                    behavior: ScrollBehavior(),
+                    behavior: const ScrollBehavior(),
                     child: ListView(
                       padding: EdgeInsets.only(left: 27.sp, right: 27.sp),
                       children: [
@@ -70,7 +70,7 @@ class BookingScreen extends StatelessWidget {
                         Text(
                           'Date and Time',
                           style: TextStyle(
-                              fontSize: 15.sp, color: AppColors.kblackSecondary),
+                              fontSize: 15.sp, color: AppColors.kBlackSecondary),
                         ),
                         SizedBox(
                           height: 20.h,
@@ -85,7 +85,7 @@ class BookingScreen extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.r),
                                   border: Border.all(
-                                      color: AppColors.bluelight, width: 1.5.sp),
+                                      color: AppColors.kBlueLight, width: 1.5.sp),
                                 ),
                                 child: CustomDeliveryWidget.dateTextField(space: 20),
                               ),
@@ -103,7 +103,7 @@ class BookingScreen extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10.r),
                                       border: Border.all(
-                                          color: AppColors.bluelight, width: 1.5.sp),
+                                          color: AppColors.kBlueLight, width: 1.5.sp),
                                     ),
                                     child: Center(
                                         child: CustomDeliveryWidget.dropdownMon(
@@ -135,7 +135,7 @@ class BookingScreen extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10.r),
                                         border: Border.all(
-                                            color: AppColors.bluelight,
+                                            color: AppColors.kBlueLight,
                                             width: 1.5.sp),
                                       ),
                                       child: Center(
@@ -153,7 +153,7 @@ class BookingScreen extends StatelessWidget {
                                 width: 56.w,
                                 decoration: BoxDecoration(
                                     border: Border.all(
-                                        color: AppColors.bluelight, width: 1.5.sp),
+                                        color: AppColors.kBlueLight, width: 1.5.sp),
                                     borderRadius: BorderRadius.circular(10.r)),
                                 child:
                                     Center(child: CustomDeliveryWidget.dropdownAm()),

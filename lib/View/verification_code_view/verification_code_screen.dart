@@ -18,7 +18,7 @@ class VerificationCodeScreen extends StatelessWidget {
           padding: EdgeInsets.only(left: 63.5, right: 62.5.sp),
           children: [
             SizedBox(
-              height: 166.sp,
+              height: 166.h,
             ),
             Center(
                 child: Text(
@@ -29,7 +29,7 @@ class VerificationCodeScreen extends StatelessWidget {
                   color: AppColors.kBlue),
             )),
             SizedBox(
-              height: 23.sp,
+              height: 23.h,
             ),
             Center(
                 child: Text(
@@ -38,7 +38,7 @@ class VerificationCodeScreen extends StatelessWidget {
               style: TextStyle(fontSize: 15.sp, color: const Color(0xFF9A9A9A)),
             )),
             SizedBox(
-              height: 101.sp,
+              height: 101.h,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.sp),
@@ -70,7 +70,7 @@ class VerificationCodeScreen extends StatelessWidget {
 
 
             SizedBox(
-              height: 23.sp,
+              height: 23.h,
             ),
             const Center(
                 child: Text(
@@ -78,7 +78,7 @@ class VerificationCodeScreen extends StatelessWidget {
               style: TextStyle(color: Color(0xFF9A9A9A)),
             )),
             SizedBox(
-              height: 170.sp,
+              height: 170.h,
             ),
             // MyElevatedButton(
             //   buttonName: "Verify",

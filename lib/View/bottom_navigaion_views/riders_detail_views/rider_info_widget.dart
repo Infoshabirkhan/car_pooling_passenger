@@ -56,7 +56,7 @@ class RiderInformation extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro Text',
                         fontSize: 15.sp,
-                        color: AppColors.kblackSecondary,
+                        color: AppColors.kBlackSecondary,
                       ),
                     )),
                 Expanded(
@@ -66,7 +66,7 @@ class RiderInformation extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'SF Pro Text',
                         fontSize: 15.sp,
-                        color: AppColors.kblackSecondary,
+                        color: AppColors.kBlackSecondary,
                       ),
                     )),
               ],

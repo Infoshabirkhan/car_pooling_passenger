@@ -26,7 +26,7 @@ class _CustomButtonState extends State<CustomButton> {
           borderRadius: BorderRadius.circular(6.r),
           boxShadow: [
             BoxShadow(
-              color: AppColors.kblackSecondary.withOpacity(0.16),
+              color: AppColors.kBlackSecondary.withOpacity(0.16),
               offset: const Offset(0, 3.0),
               blurRadius: 6.r,
             ),

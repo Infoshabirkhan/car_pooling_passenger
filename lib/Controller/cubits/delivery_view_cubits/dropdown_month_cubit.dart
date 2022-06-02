@@ -1,10 +1,10 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
 
-class WhightDropDown extends Cubit<String> {
-  WhightDropDown(super.initialState);
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-  getmonths({required month}){
+class WeightDropDown extends Cubit<String> {
+  WeightDropDown(super.initialState);
+
+  getMonths({required month}){
     emit(month);
   }
 

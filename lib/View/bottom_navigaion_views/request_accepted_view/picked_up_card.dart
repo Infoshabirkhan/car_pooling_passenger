@@ -46,7 +46,7 @@ class PickedUpCard extends StatelessWidget {
                           child: Row(
                             children: [
                               Expanded(child: Icon(
-                                AppIcons.account_person, color: const Color(0xff57A3DE),
+                                AppIcons.accountPerson, color: const Color(0xff57A3DE),
                                 size: 52.sp,)),
 
                               Expanded(
@@ -68,7 +68,7 @@ class PickedUpCard extends StatelessWidget {
                                                   flex:3,
                                                   child: Align(
                                                     alignment: Alignment.center,
-                                                    child: Icon(AppIcons.phone_call,color: AppColors.kGreen,size: 32.sp,)),),
+                                                    child: Icon(AppIcons.phoneCall,color: AppColors.kGreen,size: 32.sp,)),),
 
                                                 Expanded(
                                                     child: Text(

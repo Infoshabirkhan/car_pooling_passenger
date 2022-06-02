@@ -34,7 +34,7 @@ class MyRidersCard extends StatelessWidget {
                 flex: 2,
                 child: Row(
                   children: [
-                    Expanded(child: Icon(AppIcons.account_person, color: const Color(0xff57A3DE), size: 40.sp,)),
+                    Expanded(child: Icon(AppIcons.accountPerson, color: const Color(0xff57A3DE), size: 40.sp,)),
 
                     Expanded(
                         flex: 3,
@@ -93,10 +93,10 @@ class MyRidersCard extends StatelessWidget {
                               child: Row(
 
                                 children: [
-                                  Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                  Expanded(child: Icon(AppIcons.seat_booked, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                  Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
-                                  Expanded(child: Icon(AppIcons.empty_seat, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                  Expanded(child: Icon(AppIcons.seatBooked, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                  Expanded(child: Icon(AppIcons.seatBooked, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                  Expanded(child: Icon(AppIcons.emptySeat, size: 15.sp,color: AppColors.kBlueIcon,),),
+                                  Expanded(child: Icon(AppIcons.emptySeat, size: 15.sp,color: AppColors.kBlueIcon,),),
                                 ],
                               )),
                           Expanded(child: Text('Seats Available: 2',style: TextStyle(fontSize: 12.sp,),))

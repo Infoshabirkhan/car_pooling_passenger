@@ -21,7 +21,7 @@ class CustomDeliveryWidget {
       inputFormatters: [FilteringTextInputFormatter.singleLineFormatter],
       keyboardType: TextInputType.number,
       style: TextStyle(
-        color: AppColors.kblackSecondary,
+        color: AppColors.kBlackSecondary,
       ),
       decoration: InputDecoration(
         contentPadding: EdgeInsets.only(left: space.sp),
@@ -38,7 +38,7 @@ class CustomDeliveryWidget {
       inputFormatters: [FilteringTextInputFormatter.singleLineFormatter],
       keyboardType: TextInputType.number,
       style: TextStyle(
-        color: AppColors.bluelight,
+        color: AppColors.kBlueLight,
       ),
       decoration: InputDecoration(
           contentPadding: EdgeInsets.only(left: 30.sp),
@@ -55,7 +55,7 @@ class CustomDeliveryWidget {
       width: 322.sp,
       child: TextFormField(
         style: TextStyle(
-          color: AppColors.kblackSecondary,
+          color: AppColors.kBlackSecondary,
         ),
         decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
@@ -63,11 +63,11 @@ class CustomDeliveryWidget {
               borderRadius: BorderRadius.circular(10.r),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: AppColors.bluelight),
+              borderSide: BorderSide(color: AppColors.kBlueLight),
             ),
             hintText: hint,
             suffixIcon: Icon(
-              icon, color: AppColors.kblackSecondary, size: 30.sp,)
+              icon, color: AppColors.kBlackSecondary, size: 30.sp,)
         ),
       ),
     );
@@ -102,7 +102,7 @@ class CustomDeliveryWidget {
       'KG',
       'G',
     ];
-    return BlocBuilder<WhightDropDown, String>(
+    return BlocBuilder<WeightDropDown, String>(
       builder: (context, state) {
         return DropdownButton<String>(
             underline: const SizedBox(),
@@ -115,7 +115,7 @@ class CustomDeliveryWidget {
               );
             }).toList(),
             onChanged: (newValue) {
-              context.read<WhightDropDown>().getmonths(month: newValue);
+              context.read<WeightDropDown>().getMonths(month: newValue);
             });
       },
     );
