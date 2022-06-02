@@ -32,7 +32,6 @@ class RiderDetailScreen extends StatelessWidget {
             ),
           ),
           elevation: 0,
-          foregroundColor: Colors.black,
           backgroundColor: Colors.white,
         ),
         body: ScrollConfiguration(

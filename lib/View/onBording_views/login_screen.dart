@@ -1,4 +1,5 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
+import 'package:car_pooling_passanger/Model/utils/remove_glow.dart';
 import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.dart';
 import 'package:car_pooling_passanger/View/verification_code_view/verification_code_screen.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class LoginScreen extends StatelessWidget {
 
 
           ScrollConfiguration(
-            behavior: const ScrollBehavior(),
+            behavior:  RemoveGlow(),
             child: ListView(
               padding: EdgeInsets.only(left: 40.sp, right: 40.sp),
               children: [
