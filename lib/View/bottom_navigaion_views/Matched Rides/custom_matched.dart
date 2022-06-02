@@ -34,9 +34,9 @@ class CustomMatched{
                   Expanded(
                       flex: 2,
                       child: Icon(
-                        AppIcons.account_person,
+                        AppIcons.accountPerson,
                         size: 60.sp,
-                        color: AppColors.bluelight,
+                        color: AppColors.kBlueLight,
                       )),
                   Expanded(
                     flex: 2,
@@ -45,7 +45,7 @@ class CustomMatched{
                       child: Text(
                         'John Doe',
                         style: TextStyle(
-                          color: AppColors.kblackSecondary,
+                          color: AppColors.kBlackSecondary,
                           fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
                         ),
@@ -90,14 +90,14 @@ class CustomMatched{
                             ),
                             Expanded(
                               child: Icon(
-                                AppIcons.star_half,
+                                AppIcons.starHalf,
                                 color: Colors.black,
                                 size: 15.sp,
                               ),
                             ),
                             Expanded(
                               child: Icon(
-                                AppIcons.star_outlined,
+                                AppIcons.starOutlined,
                                 color: Colors.black,
                                 size: 15.sp,
                               ),
@@ -122,10 +122,10 @@ class CustomMatched{
                                 alignment:Alignment.bottomCenter,
                                 child: Row(
                                   children: [
-                                  Expanded(child: Icon(AppIcons.seat_booked, color: AppColors.kBlueIcon,)),
-                                  Expanded(child: Icon(AppIcons.seat_booked, color: AppColors.kBlueIcon,)),
-                                  Expanded(child: Icon(AppIcons.empty_seat, color: AppColors.kBlueIcon,)),
-                                  Expanded(child: Icon(AppIcons.empty_seat, color: AppColors.kBlueIcon,))
+                                  Expanded(child: Icon(AppIcons.seatBooked, color: AppColors.kBlueIcon,)),
+                                  Expanded(child: Icon(AppIcons.seatBooked, color: AppColors.kBlueIcon,)),
+                                  Expanded(child: Icon(AppIcons.emptySeat, color: AppColors.kBlueIcon,)),
+                                  Expanded(child: Icon(AppIcons.emptySeat, color: AppColors.kBlueIcon,))
                                   ],
                                 )),
                           ),),

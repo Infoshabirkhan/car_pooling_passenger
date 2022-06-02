@@ -29,7 +29,7 @@ class RiderArrivedCard extends StatelessWidget {
                  child: Row(
                    children: [
                      Expanded(child: Icon(
-                       AppIcons.account_person, color: const Color(0xff57A3DE),
+                       AppIcons.accountPerson, color: const Color(0xff57A3DE),
                        size: 52.sp,)),
 
                      Expanded(
@@ -51,7 +51,7 @@ class RiderArrivedCard extends StatelessWidget {
                                          flex: 2,
                                          child: Align(
                                            alignment: Alignment.center,
-                                           child: Icon(AppIcons.phone_call,color: AppColors.kGreen,size: 32.sp,)),),
+                                           child: Icon(AppIcons.phoneCall,color: AppColors.kGreen,size: 32.sp,)),),
 
                                        Expanded(
                                            child: Text(
@@ -116,7 +116,7 @@ class RiderArrivedCard extends StatelessWidget {
                                  style: TextStyle(
                                    fontFamily: 'SF Pro Text',
                                    fontSize: 15.sp,
-                                   color: AppColors.kblackSecondary,
+                                   color: AppColors.kBlackSecondary,
                                  ),
                                )),
                            Expanded(
@@ -127,7 +127,7 @@ class RiderArrivedCard extends StatelessWidget {
                                  style: TextStyle(
                                    fontFamily: 'SF Pro Text',
                                    fontSize: 15.sp,
-                                   color: AppColors.kblackSecondary,
+                                   color: AppColors.kBlackSecondary,
                                  ),
                                )),
                          ],

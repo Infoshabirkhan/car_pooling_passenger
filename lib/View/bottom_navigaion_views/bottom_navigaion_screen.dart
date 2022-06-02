@@ -95,7 +95,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                       },
                       child: Column(
                         children: [
-                          Spacer(flex: 2,),
+                          const Spacer(flex: 2,),
 
                           Expanded(child: Text('Travel', style: TextStyle(color: state == 1 ? AppColors.kBlue : AppColors.kBlue.withOpacity(0.4)),)),
                         ],
@@ -125,7 +125,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
 
         body: PageView(
           controller: MyBottomNavigation.pageController,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           children: const [
 
 

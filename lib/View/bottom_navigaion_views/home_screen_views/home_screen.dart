@@ -1,6 +1,5 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
-import 'package:car_pooling_passanger/View/bottom_navigaion_views/bookkings_views/booking_view.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/home_screen_views/booking_rides_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -134,7 +133,7 @@ class HomeScreen extends StatelessWidget {
                   return BookRideWidget(
                     currentIndex: index,
                       myIcon: index % 2 == 0
-                          ? AppIcons.seat_booked
+                          ? AppIcons.seatBooked
                           : AppIcons.bucket,
                       name: index % 2 == 0 ? "Booked Seats: 2" : "Delivery");
                 }),

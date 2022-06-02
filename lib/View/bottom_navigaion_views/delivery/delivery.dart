@@ -28,7 +28,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
     return BlocProvider(
       create: (context) => AmPmDropDownCubit('PM'),
       child: BlocProvider(
-        create: (context) => WhightDropDown('G'),
+        create: (context) => WeightDropDown('G'),
         child: BlocProvider(
           create: (context) => MonthDropDown('Jan'),
           child: Scaffold(
@@ -40,7 +40,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
               title: Text(
                 'Delivery',
                 style: TextStyle(
-                  color: AppColors.kblackSecondary,
+                  color: AppColors.kBlackSecondary,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.bold,
                 ),
@@ -84,7 +84,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                   Text(
                     'Date and Time',
                     style:
-                    TextStyle(fontSize: 15.sp, color: AppColors.kblackSecondary),
+                    TextStyle(fontSize: 15.sp, color: AppColors.kBlackSecondary),
                   ),
                   SizedBox(
                     height: 10.h,
@@ -99,7 +99,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10.r),
                             border:
-                            Border.all(color: AppColors.bluelight, width: 1.5.sp),
+                            Border.all(color: AppColors.kBlueLight, width: 1.5.sp),
                           ),
                           child: CustomDeliveryWidget.dateTextField(space: 20),
                         ),
@@ -117,7 +117,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10.r),
                                 border: Border.all(
-                                    color: AppColors.bluelight, width: 1.5.sp),
+                                    color: AppColors.kBlueLight, width: 1.5.sp),
                               ),
                               child: Center(
                                   child: CustomDeliveryWidget.dropdownMon(
@@ -149,7 +149,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.r),
                                   border: Border.all(
-                                      color: AppColors.bluelight, width: 1.5.sp),
+                                      color: AppColors.kBlueLight, width: 1.5.sp),
                                 ),
                                 child: Center(child: Text(
                                     state.format(context).toString())),
@@ -165,7 +165,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                           width: 56.w,
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color: AppColors.bluelight, width: 1.5.sp),
+                                  color: AppColors.kBlueLight, width: 1.5.sp),
                               borderRadius: BorderRadius.circular(10.r)),
                           child: Center(child: CustomDeliveryWidget.dropdownAm()),
                         ),
@@ -179,7 +179,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                     'Package weight',
                     style: TextStyle(
                       fontSize: 15.sp,
-                      color: AppColors.kblackSecondary,
+                      color: AppColors.kBlackSecondary,
                     ),
                   ),
                   SizedBox(
@@ -194,7 +194,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                           width: 106.w,
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color: AppColors.bluelight, width: 1.5.sp),
+                                  color: AppColors.kBlueLight, width: 1.5.sp),
                               borderRadius: BorderRadius.circular(10.r)),
                           child: Center(
                               child: CustomDeliveryWidget.dateTextField(
@@ -209,7 +209,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                           width: 100.w,
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color: AppColors.bluelight, width: 1.5.sp),
+                                  color: AppColors.kBlueLight, width: 1.5.sp),
                               borderRadius: BorderRadius.circular(10.r)),
                           child:
                           Center(child: CustomDeliveryWidget.dropDownWi(context)),
@@ -223,7 +223,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                   Text(
                     'Receiver Information',
                     style: TextStyle(
-                      color: AppColors.kblackSecondary,
+                      color: AppColors.kBlackSecondary,
                       fontSize: 15.sp,
                     ),
                   ),

@@ -68,7 +68,7 @@ class MyBottomSheet extends StatelessWidget {
                         children: [
 
                           Expanded(
-                            child: Icon(currentState == false ? AppIcons.arrow_up : AppIcons.arrow_down),
+                            child: Icon(currentState == false ? AppIcons.arrowUp : AppIcons.arrowDown),
                           ),
 
 

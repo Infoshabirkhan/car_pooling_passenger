@@ -49,9 +49,9 @@ class RiderDetailScreen extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(right: 37.sp),
                     child: Icon(
-                      AppIcons.account_person,
+                      AppIcons.accountPerson,
                       size: 83.04.sp,
-                      color: AppColors.bluelight,
+                      color: AppColors.kBlueLight,
                     ),
                   )),
               SizedBox(
@@ -82,7 +82,7 @@ class RiderDetailScreen extends StatelessWidget {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Icon(
-                              AppIcons.phone_call,
+                              AppIcons.phoneCall,
                               color: AppColors.kGreen,
                               size: 36.57.sp,
                             ),
@@ -122,7 +122,7 @@ class RiderDetailScreen extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'SF Pro Text',
                   fontSize: 15.sp,
-                  color: AppColors.kblackSecondary,
+                  color: AppColors.kBlackSecondary,
                 ),
               ),
               SizedBox(
@@ -182,7 +182,7 @@ class RiderDetailScreen extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'SF Pro Text',
                     fontSize: 12.sp,
-                    color: AppColors.kblackSecondary,
+                    color: AppColors.kBlackSecondary,
                   ),
                 ),
               ),
