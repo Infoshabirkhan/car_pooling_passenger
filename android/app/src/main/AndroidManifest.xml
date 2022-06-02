@@ -7,7 +7,7 @@
         android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
    <application
-        android:label="car_pooling_passanger"
+        android:label="Car Pooling Passenger"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 
