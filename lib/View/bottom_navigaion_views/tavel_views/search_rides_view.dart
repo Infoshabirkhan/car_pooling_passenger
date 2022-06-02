@@ -101,7 +101,7 @@ class SearchRidesView extends StatelessWidget {
 
             Positioned(
                 bottom: 27.sp,
-                 right: 10.sp,
+                 right: 40.sp,
                 left: 40.sp,
 
                 child: CustomButton(

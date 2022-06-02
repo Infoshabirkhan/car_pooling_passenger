@@ -1,5 +1,5 @@
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
-import 'package:car_pooling_passanger/View/utils/custom_widgets/elevated_button.dart';
+import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.dart';
 import 'package:car_pooling_passanger/View/verification_code_view/verification_code_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -87,14 +87,16 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 height: 200.h,
               ),
-              MyElevatedButton(
-                buttonName: "Login",
-                onPress: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                    return const VerificationCodeScreen();
-                  }));
-                },
-              ),
+              CustomButton(text: 'Login', ontap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)
+                {
+
+                  return const VerificationCodeScreen();
+                }
+
+                ));
+              }, color: AppColors.kBlue)
+
             ],
           ),
         ],
