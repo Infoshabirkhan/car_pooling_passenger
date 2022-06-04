@@ -5,6 +5,7 @@ import '../../../Model/utils/appcolors.dart';
 
 
 class RiderInformation extends StatelessWidget {
+  final double? textSize;
   final String heading1;
   final String heading2;
   final String headingDetail1;
@@ -12,13 +13,14 @@ class RiderInformation extends StatelessWidget {
 
 
 
-  const RiderInformation({Key? key, required this.heading1, required this.heading2, required this.headingDetail1, required this.headingDetail2}) : super(key: key);
+  const RiderInformation({Key? key, this.textSize = 12, required this.heading1, required this.heading2, required this.headingDetail1, required this.headingDetail2}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return             SizedBox(
-      width: 271.sp,
-      height: 35.sp,
+      width: 271.w,
+      height: size.width > 600 ? 60.h:35.h,
       // color: Colors.green,
       child: Column(
         children: [
@@ -30,7 +32,7 @@ class RiderInformation extends StatelessWidget {
                       heading1,
                       style: TextStyle(
                         fontFamily: 'SF Pro Text',
-                        fontSize: 12.sp,
+                        fontSize: textSize!.sp,
                         color: AppColors.kGreySecondary,
                       ),
                     )),
@@ -40,7 +42,7 @@ class RiderInformation extends StatelessWidget {
                       heading2,
                       style: TextStyle(
                         fontFamily: 'SF Pro Text',
-                        fontSize: 12.sp,
+                        fontSize: textSize!.sp,
                         color: AppColors.kGreySecondary,
                       ),
                     )),
@@ -55,7 +57,7 @@ class RiderInformation extends StatelessWidget {
                       headingDetail1,
                       style: TextStyle(
                         fontFamily: 'SF Pro Text',
-                        fontSize: 15.sp,
+                        fontSize: textSize!+3.sp,
                         color: AppColors.kBlackSecondary,
                       ),
                     )),
@@ -65,7 +67,7 @@ class RiderInformation extends StatelessWidget {
                       headingDetail2,
                       style: TextStyle(
                         fontFamily: 'SF Pro Text',
-                        fontSize: 15.sp,
+                        fontSize: textSize!+3.sp,
                         color: AppColors.kBlackSecondary,
                       ),
                     )),

@@ -1,17 +1,31 @@
+import 'package:car_pooling_passanger/Controller/cubits/home_screen_cubit/home_api_cubit.dart';
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
-import 'package:car_pooling_passanger/Model/utils/appicons.dart';
-import 'package:car_pooling_passanger/View/bottom_navigaion_views/home_screen_views/booking_rides_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../my_static_properites.dart';
+import 'home_loaded_list.dart';
+import 'landscape_view/home_landscape_loaded_data.dart';
 
-
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    context.read<HomeApiCubit>().getData();
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -21,7 +35,8 @@ class HomeScreen extends StatelessWidget {
           child: Text(
             "Home",
             style: TextStyle(
-              fontSize: 20.sp,
+              //fontSize: 20.sp,
+              //fontSize: 20.sp,
               fontWeight: FontWeight.bold,
               color: AppColors.kBlack,
             ),
@@ -29,116 +44,29 @@ class HomeScreen extends StatelessWidget {
         ),
         automaticallyImplyLeading: false,
       ),
-      body: ScrollConfiguration(
-        behavior: const ScrollBehavior(
-         androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
-               ),
-        child: ListView(
-          padding: EdgeInsets.only(left: 16.sp, right: 15.sp),
-          children: [
-            SizedBox(
-              height: 27.sp,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Card(
-                      child: InkWell(
-                          onTap: () {
+      body: BlocBuilder<HomeApiCubit, HomeApiState>(
+        builder: (context, state) {
+          if (state is HomeApiLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state is HomeApiLoaded) {
 
-                            /// It will navigate to the Booking screen
-                            /// booking screen is on Index 8 in bottom navigation screen
-                            MyBottomNavigation.pageController.jumpToPage(8);
-                          },
-                          child: Container(
-                            margin: EdgeInsets.only(right: 5.sp),
-                            height: 105.sp,
-                            child: Column(
-                              children: [
-                                Expanded(
-                                  flex: 2,
-                                  child: Image.asset(
-                                    "assets/images/pic_three.png",
-                                  ),
-                                ),
-                                Expanded(
-                                    child: Text(
-                                  "Make Bookings",
-                                  style: TextStyle(
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.kBlack),
-                                )),
-                              ],
-                            ),
-                          ))),
-                ),
-                Expanded(
-                    child: InkWell(
-                      onTap: (){
+            if(size.width > 600){
 
-                        // It will Navigate it to Delivery Screen //
-                        // where delivery screen is on index 6 in
-                        //  bottom navigation
-                        MyBottomNavigation.pageController.jumpToPage(6);
+              return HomeLandscapeLoadedData(model: state.model);
+            }else{
+              return HomeLoadedList(model: state.model);
 
-
-                      },
-                      child: Card(
-                        child: Container(
-                        margin: EdgeInsets.only(left: 5.sp),
-                        height: 105.sp,
-                        child: Column(
-                          children: [
-                            Expanded(
-                                flex: 2,
-                                child:
-                                    Image.asset("assets/images/pic_two.png")),
-                            Expanded(
-                                child: Text(
-                              "Make Delivery",
-                              style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.kBlack),
-                            )),
-                          ],
-                        ),
-                      ),
-                      ),
-                    ),
-
-                ),
-                const Spacer(),
-              ],
-            ),
-            SizedBox(
-              height: 33.sp,
-            ),
-            Text(
-              "Booked Rides",
-              style: TextStyle(
-                  color: AppColors.kGreyFourth,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15.sp),
-            ),
-            SizedBox(
-              height: 15.sp,
-            ),
-            ListView.builder(
-                primary: false,
-                shrinkWrap: true,
-                itemCount: 10,
-                itemBuilder: (ctx, index) {
-                  return BookRideWidget(
-                    currentIndex: index,
-                      myIcon: index % 2 == 0
-                          ? AppIcons.seatBooked
-                          : AppIcons.bucket,
-                      name: index % 2 == 0 ? "Booked Seats: 2" : "Delivery");
-                }),
-          ],
-        ),
+            }
+          } else if (state is HomeApiError) {
+            return Center(
+              child: Text(state.error),
+            );
+          } else {
+            return Container();
+          }
+        },
       ),
     );
   }

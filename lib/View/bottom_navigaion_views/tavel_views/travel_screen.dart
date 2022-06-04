@@ -1,12 +1,14 @@
 import 'dart:async';
 
 import 'package:car_pooling_passanger/Controller/cubits/travel_views_cubits/find_riders_cubit.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/landscape_views/bottom_sheet_landscape.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/tavel_views/search_rides_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../../Controller/cubits/travel_views_cubits/bottom_sheet_cubit.dart';
+import 'landscape_views/search_rides_landscape_view.dart';
 import 'my_bottom_sheet.dart';
 
 void main() => runApp(const TravelScreen());
@@ -43,6 +45,7 @@ class TravelScreenState extends State<TravelScreen> {
   // MapType _currentMapType = MapType.hybrid;
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
 
     return MultiBlocProvider(
 
@@ -76,9 +79,16 @@ class TravelScreenState extends State<TravelScreen> {
 
               BlocBuilder<FindRidersCubit, int>(
                 builder: (context, state) {
-                  return SearchRidesView(currentState: state, onTap: (){
-                    context.read<FindRidersCubit>().ridersScreen(number: 2);
-                  },);
+                 if(size.width > 600){
+                   return SearchRideLandscapeView(currentState: state, onTap: (){
+                     context.read<FindRidersCubit>().ridersScreen(number: 2);
+                   },);
+                 }else{
+                   return SearchRidesView(currentState: state, onTap: (){
+                     context.read<FindRidersCubit>().ridersScreen(number: 2);
+                   },);
+                 }
+
                 },
               ),
 
@@ -89,14 +99,30 @@ class TravelScreenState extends State<TravelScreen> {
                     visible: state == 2 ? true :false,
                     child: BlocBuilder<BottomSheetCubit, bool>(
                       builder: (context, state) {
-                        return MyBottomSheet(
-                            cancelClick: (){
-                              context.read<FindRidersCubit>().ridersScreen(number: 1);
-                            },
-                            currentState: state, onTap: () {
-                          context.read<BottomSheetCubit>().adjustHeight(
-                              isExpand: !state);
-                        });
+
+
+                        if(size.width > 600){
+                          return BottomSheetLandscape(
+                              cancelClick: (){
+                                context.read<FindRidersCubit>().ridersScreen(number: 1);
+                              },
+                              currentState: state, onTap: () {
+                            context.read<BottomSheetCubit>().adjustHeight(
+                                isExpand: !state);
+                          });
+
+                        }else{
+                          return MyBottomSheet(
+                              cancelClick: (){
+                                context.read<FindRidersCubit>().ridersScreen(number: 1);
+                              },
+                              currentState: state, onTap: () {
+                            context.read<BottomSheetCubit>().adjustHeight(
+                                isExpand: !state);
+                          });
+
+
+                        }
                       },
                     ),
                   );

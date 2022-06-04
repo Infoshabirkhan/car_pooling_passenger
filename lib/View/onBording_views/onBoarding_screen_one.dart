@@ -8,6 +8,7 @@ class OnBoardingScreenOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
     return Scaffold(
         body: Stack(
       children: [
@@ -29,7 +30,7 @@ class OnBoardingScreenOne extends StatelessWidget {
 
                     style: TextStyle(
                         color: AppColors.kWhite,
-                        fontSize: 35.sp,
+                        fontSize: width > 600 ? 14.sp : 32.sp,
                         fontWeight: FontWeight.bold)),
               )),
               const Spacer(),
@@ -39,7 +40,7 @@ class OnBoardingScreenOne extends StatelessWidget {
                 child: Text("Join the trusted community for booking rides",
                     style: TextStyle(
                       color: AppColors.kWhite,
-                      fontSize: 15.sp,
+                      fontSize:  width > 600 ? 8.sp : 15.sp,
                     )),
               )),
             ],

@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatefulWidget {
+  final double? height;
   final String text;
   final VoidCallback ontap;
   final Color color;
-  const CustomButton({Key? key,required this.text,required this.ontap,required this.color}) : super(key: key);
+  final int? textSize;
+  const CustomButton({Key? key,required this.text,required this.ontap,required this.color, this.height = 51, this.textSize = 20 }) : super(key: key);
 
   @override
   State<CustomButton> createState() => _CustomButtonState();
@@ -19,8 +21,8 @@ class _CustomButtonState extends State<CustomButton> {
       onTap: widget.ontap,
       child: Container(
 
-          width: 296.sp,
-          height: 51.sp,
+          width: 296.w,
+          height: widget.height!.h,
         decoration: BoxDecoration(
           color: widget.color,
           borderRadius: BorderRadius.circular(6.r),
@@ -38,7 +40,7 @@ class _CustomButtonState extends State<CustomButton> {
             widget.text,
             style: TextStyle(
               fontFamily: 'SF Pro Text',
-              fontSize: 20.sp,
+              fontSize: widget.textSize!.sp,
               color: AppColors.kWhite,
             ),
           ),

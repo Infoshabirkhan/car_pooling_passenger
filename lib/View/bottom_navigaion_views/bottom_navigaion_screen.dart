@@ -64,7 +64,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
             ]
 
           ),
-          height: 88.sp,
+          height: 88.h,
           child: BlocBuilder<BottomNavigationCubit, int>(
             builder: (context, state) {
               return Row(

@@ -2,16 +2,17 @@ import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../Model/utils/appcolors.dart';
+import '../../../../Model/utils/appcolors.dart';
+import '../../../../Model/utils/appcolors.dart';
 
-class BookRideWidget extends StatelessWidget {
+class BookRideLandScapeCard extends StatelessWidget {
   final String destination;
   final String rupees;
   final String location;
   final String dateTime;
   final String seats;
 
-  const BookRideWidget(
+  const BookRideLandScapeCard(
       {Key? key,
       required this.dateTime,
       required this.destination,
@@ -22,14 +23,13 @@ class BookRideWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
-      margin: EdgeInsets.only(top: 20.sp),
+      margin: EdgeInsets.only(top: 25.h),
       padding: EdgeInsets.only(left: 14.sp, right: 16.sp),
       decoration: BoxDecoration(color: Colors.white, boxShadow: [
         BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 3)
       ]),
-      height: 156.h,
+      height: 300.h,
       width: 344.w,
       child: Column(
         children: [
@@ -47,7 +47,7 @@ class BookRideWidget extends StatelessWidget {
                               "Destination: $destination",
                               style: TextStyle(
                                   color: AppColors.kBlack,
-                                  fontSize: 15.sp,
+                                  fontSize: 8.sp,
                                   fontWeight: FontWeight.bold),
                             ))),
                     Expanded(
@@ -57,7 +57,7 @@ class BookRideWidget extends StatelessWidget {
                               "Pick Up",
                               style: TextStyle(
                                   color: AppColors.kGreySecondary,
-                                  fontSize: 12.sp),
+                                  fontSize: 8.sp),
                             ))),
                   ],
                 ),
@@ -73,14 +73,13 @@ class BookRideWidget extends StatelessWidget {
                               "RS. $rupees",
                               style: TextStyle(
                                   color: AppColors.kBlack,
-                                  fontSize: 15.sp,
+                                  fontSize: 8.sp,
                                   fontWeight: FontWeight.bold),
                             ))),
                     Expanded(
                         child: Text(
                       "Total Cost",
-                      style:
-                          TextStyle(color: AppColors.kBlack, fontSize: 12.sp),
+                      style: TextStyle(color: AppColors.kBlack, fontSize: 8.sp),
                     )),
                   ],
                 ),
@@ -94,7 +93,7 @@ class BookRideWidget extends StatelessWidget {
                     location,
                     style: TextStyle(
                       color: AppColors.kBlack,
-                      fontSize: 15.sp,
+                      fontSize: 8.sp,
                     ),
                   ))),
           Expanded(
@@ -106,7 +105,7 @@ class BookRideWidget extends StatelessWidget {
                   children: [
                     Expanded(
                       child: SizedBox(
-                        width: 80.sp,
+                        width: 80.w,
                         child: Row(
                           children: [
                             Expanded(
@@ -132,7 +131,7 @@ class BookRideWidget extends StatelessWidget {
                       'Booked Seats: $seats',
                       style: TextStyle(
                         color: AppColors.kBlack,
-                        fontSize: 12.sp,
+                        fontSize: 7.sp,
                       ),
                     )),
                   ],
@@ -149,7 +148,7 @@ class BookRideWidget extends StatelessWidget {
                               "Date and Time",
                               style: TextStyle(
                                 color: AppColors.kBlack,
-                                fontSize: 12.sp,
+                                fontSize: 7.sp,
                               ),
                             ))),
                     Expanded(
@@ -157,7 +156,7 @@ class BookRideWidget extends StatelessWidget {
                       dateTime,
                       style: TextStyle(
                         color: AppColors.kBlack,
-                        fontSize: 12.sp,
+                        fontSize: 7.sp,
                       ),
                     )),
                     const Spacer(),

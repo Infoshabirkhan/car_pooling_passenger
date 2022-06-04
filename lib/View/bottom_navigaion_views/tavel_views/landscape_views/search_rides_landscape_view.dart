@@ -1,16 +1,17 @@
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../Model/utils/appcolors.dart';
-import '../../utils/custom_widgets/custom_button.dart';
-import '../../utils/custom_widgets/my_text_field.dart';
+
+import '../../../../Model/utils/appcolors.dart';
+import '../../../utils/custom_widgets/custom_button.dart';
+import '../../../utils/custom_widgets/my_text_field.dart';
 
 
-class SearchRidesView extends StatelessWidget {
+class SearchRideLandscapeView extends StatelessWidget {
   final int currentState;
   final VoidCallback onTap;
 
-  const SearchRidesView({Key? key, required this.currentState, required this.onTap}) : super(key: key);
+  const SearchRideLandscapeView({Key? key, required this.currentState, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +24,9 @@ class SearchRidesView extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              right: 10.sp,
-              top: 10.sp,
-              left: 10.sp,
+              right: 10.w,
+              top: 10.h,
+              left: 10.w,
               child: Container(
 
                 decoration: BoxDecoration(
@@ -38,9 +39,9 @@ class SearchRidesView extends StatelessWidget {
 
                 ),
                 padding: EdgeInsets.only(
-                    left: 15.sp, right: 15.sp, top: 25.sp),
+                    left: 15.w, right: 15.w,top: 5.h),
                 width: 352.w,
-                height: 230.h,
+                height: 300.h,
                 child: Column(
 
                   children: [
@@ -64,38 +65,37 @@ class SearchRidesView extends StatelessWidget {
 
 
                     Expanded(
-                        // flex: 2,
+                      flex: 2,
                         child: Column(
-                      children: [
-                        Expanded(
+                          children: [
+                            Expanded(
 
-                          child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text('Seats',
-                                style: TextStyle(fontSize: 15.sp),)),
-                        ),
-
-
-                        Expanded(
-                          flex: 2,
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: SizedBox(
-                              height: 42.h,
-                              width: 87.w,
-                              child: const MyTextField(
-                                textAlignment: TextAlign.center,
+                              child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text('Seats',
+                                    style: TextStyle(fontSize: 7.sp),)),
+                            ),
 
 
-                                keyboardType: TextInputType.number,
-                                label: '1',
+                            Expanded(
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: SizedBox(
+                                  // height: 42.h,
+                                  width: 87.w,
+                                  child: const MyTextField(
+                                    textAlignment: TextAlign.center,
+
+
+                                    keyboardType: TextInputType.number,
+                                    label: '1',
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        SizedBox(height: 10.h,)
-                      ],
-                    ))
+                            SizedBox(height: 10.h,)
+                          ],
+                        ))
                   ],
                 ),
               ),
@@ -104,10 +104,12 @@ class SearchRidesView extends StatelessWidget {
 
             Positioned(
                 bottom: 27.h,
-                 right: 40.w,
+                right: 40.w,
                 left: 40.w,
 
                 child: CustomButton(
+                  height: 80,
+                  textSize: 8,
                   ontap: onTap, text: 'Find Rides', color: AppColors.kBlue,
 
                 )),
