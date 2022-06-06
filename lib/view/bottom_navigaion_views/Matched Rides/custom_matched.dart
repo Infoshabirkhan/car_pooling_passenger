@@ -1,3 +1,4 @@
+import 'package:car_pooling_passanger/model/matched_rides_models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,13 +8,13 @@ import '../../../Model/utils/appicons.dart';
 
 class CustomMatched{
 
- static Widget getCard({required VoidCallback onTap}){
+ static Widget getCard({required VoidCallback onTap, required MatchedRidesModel  model}){
    return InkWell(
      onTap: onTap,
      child: Container(
        margin: EdgeInsets.only(top: 10.sp, bottom: 10.sp),
-        height: 156.sp,
-        width: 344.sp,
+        height: 156.h,
+        width: 344.w,
         decoration: BoxDecoration(
           color: AppColors.kWhite,
           borderRadius: BorderRadius.circular(10.r),
