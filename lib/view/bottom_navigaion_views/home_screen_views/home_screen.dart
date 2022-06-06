@@ -2,7 +2,6 @@ import 'package:car_pooling_passanger/Controller/cubits/home_screen_cubit/home_a
 import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'home_loaded_list.dart';
 import 'landscape_view/home_landscape_loaded_data.dart';

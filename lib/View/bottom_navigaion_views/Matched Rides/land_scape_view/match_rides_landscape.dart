@@ -1,20 +1,29 @@
-import 'package:car_pooling_passanger/model/matched_rides_models.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../Model/utils/appcolors.dart';
-import '../../../Model/utils/appicons.dart';
+import '../../../../Model/utils/appcolors.dart';
+import '../../../../Model/utils/appicons.dart';
+import '../../../../model/matched_rides_models.dart';
 
+class MatchRidesLandScape extends StatelessWidget {
+  final VoidCallback onTap;
+  final MatchedRidesModel model;
 
-class CustomMatched{
+  const MatchRidesLandScape({
+    Key? key,
+    required this.onTap,
+    required this.model,
+  }) : super(key: key);
 
- static Widget getCard({required VoidCallback onTap, required MatchedRidesModel  model}){
-   return InkWell(
-     onTap: onTap,
-     child: Container(
-       margin: EdgeInsets.only(top: 10.sp, bottom: 10.sp),
-        height: 156.h,
-        width: 344.w,
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.only(top: 10.sp, bottom: 10.sp),
+        width: 156.w,
+        height: 344.h,
         decoration: BoxDecoration(
           color: AppColors.kWhite,
           borderRadius: BorderRadius.circular(10.r),
@@ -36,7 +45,7 @@ class CustomMatched{
                       flex: 2,
                       child: Icon(
                         AppIcons.accountPerson,
-                        size: 60.sp,
+                        size: 30.sp,
                         color: AppColors.kBlueLight,
                       )),
                   Expanded(
@@ -47,7 +56,7 @@ class CustomMatched{
                         'John Doe',
                         style: TextStyle(
                           color: AppColors.kBlackSecondary,
-                          fontSize: 15.sp,
+                          fontSize: 9.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -56,7 +65,7 @@ class CustomMatched{
                   Expanded(
                     flex: 2,
                     child: Container(
-                      margin: EdgeInsets.only(left: 30.sp),
+                      margin: EdgeInsets.only(left: 50.sp),
                       child: const Align(
                           alignment: Alignment.center, child: Text('4.5')),
                     ),
@@ -65,42 +74,42 @@ class CustomMatched{
                       flex: 3,
                       child: Container(
                         alignment: Alignment.centerLeft,
-                        margin: EdgeInsets.only(right: 10.sp),
+                        margin: EdgeInsets.only(right: 30.sp),
                         child: Row(
                           children: [
                             Expanded(
                               child: Icon(
                                 Icons.star,
                                 color: Colors.black,
-                                size: 20.sp,
+                                size: 10.sp,
                               ),
                             ),
                             Expanded(
                               child: Icon(
                                 Icons.star,
                                 color: Colors.black,
-                                size: 20.sp,
+                                size: 10.sp,
                               ),
                             ),
                             Expanded(
                               child: Icon(
                                 Icons.star,
                                 color: Colors.black,
-                                size: 20.sp,
+                                size: 10.sp,
                               ),
                             ),
                             Expanded(
                               child: Icon(
                                 AppIcons.starHalf,
                                 color: Colors.black,
-                                size: 15.sp,
+                                size: 7.sp,
                               ),
                             ),
                             Expanded(
                               child: Icon(
                                 AppIcons.starOutlined,
                                 color: Colors.black,
-                                size: 15.sp,
+                                size: 7.sp,
                               ),
                             ),
                           ],
@@ -114,48 +123,74 @@ class CustomMatched{
                 child: Column(
                   children: [
                     Expanded(
-                      flex:2,
+                      flex: 2,
                       child: Row(
                         children: [
-                          Expanded(child: Container(
-                            margin: EdgeInsets.only(left: 20.sp),
-                            child: Align(
-                                alignment:Alignment.bottomCenter,
-                                child: Row(
-                                  children: [
-                                  Expanded(child: Icon(AppIcons.seatBooked, color: AppColors.kBlueIcon,)),
-                                  Expanded(child: Icon(AppIcons.seatBooked, color: AppColors.kBlueIcon,)),
-                                  Expanded(child: Icon(AppIcons.emptySeat, color: AppColors.kBlueIcon,)),
-                                  Expanded(child: Icon(AppIcons.emptySeat, color: AppColors.kBlueIcon,))
-                                  ],
-                                )),
-                          ),),
+                          Expanded(
+                            child: Container(
+                              margin: EdgeInsets.only(left: 20.sp),
+                              child: Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                          child: Icon(
+                                        AppIcons.seatBooked,
+                                        color: AppColors.kBlueIcon,
+                                      )),
+                                      Expanded(
+                                          child: Icon(
+                                        AppIcons.seatBooked,
+                                        color: AppColors.kBlueIcon,
+                                      )),
+                                      Expanded(
+                                          child: Icon(
+                                        AppIcons.emptySeat,
+                                        color: AppColors.kBlueIcon,
+                                      )),
+                                      Expanded(
+                                          child: Icon(
+                                        AppIcons.emptySeat,
+                                        color: AppColors.kBlueIcon,
+                                      ))
+                                    ],
+                                  )),
+                            ),
+                          ),
                           Expanded(
                             flex: 2,
                             child: Align(
                                 alignment: Alignment.bottomRight,
                                 child: Container(
-                                    margin: EdgeInsets.only(right: 10.sp),
-                                    child: Text('RS. 200 ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.sp),))),),
+                                    margin: EdgeInsets.only(right: 30.sp),
+                                    child: Text(
+                                      'RS. 200 ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12.sp),
+                                    ))),
+                          ),
                         ],
                       ),
                     ),
                     Expanded(
                       flex: 2,
                       child: Container(
-                        margin: EdgeInsets.only(left: 20.sp),
+                        margin: EdgeInsets.only(left: 25.sp),
                         child: Row(
-                          children:  [
-                             const Expanded(
-                              flex:3,
-                              child: Text('Seat Available: 2'),),
+                          children: [
+                            const Expanded(
+                              flex: 3,
+                              child: Text('Seat Available: 2'),
+                            ),
                             Expanded(
                               flex: 2,
                               child: Container(
-                                alignment: Alignment.centerRight,
-                               // color: Colors.red,
-                                margin: EdgeInsets.only(right: 12.sp),
-                                child: const Text('Cost per seat')),),
+                                  alignment: Alignment.centerRight,
+                                  // color: Colors.red,
+                                  margin: EdgeInsets.only(right: 30.sp),
+                                  child: const Text('Cost per seat')),
+                            ),
                           ],
                         ),
                       ),
@@ -165,7 +200,6 @@ class CustomMatched{
           ],
         ),
       ),
-   );
+    );
   }
-
 }
