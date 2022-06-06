@@ -11,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Controller/cubits/booking_cubit/booking_cubit.dart';
 
 import 'Controller/cubits/delivery_view_cubits/time_cubit.dart';
+import 'Controller/cubits/rider_detail_view_cubits/rider_api_cubit.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (context) => HomeApiCubit()),
           BlocProvider(create: (context) => SettingApiCubit()),
           BlocProvider(create: (context) => MatchedRidesCubit()),
+          BlocProvider(create: (context) => RiderApiCubit()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
