@@ -86,7 +86,7 @@ class RiderArrivedCard extends StatelessWidget {
                          children: [
                            Expanded(
                                child: Text(
-                                 'Car Model:',
+                                 'Car model:',
                                  style: TextStyle(
                                    fontFamily: 'SF Pro Text',
                                    fontSize: 12.sp,

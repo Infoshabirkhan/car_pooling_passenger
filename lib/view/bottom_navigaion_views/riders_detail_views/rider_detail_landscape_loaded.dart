@@ -231,7 +231,7 @@ class RiderDetailLandscapeLoadedList extends StatelessWidget {
             ),
 
             )),
-        Spacer(),
+        const Spacer(),
       ],
     );
     // return ListView(

@@ -42,7 +42,7 @@ class RiderDetailScreen extends StatelessWidget {
           child: size.width > 600 ?
           const RiderDetailLandscapeLoadedList()
 
-              :
+          :
 
           RiderDetailLoadedList()
 
