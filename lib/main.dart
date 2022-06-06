@@ -1,4 +1,5 @@
 import 'package:car_pooling_passanger/Controller/cubits/home_screen_cubit/home_api_cubit.dart';
+import 'package:car_pooling_passanger/Controller/cubits/matched_rides_cubit/matched_rides_cubit.dart';
 import 'package:car_pooling_passanger/Controller/cubits/settings_views_cubit/setting_api_cubit.dart';
 import 'package:car_pooling_passanger/View/splash_view/splash_screen.dart';
 import 'package:device_preview/device_preview.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
                   TimeCubit(const TimeOfDay(hour: 8, minute: 33))),
           BlocProvider(create: (context) => HomeApiCubit()),
           BlocProvider(create: (context) => SettingApiCubit()),
+          BlocProvider(create: (context) => MatchedRidesCubit()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
