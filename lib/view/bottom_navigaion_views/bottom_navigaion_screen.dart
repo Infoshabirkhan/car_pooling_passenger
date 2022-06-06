@@ -2,7 +2,7 @@ import 'package:car_pooling_passanger/Model/utils/appcolors.dart';
 import 'package:car_pooling_passanger/Model/utils/appicons.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/Matched%20Rides/matched_rides.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/bookkings_views/booking_screen.dart';
-import 'package:car_pooling_passanger/View/bottom_navigaion_views/delivery/delivery.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/delivery/delivery_screen.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/rate_rider_screen/rate_rider_screen.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/request_accepted_screen.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/riders_detail_views/rider_detail_scren.dart';
