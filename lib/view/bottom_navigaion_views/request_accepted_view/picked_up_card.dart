@@ -109,7 +109,7 @@ class PickedUpCard extends StatelessWidget {
                                         alignment: Alignment.bottomCenter,
                                         child: Text(
                                           'Car model'
-                                              ':',
+                                          ':',
                                           style: TextStyle(
                                               color: AppColors.kGreySecondary,
                                               fontSize: 12.sp),

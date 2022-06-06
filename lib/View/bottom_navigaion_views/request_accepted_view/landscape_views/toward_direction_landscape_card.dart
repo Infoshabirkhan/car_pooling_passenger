@@ -5,7 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class TowardDirectionLandscapeCard extends StatelessWidget {
   final VoidCallback onTap;
 
-  const TowardDirectionLandscapeCard({Key? key, required this.onTap}) : super(key: key);
+  const TowardDirectionLandscapeCard({Key? key, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,35 +23,37 @@ class TowardDirectionLandscapeCard extends StatelessWidget {
               children: [
                 Expanded(
                     child: Container(
-                      alignment: Alignment.centerLeft,
-                      padding: EdgeInsets.only(left: 30.sp, top: 12.sp),
-                      // color: Colors.blue,
-                      child: Column(
-                        children: [
-                          Expanded(
-                              child: Text(
-                                'Distance',
-                                style: TextStyle(
-                                  fontFamily: 'SF Pro Text',
-                                  fontSize: 6.sp,
-                                  color: AppColors.kGreySecondary,
-                                ),
-                              )),
-                          Expanded(
-                              child: Text(
-                                '2.6 km',
-                                style: TextStyle(
-                                  fontFamily: 'SF Pro Text',
-                                  fontSize: 8.sp,
-                                  color: AppColors.kBlackSecondary,
-                                ),
-                              ))
-                        ],
-                      ),
-                    )),
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.only(left: 30.sp, top: 12.sp),
+                  // color: Colors.blue,
+                  child: Column(
+                    children: [
+                      Expanded(
+                          child: Text(
+                        'Distance',
+                        style: TextStyle(
+                          fontFamily: 'SF Pro Text',
+                          fontSize: 6.sp,
+                          color: AppColors.kGreySecondary,
+                        ),
+                      )),
+                      Expanded(
+                          child: Text(
+                        '2.6 km',
+                        style: TextStyle(
+                          fontFamily: 'SF Pro Text',
+                          fontSize: 8.sp,
+                          color: AppColors.kBlackSecondary,
+                        ),
+                      ))
+                    ],
+                  ),
+                )),
                 Expanded(
                   child: Container(
-                      padding: EdgeInsets.only(left: 30.sp,),
+                      padding: EdgeInsets.only(
+                        left: 30.sp,
+                      ),
                       // color: Colors.yellow,
                       child: Row(
                         children: [
@@ -62,29 +65,29 @@ class TowardDirectionLandscapeCard extends StatelessWidget {
                                 children: [
                                   Expanded(
                                       child: Container(
-                                        alignment: Alignment.bottomLeft,
-                                        //         color: Colors.blue,
-                                        child: Text(
-                                          'Estimated time',
-                                          style: TextStyle(
-                                            fontFamily: 'SF Pro Text',
-                                            fontSize: 6.sp,
-                                            color: AppColors.kGreySecondary,
-                                          ),
-                                        ),
-                                      )),
+                                    alignment: Alignment.bottomLeft,
+                                    //         color: Colors.blue,
+                                    child: Text(
+                                      'Estimated time',
+                                      style: TextStyle(
+                                        fontFamily: 'SF Pro Text',
+                                        fontSize: 6.sp,
+                                        color: AppColors.kGreySecondary,
+                                      ),
+                                    ),
+                                  )),
                                   Expanded(
                                       child: Container(
-                                        alignment: Alignment.topLeft,
-                                        child: Text(
-                                          '1hr 23min',
-                                          style: TextStyle(
-                                            fontFamily: 'SF Pro Text',
-                                            fontSize: 8.sp,
-                                            color: AppColors.kBlackSecondary,
-                                          ),
-                                        ),
-                                      )),
+                                    alignment: Alignment.topLeft,
+                                    child: Text(
+                                      '1hr 23min',
+                                      style: TextStyle(
+                                        fontFamily: 'SF Pro Text',
+                                        fontSize: 8.sp,
+                                        color: AppColors.kBlackSecondary,
+                                      ),
+                                    ),
+                                  )),
                                 ],
                               ),
                             ),
@@ -97,13 +100,13 @@ class TowardDirectionLandscapeCard extends StatelessWidget {
                                         'assets/images/customer_care.png')),
                                 Expanded(
                                     child: Text(
-                                      'Emergency Call',
-                                      style: TextStyle(
-                                        fontFamily: 'SF Pro Text',
-                                        fontSize: 6.sp,
-                                        color: AppColors.kRedSecondary,
-                                      ),
-                                    )),
+                                  'Emergency Call',
+                                  style: TextStyle(
+                                    fontFamily: 'SF Pro Text',
+                                    fontSize: 6.sp,
+                                    color: AppColors.kRedSecondary,
+                                  ),
+                                )),
                               ],
                             ),
                           ),

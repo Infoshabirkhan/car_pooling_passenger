@@ -8,7 +8,6 @@ import '../../../utils/custom_widgets/my_cancel_button.dart';
 import '../../my_static_properites.dart';
 import '../my_riders_cards.dart';
 
-
 class BottomSheetLandscape extends StatelessWidget {
   final bool currentState;
   final VoidCallback cancelClick;
@@ -16,9 +15,9 @@ class BottomSheetLandscape extends StatelessWidget {
 
   const BottomSheetLandscape(
       {Key? key,
-        required this.cancelClick,
-        required this.currentState,
-        required this.onTap})
+      required this.cancelClick,
+      required this.currentState,
+      required this.onTap})
       : super(key: key);
 
   @override
@@ -49,9 +48,11 @@ class BottomSheetLandscape extends StatelessWidget {
         //       ),
         //     )),
 
-
-        MyCancelButton(height: 80,onTap: cancelClick, textSize: 8,),
-
+        MyCancelButton(
+          height: 80,
+          onTap: cancelClick,
+          textSize: 8,
+        ),
 
         AnimatedPositioned(
           left: 0.w,
@@ -69,27 +70,30 @@ class BottomSheetLandscape extends StatelessWidget {
             child: Column(
               children: [
                 Expanded(
-                  // flex: 0,
+                    // flex: 0,
 
                     child: InkWell(
-                      onTap: onTap,
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: Icon(currentState == false
-                                ? AppIcons.arrowUp
-                                : AppIcons.arrowDown,size: 7.sp,),
-                          ),
-                          Expanded(
-                              child: Text(
-                                'Swipe up for more',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 7.sp, color: AppColors.kGreyLightest),
-                              )),
-                        ],
+                  onTap: onTap,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Icon(
+                          currentState == false
+                              ? AppIcons.arrowUp
+                              : AppIcons.arrowDown,
+                          size: 7.sp,
+                        ),
                       ),
-                    )),
+                      Expanded(
+                          child: Text(
+                        'Swipe up for more',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 7.sp, color: AppColors.kGreyLightest),
+                      )),
+                    ],
+                  ),
+                )),
 
                 Expanded(
                   flex: 10,
@@ -101,32 +105,30 @@ class BottomSheetLandscape extends StatelessWidget {
                           left: 15.sp, right: 15.sp, top: 5.sp, bottom: 280.h),
                       itemCount: 9,
                       itemBuilder: (context, index) {
-                        if(size.width > 600){
+                        if (size.width > 600) {
                           return RidersLandscapeCard(
                               onTap: currentState == false
                                   ? null
                                   : () {
-                                MyBottomNavigation.pageController
-                                    .jumpToPage(3);
-                                // Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                                //
-                                //   return const RiderDetailScreen();
-                                // }));
-                              });
-
-                        }else{
+                                      MyBottomNavigation.pageController
+                                          .jumpToPage(3);
+                                      // Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                                      //
+                                      //   return const RiderDetailScreen();
+                                      // }));
+                                    });
+                        } else {
                           return MyRidersCard(
                               onTap: currentState == false
                                   ? null
                                   : () {
-                                MyBottomNavigation.pageController
-                                    .jumpToPage(3);
-                                // Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                                //
-                                //   return const RiderDetailScreen();
-                                // }));
-                              });
-
+                                      MyBottomNavigation.pageController
+                                          .jumpToPage(3);
+                                      // Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                                      //
+                                      //   return const RiderDetailScreen();
+                                      // }));
+                                    });
                         }
                       }),
                 ),

@@ -14,7 +14,7 @@ class MyRequestDialog extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
     return Dialog(
       child: SizedBox(
-        height: width > 600 ? 250.h:205.h,
+        height: width > 600 ? 250.h : 205.h,
         child: Column(
           children: [
             Expanded(
@@ -22,8 +22,9 @@ class MyRequestDialog extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Text(
                     'Request Details',
-                    style:
-                        TextStyle(fontSize: width > 600 ? 8.sp: 15.sp, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: width > 600 ? 8.sp : 15.sp,
+                        fontWeight: FontWeight.bold),
                   )),
             ),
             Expanded(
@@ -62,7 +63,7 @@ class MyRequestDialog extends StatelessWidget {
                                 child: Text(
                                   'Rs. 200',
                                   style: TextStyle(
-                                      fontSize: width > 600 ? 7.sp: 15.sp,
+                                      fontSize: width > 600 ? 7.sp : 15.sp,
                                       color: Colors.green,
                                       fontWeight: FontWeight.bold),
                                 ))),
@@ -79,39 +80,37 @@ class MyRequestDialog extends StatelessWidget {
               ),
             ),
             Expanded(
-
               child: Row(
                 children: [
                   const Spacer(),
                   Expanded(
-                    flex: 3,
+                      flex: 3,
                       child: Row(
-                    children: [
-                      Expanded(
-
-                          child: TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: Text(
-                          'Cancel',
-                          style: TextStyle(
-                              fontSize: width > 600 ? 8.sp:15.sp,
-                              fontWeight: FontWeight.bold,
-                              color: const Color(0xff808080)),
-                        ),
-                      )),
-                      Expanded(
-                          child: TextButton(
-                        onPressed: onConfirm,
-                        child: Text('Confirm',
-                            style: TextStyle(
-                                fontSize: width > 600 ? 8.sp:15.sp,
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.kBlue)),
-                      )),
-                    ],
-                  ))
+                        children: [
+                          Expanded(
+                              child: TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text(
+                              'Cancel',
+                              style: TextStyle(
+                                  fontSize: width > 600 ? 8.sp : 15.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: const Color(0xff808080)),
+                            ),
+                          )),
+                          Expanded(
+                              child: TextButton(
+                            onPressed: onConfirm,
+                            child: Text('Confirm',
+                                style: TextStyle(
+                                    fontSize: width > 600 ? 8.sp : 15.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.kBlue)),
+                          )),
+                        ],
+                      ))
                 ],
               ),
             )

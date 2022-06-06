@@ -8,29 +8,18 @@ part 'setting_api_state.dart';
 class SettingApiCubit extends Cubit<SettingApiState> {
   SettingApiCubit() : super(SettingApiInitial());
 
-
-
-  Future getData()async{
-
-
+  Future getData() async {
     emit(SettingApiLoading());
-
 
     var data = await SettingsRepo.getData();
 
-
-    if(data != null){
-
+    if (data != null) {
       emit(SettingApiLoaded(model: data));
-
-    }else{
+    } else {
       emit(SettingApiError(error: 'Something went wrong'));
     }
 
-    try{
-
-    }catch (e){
-
+    try {} catch (e) {
       emit(SettingApiError(error: e.toString()));
     }
   }

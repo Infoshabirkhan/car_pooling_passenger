@@ -52,7 +52,10 @@ class _MatchedRidesState extends State<MatchedRides> {
                     var data = state.model[index];
 
                     if (size.width > 600) {
-                      return MatchRidesLandScape(onTap: () {  }, model: data,);
+                      return MatchRidesLandScape(
+                        onTap: () {},
+                        model: data,
+                      );
                     } else {
                       return CustomMatched.getCard(
                           model: data,

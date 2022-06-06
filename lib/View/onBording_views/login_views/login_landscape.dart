@@ -39,14 +39,10 @@ class LoginLandscapeView extends StatelessWidget {
         SizedBox(
           height: 80.h,
           child: TextField(
-            style: TextStyle(
-                color: AppColors.kWhite,
-                fontSize: 7.sp
-            ),
+            style: TextStyle(color: AppColors.kWhite, fontSize: 7.sp),
             decoration: InputDecoration(
               hintText: "Email or Phone Number",
-              hintStyle:
-              TextStyle(color: AppColors.kWhite, fontSize: 7.sp),
+              hintStyle: TextStyle(color: AppColors.kWhite, fontSize: 7.sp),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(6.r),
               ),
@@ -61,7 +57,7 @@ class LoginLandscapeView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(6.r),
               ),
               contentPadding:
-              EdgeInsets.only(left: 20.sp, top: 10.sp, bottom: 12.sp),
+                  EdgeInsets.only(left: 20.sp, top: 10.sp, bottom: 12.sp),
             ),
           ),
         ),
@@ -69,19 +65,15 @@ class LoginLandscapeView extends StatelessWidget {
           height: 100.h,
         ),
         CustomButton(
-
             height: 80,
             textSize: 9,
-            text: 'Login', ontap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)
-          {
-
-            return const VerificationCodeScreen();
-          }
-
-          ));
-        }, color: AppColors.kBlue)
-
+            text: 'Login',
+            ontap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const VerificationCodeScreen();
+              }));
+            },
+            color: AppColors.kBlue)
       ],
     );
   }

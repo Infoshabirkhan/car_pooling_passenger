@@ -24,7 +24,7 @@ class VerificationCodeScreen extends StatelessWidget {
                 child: Text(
               "Enter Verification Code",
               style: TextStyle(
-                  fontSize: width > 600 ? 10.sp:20.sp,
+                  fontSize: width > 600 ? 10.sp : 20.sp,
                   fontWeight: FontWeight.bold,
                   color: AppColors.kBlue),
             )),
@@ -35,7 +35,9 @@ class VerificationCodeScreen extends StatelessWidget {
                 child: Text(
               "We have sent a verification code\nto your phone number",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: width > 600 ? 8.sp:15.sp, color: const Color(0xFF9A9A9A)),
+              style: TextStyle(
+                  fontSize: width > 600 ? 8.sp : 15.sp,
+                  color: const Color(0xFF9A9A9A)),
             )),
             SizedBox(
               height: 101.h,

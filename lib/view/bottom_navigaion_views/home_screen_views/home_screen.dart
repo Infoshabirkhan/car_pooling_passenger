@@ -23,7 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -50,13 +49,10 @@ class _HomeScreenState extends State<HomeScreen> {
               child: CircularProgressIndicator(),
             );
           } else if (state is HomeApiLoaded) {
-
-            if(size.width > 600){
-
+            if (size.width > 600) {
               return HomeLandscapeLoadedData(model: state.model);
-            }else{
+            } else {
               return HomeLoadedList(model: state.model);
-
             }
           } else if (state is HomeApiError) {
             return Center(

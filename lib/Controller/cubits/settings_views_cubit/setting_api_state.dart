@@ -4,15 +4,16 @@ part of 'setting_api_cubit.dart';
 abstract class SettingApiState {}
 
 class SettingApiInitial extends SettingApiState {}
-class SettingApiLoading extends SettingApiState {}
-class SettingApiLoaded extends SettingApiState {
 
+class SettingApiLoading extends SettingApiState {}
+
+class SettingApiLoaded extends SettingApiState {
   final SettingsModel model;
 
   SettingApiLoaded({required this.model});
 }
-class SettingApiError extends SettingApiState {
 
+class SettingApiError extends SettingApiState {
   final String error;
 
   SettingApiError({required this.error});

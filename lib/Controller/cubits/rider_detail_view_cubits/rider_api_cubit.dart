@@ -8,36 +8,18 @@ part 'rider_api_state.dart';
 class RiderApiCubit extends Cubit<RiderApiState> {
   RiderApiCubit() : super(RiderApiInitial());
 
+  Future getData() async {
+    emit(RiderApiLoading());
 
-Future getData()async{
+    var data = await RiderDetailRepo.getData();
 
-  emit(RiderApiLoading());
-
-  var data = await RiderDetailRepo.getData();
-
-  if(data != null)
-    {
-
+    if (data != null) {
       emit(RiderApiLoaded(model: data));
-    }else
-  {
-    emit(RiderApiError(error: 'Something went Wrong'));
+    } else {
+      emit(RiderApiError(error: 'Something went Wrong'));
+    }
+    try {} catch (e) {
+      emit(RiderApiError(error: e.toString()));
+    }
   }
-  try{
-
-
-  }
-  catch (e){
-
-    emit(RiderApiError(error: e.toString()));
-  }
-
-}
-
-
-
-
-
-
-
 }

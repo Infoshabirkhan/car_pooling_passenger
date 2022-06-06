@@ -59,7 +59,6 @@ class RequestAcceptedScreenState extends State<RequestAcceptedScreen> {
             children: [
               GoogleMap(
                 zoomControlsEnabled: false,
-
                 onMapCreated: _onMapCreated,
                 initialCameraPosition: const CameraPosition(
                   target: _center,
@@ -161,19 +160,17 @@ class RequestAcceptedScreenState extends State<RequestAcceptedScreen> {
                 builder: (context, state) {
                   return Visibility(
                     visible: state == 4 ? true : false,
-                    child: size.width > 600 ?
-                    TowardDirectionLandscapeCard(
-                      onTap: () {
-                        MyBottomNavigation.pageController.jumpToPage(5);
-                      },
-                    )
-                    :
-                    TowardDirectionCard(
-                      onTap: () {
-                        MyBottomNavigation.pageController.jumpToPage(5);
-                      },
-                    )
-                    ,
+                    child: size.width > 600
+                        ? TowardDirectionLandscapeCard(
+                            onTap: () {
+                              MyBottomNavigation.pageController.jumpToPage(5);
+                            },
+                          )
+                        : TowardDirectionCard(
+                            onTap: () {
+                              MyBottomNavigation.pageController.jumpToPage(5);
+                            },
+                          ),
                   );
                 },
               ),

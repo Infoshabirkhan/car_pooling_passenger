@@ -21,7 +21,6 @@ class TravelScreen extends StatefulWidget {
 }
 
 class TravelScreenState extends State<TravelScreen> {
-
   // final CameraPosition _initialCameraPosition = const CameraPosition(
   //     target: LatLng(24.903623, 67.198367));
 
@@ -39,7 +38,6 @@ class TravelScreenState extends State<TravelScreen> {
     //
     // void _onMapCreated(GoogleMapController controller) {
     //   _controller.complete(controller);
-
   }
 
   // MapType _currentMapType = MapType.hybrid;
@@ -48,95 +46,87 @@ class TravelScreenState extends State<TravelScreen> {
     final Size size = MediaQuery.of(context).size;
 
     return MultiBlocProvider(
-
       providers: [
-
         BlocProvider<BottomSheetCubit>(
             create: (context) => BottomSheetCubit(false)),
         BlocProvider<FindRidersCubit>(create: (context) => FindRidersCubit(1)),
-
-
       ],
       child: Scaffold(
         body: SafeArea(
           child: Stack(
             children: [
-
-
               GoogleMap(
-
-               zoomControlsEnabled: false,
+                zoomControlsEnabled: false,
                 onMapCreated: _onMapCreated,
                 initialCameraPosition: const CameraPosition(
                   target: _center,
                   zoom: 15.0,
-
                 ),
                 mapType: MapType.normal,
               ),
-
-
-
               BlocBuilder<FindRidersCubit, int>(
                 builder: (context, state) {
-                 if(size.width > 600){
-                   return SearchRideLandscapeView(currentState: state, onTap: (){
-                     context.read<FindRidersCubit>().ridersScreen(number: 2);
-                   },);
-                 }else{
-                   return SearchRidesView(currentState: state, onTap: (){
-                     context.read<FindRidersCubit>().ridersScreen(number: 2);
-                   },);
-                 }
-
+                  if (size.width > 600) {
+                    return SearchRideLandscapeView(
+                      currentState: state,
+                      onTap: () {
+                        context.read<FindRidersCubit>().ridersScreen(number: 2);
+                      },
+                    );
+                  } else {
+                    return SearchRidesView(
+                      currentState: state,
+                      onTap: () {
+                        context.read<FindRidersCubit>().ridersScreen(number: 2);
+                      },
+                    );
+                  }
                 },
               ),
-
-
               BlocBuilder<FindRidersCubit, int>(
                 builder: (context, state) {
                   return Visibility(
-                    visible: state == 2 ? true :false,
+                    visible: state == 2 ? true : false,
                     child: BlocBuilder<BottomSheetCubit, bool>(
                       builder: (context, state) {
-
-
-                        if(size.width > 600){
+                        if (size.width > 600) {
                           return BottomSheetLandscape(
-                              cancelClick: (){
-                                context.read<FindRidersCubit>().ridersScreen(number: 1);
+                              cancelClick: () {
+                                context
+                                    .read<FindRidersCubit>()
+                                    .ridersScreen(number: 1);
                               },
-                              currentState: state, onTap: () {
-                            context.read<BottomSheetCubit>().adjustHeight(
-                                isExpand: !state);
-                          });
-
-                        }else{
+                              currentState: state,
+                              onTap: () {
+                                context
+                                    .read<BottomSheetCubit>()
+                                    .adjustHeight(isExpand: !state);
+                              });
+                        } else {
                           return MyBottomSheet(
-                              cancelClick: (){
-                                context.read<FindRidersCubit>().ridersScreen(number: 1);
+                              cancelClick: () {
+                                context
+                                    .read<FindRidersCubit>()
+                                    .ridersScreen(number: 1);
                               },
-                              currentState: state, onTap: () {
-                            context.read<BottomSheetCubit>().adjustHeight(
-                                isExpand: !state);
-                          });
-
-
+                              currentState: state,
+                              onTap: () {
+                                context
+                                    .read<BottomSheetCubit>()
+                                    .adjustHeight(isExpand: !state);
+                              });
                         }
                       },
                     ),
                   );
                 },
               ),
-
-
             ],
           ),
         ),
       ),
     );
   }
-
 }
 // body: Container(
 // // color: Colors.blue,

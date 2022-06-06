@@ -4,7 +4,8 @@
 
 import 'dart:convert';
 
-SettingsModel SettingsModelFromMap(String str) => SettingsModel.fromMap(json.decode(str));
+SettingsModel SettingsModelFromMap(String str) =>
+    SettingsModel.fromMap(json.decode(str));
 
 String SettingsModelToMap(SettingsModel data) => json.encode(data.toMap());
 
@@ -24,18 +25,18 @@ class SettingsModel {
   String? address;
 
   factory SettingsModel.fromMap(Map<String, dynamic> json) => SettingsModel(
-    userName: json["user_name"],
-    gender: json["gender"],
-    phoneNo: json["Phone_no"],
-    email: json["email"],
-    address: json["address"],
-  );
+        userName: json["user_name"],
+        gender: json["gender"],
+        phoneNo: json["Phone_no"],
+        email: json["email"],
+        address: json["address"],
+      );
 
   Map<String, dynamic> toMap() => {
-    "user_name": userName,
-    "gender": gender,
-    "Phone_no": phoneNo,
-    "email": email,
-    "address": address,
-  };
+        "user_name": userName,
+        "gender": gender,
+        "Phone_no": phoneNo,
+        "email": email,
+        "address": address,
+      };
 }

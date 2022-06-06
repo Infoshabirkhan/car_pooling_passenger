@@ -39,14 +39,10 @@ class LoginPotraitView extends StatelessWidget {
         SizedBox(
           height: 41.h,
           child: TextField(
-            style: TextStyle(
-                color: AppColors.kWhite,
-                fontSize: 15.sp
-            ),
+            style: TextStyle(color: AppColors.kWhite, fontSize: 15.sp),
             decoration: InputDecoration(
               hintText: "Email or Phone Number",
-              hintStyle:
-              TextStyle(color: AppColors.kWhite, fontSize: 15.sp),
+              hintStyle: TextStyle(color: AppColors.kWhite, fontSize: 15.sp),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(6.r),
               ),
@@ -61,23 +57,21 @@ class LoginPotraitView extends StatelessWidget {
                 borderRadius: BorderRadius.circular(6.r),
               ),
               contentPadding:
-              EdgeInsets.only(left: 20.sp, top: 10.sp, bottom: 12.sp),
+                  EdgeInsets.only(left: 20.sp, top: 10.sp, bottom: 12.sp),
             ),
           ),
         ),
         SizedBox(
           height: 200.h,
         ),
-        CustomButton(text: 'Login', ontap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)
-          {
-
-            return const VerificationCodeScreen();
-          }
-
-          ));
-        }, color: AppColors.kBlue)
-
+        CustomButton(
+            text: 'Login',
+            ontap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const VerificationCodeScreen();
+              }));
+            },
+            color: AppColors.kBlue)
       ],
     );
   }

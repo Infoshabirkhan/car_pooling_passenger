@@ -12,7 +12,6 @@ import '../../utils/custom_widgets/custom_button.dart';
 import '../delivery/delivery_custom_widget.dart';
 import '../my_static_properites.dart';
 
-
 class BookingViewContent extends StatelessWidget {
   const BookingViewContent({Key? key}) : super(key: key);
 
@@ -37,9 +36,10 @@ class BookingViewContent extends StatelessWidget {
               SizedBox(
                 height: 5.h,
               ),
-
-              const MyTextField(label: 'Select a pick up location', prefixIcon: Icon(AppIcons.search),),
-
+              const MyTextField(
+                label: 'Select a pick up location',
+                prefixIcon: Icon(AppIcons.search),
+              ),
               SizedBox(
                 height: 20.h,
               ),
@@ -47,10 +47,10 @@ class BookingViewContent extends StatelessWidget {
               SizedBox(
                 height: 5.h,
               ),
-
-              const MyTextField(label: 'Select your destination', prefixIcon: Icon(AppIcons.search),),
-
-
+              const MyTextField(
+                label: 'Select your destination',
+                prefixIcon: Icon(AppIcons.search),
+              ),
               SizedBox(
                 height: 20.h,
               ),
@@ -93,8 +93,7 @@ class BookingViewContent extends StatelessWidget {
                                 color: AppColors.kBlueLight, width: 1.5.sp),
                           ),
                           child: Center(
-                              child: CustomDeliveryWidget.dropdownMon(
-                                  context)),
+                              child: CustomDeliveryWidget.dropdownMon(context)),
                         );
                       },
                     ),
@@ -115,19 +114,16 @@ class BookingViewContent extends StatelessWidget {
                       child: BlocBuilder<BookingTimeCubit, TimeOfDay>(
                         builder: (context, state) {
                           return Container(
-                            margin:
-                            EdgeInsets.only(right: 10.sp, left: 20.sp),
+                            margin: EdgeInsets.only(right: 10.sp, left: 20.sp),
                             height: 52.h,
                             width: 100.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.r),
                               border: Border.all(
-                                  color: AppColors.kBlueLight,
-                                  width: 1.5.sp),
+                                  color: AppColors.kBlueLight, width: 1.5.sp),
                             ),
                             child: Center(
-                                child: Text(
-                                    state.format(context).toString())),
+                                child: Text(state.format(context).toString())),
                           );
                         },
                       ),
@@ -142,43 +138,32 @@ class BookingViewContent extends StatelessWidget {
                           border: Border.all(
                               color: AppColors.kBlueLight, width: 1.5.sp),
                           borderRadius: BorderRadius.circular(10.r)),
-                      child:
-                      Center(child: CustomDeliveryWidget.dropdownAm()),
+                      child: Center(child: CustomDeliveryWidget.dropdownAm()),
                     ),
                   ),
                 ],
               ),
-
-
               SizedBox(
                 height: 200.h,
               )
-
             ],
           ),
         ),
-
-
         Positioned(
           bottom: 20.h,
           left: 20.w,
           right: 20.w,
           child: CustomButton(
-            ontap: (){
-
+            ontap: () {
               /// It will navigate it to the Match rider screen
               /// Match rider is on index 7 in bottom navigation screen
 
               MyBottomNavigation.pageController.jumpToPage(7);
-
-
             },
             color: AppColors.kBlue,
             text: 'Show Bookings',
-
           ),
         )
-
       ],
     );
   }

@@ -9,38 +9,21 @@ part 'home_api_state.dart';
 class HomeApiCubit extends Cubit<HomeApiState> {
   HomeApiCubit() : super(HomeApiInitial());
 
-
-
-  Future getData()async{
-
+  Future getData() async {
     emit(HomeApiLoading());
 
-
-
-    try{
-
+    try {
       var data = await HomeRepo.getData();
 
-      if(data.isNotEmpty){
-
-      Future.delayed(const Duration(milliseconds: 200),(){
-        emit(HomeApiLoaded(model: data));
-
-
-      });
-
-
-      }else{
+      if (data.isNotEmpty) {
+        Future.delayed(const Duration(milliseconds: 200), () {
+          emit(HomeApiLoaded(model: data));
+        });
+      } else {
         emit(HomeApiError(error: 'No data found'));
       }
-
-
-
-      }catch (e){
-
+    } catch (e) {
       emit(HomeApiError(error: e.toString()));
     }
-
-
   }
 }

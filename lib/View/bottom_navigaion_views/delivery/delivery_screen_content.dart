@@ -10,7 +10,6 @@ import '../../utils/custom_widgets/my_text_field.dart';
 import '../my_static_properites.dart';
 import 'delivery_custom_widget.dart';
 
-
 class DeliveryContent extends StatelessWidget {
   const DeliveryContent({Key? key}) : super(key: key);
 
@@ -33,10 +32,15 @@ class DeliveryContent extends StatelessWidget {
           SizedBox(
             height: 5.h,
           ),
-
           SizedBox(
               height: 42.h,
-              child: const MyTextField(label: 'Select a pick up location', suffixIcon: Icon(AppIcons.search, color: Colors.black,), )),
+              child: const MyTextField(
+                label: 'Select a pick up location',
+                suffixIcon: Icon(
+                  AppIcons.search,
+                  color: Colors.black,
+                ),
+              )),
           SizedBox(
             height: 18.h,
           ),
@@ -46,15 +50,19 @@ class DeliveryContent extends StatelessWidget {
           ),
           SizedBox(
               height: 42.h,
-              child: const MyTextField(label: 'Select a pick up location', suffixIcon: Icon(AppIcons.search, color: Colors.black,), )),
-
+              child: const MyTextField(
+                label: 'Select a pick up location',
+                suffixIcon: Icon(
+                  AppIcons.search,
+                  color: Colors.black,
+                ),
+              )),
           SizedBox(
             height: 20.h,
           ),
           Text(
             'Date and Time',
-            style:
-            TextStyle(fontSize: 15.sp, color: AppColors.kBlackSecondary),
+            style: TextStyle(fontSize: 15.sp, color: AppColors.kBlackSecondary),
           ),
           SizedBox(
             height: 10.h,
@@ -69,7 +77,7 @@ class DeliveryContent extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.r),
                     border:
-                    Border.all(color: AppColors.kBlueLight, width: 1.5.sp),
+                        Border.all(color: AppColors.kBlueLight, width: 1.5.sp),
                   ),
                   child: CustomDeliveryWidget.dateTextField(space: 20),
                 ),
@@ -90,8 +98,7 @@ class DeliveryContent extends StatelessWidget {
                             color: AppColors.kBlueLight, width: 1.5.sp),
                       ),
                       child: Center(
-                          child: CustomDeliveryWidget.dropdownMon(
-                              context)),
+                          child: CustomDeliveryWidget.dropdownMon(context)),
                     );
                   },
                 ),
@@ -102,18 +109,15 @@ class DeliveryContent extends StatelessWidget {
                   onTap: () {
                     showTimePicker(
                       context: context,
-                      initialTime: TimeOfDay.now(),)
-                        .then((value) {
-                      return context
-                          .read<TimeCubit>()
-                          .getTime(state: value);
+                      initialTime: TimeOfDay.now(),
+                    ).then((value) {
+                      return context.read<TimeCubit>().getTime(state: value);
                     });
                   },
                   child: BlocBuilder<TimeCubit, TimeOfDay>(
                     builder: (context, state) {
                       return Container(
-                        margin: EdgeInsets.only(
-                            right: 10.sp, left: 20.sp),
+                        margin: EdgeInsets.only(right: 10.sp, left: 20.sp),
                         height: 52.h,
                         width: 100.w,
                         decoration: BoxDecoration(
@@ -121,8 +125,8 @@ class DeliveryContent extends StatelessWidget {
                           border: Border.all(
                               color: AppColors.kBlueLight, width: 1.5.sp),
                         ),
-                        child: Center(child: Text(
-                            state.format(context).toString())),
+                        child: Center(
+                            child: Text(state.format(context).toString())),
                       );
                     },
                   ),
@@ -167,8 +171,7 @@ class DeliveryContent extends StatelessWidget {
                           color: AppColors.kBlueLight, width: 1.5.sp),
                       borderRadius: BorderRadius.circular(10.r)),
                   child: Center(
-                      child: CustomDeliveryWidget.dateTextField(
-                          space: 30)),
+                      child: CustomDeliveryWidget.dateTextField(space: 30)),
                 ),
               ),
               Expanded(
@@ -182,7 +185,7 @@ class DeliveryContent extends StatelessWidget {
                           color: AppColors.kBlueLight, width: 1.5.sp),
                       borderRadius: BorderRadius.circular(10.r)),
                   child:
-                  Center(child: CustomDeliveryWidget.dropDownWi(context)),
+                      Center(child: CustomDeliveryWidget.dropDownWi(context)),
                 ),
               ),
             ],
@@ -216,10 +219,7 @@ class DeliveryContent extends StatelessWidget {
           SizedBox(
             height: 8.h,
           ),
-
-          SizedBox(
-              height: 42.h,
-              child: const MyTextField()),
+          SizedBox(height: 42.h, child: const MyTextField()),
           SizedBox(
             height: 15.h,
           ),
@@ -239,29 +239,21 @@ class DeliveryContent extends StatelessWidget {
           SizedBox(
             height: 7.h,
           ),
-
-          SizedBox(
-              height: 42.h,
-              child: const  MyTextField()),
-
+          SizedBox(height: 42.h, child: const MyTextField()),
           SizedBox(
             height: 20.h,
           ),
-
-
-
-
-
           Center(
-            child: CustomButton(ontap: (){
+            child: CustomButton(
+              ontap: () {
+                /// It will navigate it to the Match rider Screen
+                /// Match rider is on index 7 in bottom navigation
 
-
-              /// It will navigate it to the Match rider Screen
-              /// Match rider is on index 7 in bottom navigation
-
-              MyBottomNavigation.pageController.jumpToPage(7);
-
-            }, color: AppColors.kBlue, text: 'Find Rides',),
+                MyBottomNavigation.pageController.jumpToPage(7);
+              },
+              color: AppColors.kBlue,
+              text: 'Find Rides',
+            ),
           ),
         ],
       ),

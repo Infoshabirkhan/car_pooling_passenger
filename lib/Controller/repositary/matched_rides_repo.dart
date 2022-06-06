@@ -30,11 +30,10 @@ class MatchedRidesRepo {
     ];
 
     List<MatchedRidesModel> list = [];
-    for(var rides in map)
-      {
-        MatchedRidesModel model = MatchedRidesModel.fromJson(rides);
-        list.add(model);
-      }
+    for (var rides in map) {
+      MatchedRidesModel model = MatchedRidesModel.fromJson(rides);
+      list.add(model);
+    }
 
     return list;
   }

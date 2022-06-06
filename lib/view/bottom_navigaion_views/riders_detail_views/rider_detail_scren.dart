@@ -15,22 +15,15 @@ class RiderDetailScreen extends StatefulWidget {
 }
 
 class _RiderDetailScreenState extends State<RiderDetailScreen> {
-
- @override
+  @override
   void initState() {
-
-   context.read<RiderApiCubit>().getData();
+    context.read<RiderApiCubit>().getData();
     // TODO: implement initState
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
-
-
-
-
     final Size size = MediaQuery.of(context).size;
     return BlocProvider(
       create: (context) => BookRideCubit(false),
@@ -60,8 +53,7 @@ class _RiderDetailScreenState extends State<RiderDetailScreen> {
                   child: size.width > 600
                       ? const RiderDetailLandscapeLoadedList()
                       : const RiderDetailLoadedList());
-            } else if (state is RiderApiError) {
-            }
+            } else if (state is RiderApiError) {}
             return Container();
           },
         ),

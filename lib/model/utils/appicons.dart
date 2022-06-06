@@ -25,24 +25,44 @@ class AppIcons {
   static const _kFontFam = 'AppIcons';
   static const String? _kFontPkg = null;
 
-  static const IconData phoneCall = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData arrowBack = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData star = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData starHalf = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData settings = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData starOutlined = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData accountPerson = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData seatBooked = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData home = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData square = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData emptySeat = IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData arrowUp = IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData travel = IconData(0xe80d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData customerCare = IconData(0xe80e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData arrowDown = IconData(0xe80f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData group_83 = IconData(0xe810, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData car = IconData(0xe811, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData bucket = IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData search = IconData(0xe814, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData user_2 = IconData(0xf007, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData phoneCall =
+      IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData arrowBack =
+      IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData star =
+      IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData starHalf =
+      IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData settings =
+      IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData starOutlined =
+      IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData accountPerson =
+      IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData seatBooked =
+      IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData home =
+      IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData square =
+      IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData emptySeat =
+      IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData arrowUp =
+      IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData travel =
+      IconData(0xe80d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData customerCare =
+      IconData(0xe80e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData arrowDown =
+      IconData(0xe80f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData group_83 =
+      IconData(0xe810, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData car =
+      IconData(0xe811, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData bucket =
+      IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData search =
+      IconData(0xe814, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData user_2 =
+      IconData(0xf007, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

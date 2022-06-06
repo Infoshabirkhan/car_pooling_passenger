@@ -1,11 +1,5 @@
-
-
-
-
 import 'package:flutter/material.dart';
 
-class MyBottomNavigation{
-
+class MyBottomNavigation {
   static PageController pageController = PageController();
-
 }

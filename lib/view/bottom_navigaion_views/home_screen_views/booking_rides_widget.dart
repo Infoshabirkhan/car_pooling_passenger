@@ -22,7 +22,6 @@ class BookRideWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       margin: EdgeInsets.only(top: 20.sp),
       padding: EdgeInsets.only(left: 14.sp, right: 16.sp),

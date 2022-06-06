@@ -8,16 +8,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Controller/cubits/delivery_view_cubits/am_pm_dropdown_dart.dart';
 
-
-
 class CustomDeliveryWidget {
-
-
-
   static Widget dateTextField({required int space}) {
     return TextFormField(
       maxLength: 2,
-
       inputFormatters: [FilteringTextInputFormatter.singleLineFormatter],
       keyboardType: TextInputType.number,
       style: TextStyle(
@@ -43,8 +37,7 @@ class CustomDeliveryWidget {
       decoration: InputDecoration(
           contentPadding: EdgeInsets.only(left: 30.sp),
           border: InputBorder.none,
-          hintText: '00:00'
-      ),
+          hintText: '00:00'),
     );
   }
 
@@ -67,8 +60,10 @@ class CustomDeliveryWidget {
             ),
             hintText: hint,
             suffixIcon: Icon(
-              icon, color: AppColors.kBlackSecondary, size: 30.sp,)
-        ),
+              icon,
+              color: AppColors.kBlackSecondary,
+              size: 30.sp,
+            )),
       ),
     );
   }
@@ -82,7 +77,8 @@ class CustomDeliveryWidget {
       builder: (context, state) {
         return DropdownButton<String>(
             underline: const SizedBox(),
-            icon: const Visibility(visible: false, child: Icon(Icons.arrow_downward)),
+            icon: const Visibility(
+                visible: false, child: Icon(Icons.arrow_downward)),
             value: state,
             items: month.map((String items) {
               return DropdownMenuItem(
@@ -106,7 +102,8 @@ class CustomDeliveryWidget {
       builder: (context, state) {
         return DropdownButton<String>(
             underline: const SizedBox(),
-            icon: const Visibility(visible: false, child: Icon(Icons.arrow_downward)),
+            icon: const Visibility(
+                visible: false, child: Icon(Icons.arrow_downward)),
             value: state,
             items: month.map((String items) {
               return DropdownMenuItem(
@@ -141,14 +138,11 @@ class CustomDeliveryWidget {
       builder: (context, state) {
         return DropdownButton(
             underline: const SizedBox(),
-            icon: const Visibility(visible: false, child: Icon(Icons.arrow_downward)),
+            icon: const Visibility(
+                visible: false, child: Icon(Icons.arrow_downward)),
             value: state,
             items: month.map((items) {
-              return DropdownMenuItem(
-                value: items,
-                child: Text(items)
-
-              );
+              return DropdownMenuItem(value: items, child: Text(items));
             }).toList(),
             onChanged: (newValue) {
               context.read<MonthDropDown>().getDropDown(months: newValue);
@@ -156,5 +150,4 @@ class CustomDeliveryWidget {
       },
     );
   }
-
 }

@@ -17,8 +17,10 @@ class SplashscreenState extends State<Splashscreen> {
     // TODO: implement initState
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushAndRemoveUntil(context,
-          MaterialPageRoute(builder: (_) => const OnBoardingScreen()), (route) => false);
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (_) => const OnBoardingScreen()),
+          (route) => false);
     });
   }
 
@@ -37,17 +39,15 @@ class SplashscreenState extends State<Splashscreen> {
               child: Image.asset("assets/images/location.png")),
           Center(child: Image.asset("assets/images/logo.png")),
           Positioned(
-            left: 10.sp,
+              left: 10.sp,
               bottom: 10.sp,
               child: Image.asset("assets/images/location.png")),
-
           Positioned(
-            right: -60.sp,
+              right: -60.sp,
               bottom: -80.sp,
               child: Image.asset("assets/images/splash_circle_image.png")),
         ],
       ),
-
     );
   }
 }
