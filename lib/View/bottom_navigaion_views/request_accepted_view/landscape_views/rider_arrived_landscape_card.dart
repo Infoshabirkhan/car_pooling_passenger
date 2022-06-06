@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../Model/utils/appcolors.dart';
-import '../../../Model/utils/appicons.dart';
+import '../../../../Model/utils/appcolors.dart';
+import '../../../../Model/utils/appicons.dart';
 
-class RiderArrivedCard extends StatelessWidget {
+class RiderArrivedLandscapeCard extends StatelessWidget {
   final VoidCallback onTap;
 
-  const RiderArrivedCard({Key? key, required this.onTap}) : super(key: key);
+  const RiderArrivedLandscapeCard({Key? key, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +20,8 @@ class RiderArrivedCard extends StatelessWidget {
         onTap: onTap,
         child: Container(
           color: AppColors.kWhite,
-          width: 200.sp,
-          height: 200.sp,
+          width: 200.w,
+          height: 300.h,
           child: Column(
             children: [
               Expanded(
@@ -31,7 +32,7 @@ class RiderArrivedCard extends StatelessWidget {
                           child: Icon(
                         AppIcons.accountPerson,
                         color: const Color(0xff57A3DE),
-                        size: 52.sp,
+                        size: 20.sp,
                       )),
                       Expanded(
                           flex: 3,
@@ -45,7 +46,7 @@ class RiderArrivedCard extends StatelessWidget {
                                       child: Text(
                                     'John Doe',
                                     style: TextStyle(
-                                        fontSize: 15.sp,
+                                        fontSize: 8.sp,
                                         fontWeight: FontWeight.bold),
                                   )),
                                   Expanded(
@@ -60,7 +61,7 @@ class RiderArrivedCard extends StatelessWidget {
                                                 child: Icon(
                                                   AppIcons.phoneCall,
                                                   color: AppColors.kGreen,
-                                                  size: 32.sp,
+                                                  size: 15.sp,
                                                 )),
                                           ),
                                           Expanded(
@@ -68,7 +69,7 @@ class RiderArrivedCard extends StatelessWidget {
                                             'Make Call',
                                             style: TextStyle(
                                               fontFamily: 'SF Pro Text',
-                                              fontSize: 12.sp,
+                                              fontSize: 7.sp,
                                               color: AppColors.kGreen,
                                             ),
                                           ))
@@ -95,7 +96,7 @@ class RiderArrivedCard extends StatelessWidget {
                               'Car model:',
                               style: TextStyle(
                                 fontFamily: 'SF Pro Text',
-                                fontSize: 12.sp,
+                                fontSize: 7.sp,
                                 color: AppColors.kGreySecondary,
                               ),
                             )),
@@ -106,7 +107,7 @@ class RiderArrivedCard extends StatelessWidget {
                                   'Plate No:',
                                   style: TextStyle(
                                     fontFamily: 'SF Pro Text',
-                                    fontSize: 12.sp,
+                                    fontSize: 7.sp,
                                     color: AppColors.kGreySecondary,
                                   ),
                                 )),
@@ -121,7 +122,7 @@ class RiderArrivedCard extends StatelessWidget {
                               'Alto VXR',
                               style: TextStyle(
                                 fontFamily: 'SF Pro Text',
-                                fontSize: 15.sp,
+                                fontSize: 8.sp,
                                 color: AppColors.kBlackSecondary,
                               ),
                             )),
@@ -132,7 +133,7 @@ class RiderArrivedCard extends StatelessWidget {
                                   'DH-233R',
                                   style: TextStyle(
                                     fontFamily: 'SF Pro Text',
-                                    fontSize: 15.sp,
+                                    fontSize: 8.sp,
                                     color: AppColors.kBlackSecondary,
                                   ),
                                 )),
@@ -165,7 +166,7 @@ class RiderArrivedCard extends StatelessWidget {
                               'Your Rider has Arrived',
                               style: TextStyle(
                                 fontFamily: 'SF Pro Text',
-                                fontSize: 15.sp,
+                                fontSize: 8.sp,
                                 color: AppColors.kBlack,
                               ),
                             ),

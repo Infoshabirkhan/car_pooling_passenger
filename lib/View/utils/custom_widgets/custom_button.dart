@@ -10,7 +10,12 @@ class CustomButton extends StatefulWidget {
   final Color color;
 
   const CustomButton(
-      {Key? key, required this.text, required this.ontap, required this.color, this.height = 51, this.textSize = 20})
+      {Key? key,
+      required this.text,
+      required this.ontap,
+      required this.color,
+      this.height = 51,
+      this.textSize = 20})
       : super(key: key);
 
   @override
@@ -24,7 +29,7 @@ class _CustomButtonState extends State<CustomButton> {
       onTap: widget.ontap,
       child: Container(
           width: 296.w,
-          height: widget.height?.h,
+          height: widget.height!.h,
           decoration: BoxDecoration(
             color: widget.color,
             borderRadius: BorderRadius.circular(6.r),

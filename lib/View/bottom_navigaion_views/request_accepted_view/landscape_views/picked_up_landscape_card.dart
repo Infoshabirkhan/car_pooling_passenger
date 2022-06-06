@@ -2,14 +2,14 @@ import 'package:car_pooling_passanger/View/utils/custom_widgets/custom_button.da
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../Model/utils/appcolors.dart';
-import '../../../Model/utils/appicons.dart';
+import '../../../../Model/utils/appcolors.dart';
+import '../../../../Model/utils/appicons.dart';
 
-class PickedUpCard extends StatelessWidget {
+class PickedUpLandscapeCard extends StatelessWidget {
   final VoidCallback onTap;
 
   // final VoidCallback onCancel;
-  const PickedUpCard({
+  const PickedUpLandscapeCard({
     Key? key,
     required this.onTap,
   }) : super(key: key);
@@ -23,7 +23,7 @@ class PickedUpCard extends StatelessWidget {
         children: [
           // MyCancelButton(onTap: onTap),
           Positioned(
-            bottom: 27.sp,
+            bottom: 27.h,
             left: 10.sp,
             right: 10.sp,
             child: InkWell(
@@ -33,7 +33,7 @@ class PickedUpCard extends StatelessWidget {
                     BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 5)
                   ]),
                   width: 200.w,
-                  height: 274.h,
+                  height: 290.h,
                   child: Column(
                     children: [
                       Expanded(
@@ -44,7 +44,7 @@ class PickedUpCard extends StatelessWidget {
                               child: Icon(
                             AppIcons.accountPerson,
                             color: const Color(0xff57A3DE),
-                            size: 52.sp,
+                            size: 20.sp,
                           )),
                           Expanded(
                               flex: 3,
@@ -58,7 +58,7 @@ class PickedUpCard extends StatelessWidget {
                                           child: Text(
                                         'John Doe',
                                         style: TextStyle(
-                                            fontSize: 15.sp,
+                                            fontSize: 8.sp,
                                             fontWeight: FontWeight.bold),
                                       )),
                                       Expanded(
@@ -73,7 +73,7 @@ class PickedUpCard extends StatelessWidget {
                                                     child: Icon(
                                                       AppIcons.phoneCall,
                                                       color: AppColors.kGreen,
-                                                      size: 32.sp,
+                                                      size: 15.sp,
                                                     )),
                                               ),
                                               Expanded(
@@ -81,7 +81,7 @@ class PickedUpCard extends StatelessWidget {
                                                 'Make Call',
                                                 style: TextStyle(
                                                   fontFamily: 'SF Pro Text',
-                                                  fontSize: 12.sp,
+                                                  fontSize: 6.sp,
                                                   color: AppColors.kGreen,
                                                 ),
                                               ))
@@ -108,17 +108,16 @@ class PickedUpCard extends StatelessWidget {
                                     child: Align(
                                         alignment: Alignment.bottomCenter,
                                         child: Text(
-                                          'Car model'
-                                              ':',
+                                          'Car model:',
                                           style: TextStyle(
                                               color: AppColors.kGreySecondary,
-                                              fontSize: 12.sp),
+                                              fontSize: 6.sp),
                                         )),
                                   ),
                                   Expanded(
                                     child: Text(
                                       'Alto VXR',
-                                      style: TextStyle(fontSize: 15.sp),
+                                      style: TextStyle(fontSize: 8.sp),
                                     ),
                                   )
                                 ],
@@ -130,16 +129,16 @@ class PickedUpCard extends StatelessWidget {
                                     child: Align(
                                         alignment: Alignment.bottomCenter,
                                         child: Text(
-                                          'Plate No :',
+                                          'Plate No : ',
                                           style: TextStyle(
                                               color: AppColors.kGreySecondary,
-                                              fontSize: 12.sp),
+                                              fontSize: 6.sp),
                                         )),
                                   ),
                                   Expanded(
                                     child: Text(
                                       'DH-233R',
-                                      style: TextStyle(fontSize: 15.sp),
+                                      style: TextStyle(fontSize: 8.sp),
                                     ),
                                   )
                                 ],
@@ -155,7 +154,7 @@ class PickedUpCard extends StatelessWidget {
                           Expanded(
                             child: Text(
                               'Did you got picked up?',
-                              style: TextStyle(fontSize: 15.sp),
+                              style: TextStyle(fontSize: 8.sp),
                             ),
                           ),
                           Expanded(
@@ -168,6 +167,8 @@ class PickedUpCard extends StatelessWidget {
                                     child: Align(
                                         alignment: Alignment.centerRight,
                                         child: CustomButton(
+                                          height: 80,
+                                          textSize: 8,
                                           text: 'No',
                                           color: AppColors.kBlue,
                                           ontap: () {},
@@ -177,6 +178,8 @@ class PickedUpCard extends StatelessWidget {
                                     child: Align(
                                         alignment: Alignment.center,
                                         child: CustomButton(
+                                          height: 80,
+                                          textSize: 8,
                                           text: 'Yes',
                                           color: AppColors.kBlue,
                                           ontap: () {},
@@ -187,9 +190,6 @@ class PickedUpCard extends StatelessWidget {
                           ))
                         ],
                       )),
-                      SizedBox(
-                        height: 10.h,
-                      )
                     ],
                   ),
                 )),

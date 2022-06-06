@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:car_pooling_passanger/Controller/cubits/travel_views_cubits/find_riders_cubit.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/landscape_views/picked_up_landscape_card.dart';
+import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/landscape_views/request_accepted_landscape_card.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/picked_up_card.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/request_accepted_card.dart';
 import 'package:car_pooling_passanger/View/bottom_navigaion_views/request_accepted_view/rider_arrived_card.dart';
@@ -11,6 +13,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'landscape_views/rider_arrived_landscape_card.dart';
+import 'landscape_views/toward_direction_landscape_card.dart';
 
 void main() => runApp(const RequestAcceptedScreen());
 
@@ -22,7 +26,6 @@ class RequestAcceptedScreen extends StatefulWidget {
 }
 
 class RequestAcceptedScreenState extends State<RequestAcceptedScreen> {
-
   // final CameraPosition _initialCameraPosition = const CameraPosition(
   //     target: LatLng(24.903623, 67.198367));
 
@@ -40,105 +43,146 @@ class RequestAcceptedScreenState extends State<RequestAcceptedScreen> {
     //
     // void _onMapCreated(GoogleMapController controller) {
     //   _controller.complete(controller);
-
   }
 
   // MapType _currentMapType = MapType.hybrid;
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return MultiBlocProvider(
-
       providers: [
-
-
         BlocProvider<FindRidersCubit>(create: (context) => FindRidersCubit(1)),
-
-
       ],
       child: Scaffold(
         body: SafeArea(
           child: Stack(
             children: [
-
-
               GoogleMap(
+                zoomControlsEnabled: false,
+
                 onMapCreated: _onMapCreated,
                 initialCameraPosition: const CameraPosition(
                   target: _center,
                   zoom: 15.0,
-
                 ),
                 mapType: MapType.normal,
               ),
 
-
+              /// when request has been accepted by rider this card will
+              /// appear
+              /// =======================================
               BlocBuilder<FindRidersCubit, int>(
                 builder: (context, state) {
                   return Visibility(
                     visible: state == 1 ? true : false,
-                    child: Positioned(
-                        bottom: 0.sp,
-                        child: SizedBox(
-
-                            width: 1.sw,
-                            height: 200.h,
-                            child: RequestAcceptedCard(onTap: (){
-                              context.read<FindRidersCubit>().ridersScreen(number: 2);
-                            },))),
+                    child: size.width > 600
+                        ? Positioned(
+                            bottom: 0.sp,
+                            child: SizedBox(
+                                width: 1.sw,
+                                height: 320.h,
+                                child: RequestAcceptedLandscapeCard(
+                                  onTap: () {
+                                    context
+                                        .read<FindRidersCubit>()
+                                        .ridersScreen(number: 2);
+                                  },
+                                )))
+                        : Positioned(
+                            bottom: 0.sp,
+                            child: SizedBox(
+                                width: 1.sw,
+                                height: 200.h,
+                                child: RequestAcceptedCard(
+                                  onTap: () {
+                                    context
+                                        .read<FindRidersCubit>()
+                                        .ridersScreen(number: 2);
+                                  },
+                                ))),
                   );
                 },
               ),
 
+              /// ======================================
 
+              ///  Rider has been Arrived this card will appear
+              ///  ==============================
               BlocBuilder<FindRidersCubit, int>(
                 builder: (context, state) {
                   return Visibility(
                     visible: state == 2 ? true : false,
-                    child: RiderArrivedCard(onTap: (){
-                      context.read<FindRidersCubit>().ridersScreen(number: 3);
-
-                    },),
+                    child: size.width > 600
+                        ? RiderArrivedLandscapeCard(
+                            onTap: () {
+                              context
+                                  .read<FindRidersCubit>()
+                                  .ridersScreen(number: 3);
+                            },
+                          )
+                        : RiderArrivedCard(
+                            onTap: () {
+                              context
+                                  .read<FindRidersCubit>()
+                                  .ridersScreen(number: 3);
+                            },
+                          ),
                   );
                 },
               ),
-
-
-
-
-     BlocBuilder<FindRidersCubit, int>(
+              BlocBuilder<FindRidersCubit, int>(
                 builder: (context, state) {
                   return Visibility(
                     visible: state == 3 ? true : false,
-                    child: PickedUpCard(
-
-                      onTap: (){
-                      context.read<FindRidersCubit>().ridersScreen(number: 4);
-
-                    },),
+                    child: size.width > 600
+                        ? PickedUpLandscapeCard(
+                            onTap: () {
+                              context
+                                  .read<FindRidersCubit>()
+                                  .ridersScreen(number: 4);
+                            },
+                          )
+                        : PickedUpCard(
+                            onTap: () {
+                              context
+                                  .read<FindRidersCubit>()
+                                  .ridersScreen(number: 4);
+                            },
+                          ),
                   );
                 },
               ),
 
-  BlocBuilder<FindRidersCubit, int>(
+              /// =========================================
+
+              ///  Toward direction card is here
+              ///  =====================================
+              BlocBuilder<FindRidersCubit, int>(
                 builder: (context, state) {
                   return Visibility(
                     visible: state == 4 ? true : false,
-                    child: TowardDirectionCard(onTap: (){
-
-                      MyBottomNavigation.pageController.jumpToPage(5);
-                    },),
+                    child: size.width > 600 ?
+                    TowardDirectionLandscapeCard(
+                      onTap: () {
+                        MyBottomNavigation.pageController.jumpToPage(5);
+                      },
+                    )
+                    :
+                    TowardDirectionCard(
+                      onTap: () {
+                        MyBottomNavigation.pageController.jumpToPage(5);
+                      },
+                    )
+                    ,
                   );
                 },
               ),
-
-
             ],
           ),
         ),
       ),
     );
   }
-
 }
 // body: Container(
 // // color: Colors.blue,

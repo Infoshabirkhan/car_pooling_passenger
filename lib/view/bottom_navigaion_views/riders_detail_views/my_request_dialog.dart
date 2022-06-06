@@ -11,9 +11,10 @@ class MyRequestDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
     return Dialog(
       child: SizedBox(
-        height: 205.h,
+        height: width > 600 ? 250.h:205.h,
         child: Column(
           children: [
             Expanded(
@@ -22,7 +23,7 @@ class MyRequestDialog extends StatelessWidget {
                   child: Text(
                     'Request Details',
                     style:
-                        TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: width > 600 ? 8.sp: 15.sp, fontWeight: FontWeight.bold),
                   )),
             ),
             Expanded(
@@ -61,7 +62,7 @@ class MyRequestDialog extends StatelessWidget {
                                 child: Text(
                                   'Rs. 200',
                                   style: TextStyle(
-                                      fontSize: 15.sp,
+                                      fontSize: width > 600 ? 7.sp: 15.sp,
                                       color: Colors.green,
                                       fontWeight: FontWeight.bold),
                                 ))),
@@ -95,7 +96,7 @@ class MyRequestDialog extends StatelessWidget {
                         child: Text(
                           'Cancel',
                           style: TextStyle(
-                              fontSize: 15.sp,
+                              fontSize: width > 600 ? 8.sp:15.sp,
                               fontWeight: FontWeight.bold,
                               color: const Color(0xff808080)),
                         ),
@@ -105,7 +106,7 @@ class MyRequestDialog extends StatelessWidget {
                         onPressed: onConfirm,
                         child: Text('Confirm',
                             style: TextStyle(
-                                fontSize: 15.sp,
+                                fontSize: width > 600 ? 8.sp:15.sp,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.kBlue)),
                       )),

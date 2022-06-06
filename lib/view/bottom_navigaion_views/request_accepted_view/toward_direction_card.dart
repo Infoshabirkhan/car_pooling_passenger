@@ -17,14 +17,14 @@ class TowardDirectionCard extends StatelessWidget {
           onTap: onTap,
           child: Container(
             height: 140.h,
-             color: Colors.white,
+            color: Colors.white,
             child: Column(
               children: [
                 Expanded(
                     child: Container(
                   alignment: Alignment.centerLeft,
                   padding: EdgeInsets.only(left: 30.sp, top: 12.sp),
-                   // color: Colors.blue,
+                  // color: Colors.blue,
                   child: Column(
                     children: [
                       Expanded(
@@ -49,8 +49,8 @@ class TowardDirectionCard extends StatelessWidget {
                   ),
                 )),
                 Expanded(
-                    flex: 2,
-                    child: Container(
+                  flex: 2,
+                  child: Container(
                       padding: EdgeInsets.only(left: 30.sp, top: 13.sp),
                       // color: Colors.yellow,
                       child: Row(
@@ -61,9 +61,10 @@ class TowardDirectionCard extends StatelessWidget {
                               // color: Colors.white,
                               child: Column(
                                 children: [
-                                  Expanded(child: Container(
+                                  Expanded(
+                                      child: Container(
                                     alignment: Alignment.bottomLeft,
-                           //         color: Colors.blue,
+                                    //         color: Colors.blue,
                                     child: Text(
                                       'Estimated time',
                                       style: TextStyle(
@@ -71,10 +72,10 @@ class TowardDirectionCard extends StatelessWidget {
                                         fontSize: 12.sp,
                                         color: AppColors.kGreySecondary,
                                       ),
-
                                     ),
                                   )),
-                                  Expanded(child: Container(
+                                  Expanded(
+                                      child: Container(
                                     alignment: Alignment.topLeft,
                                     child: Text(
                                       '1hr 23min',
@@ -85,8 +86,6 @@ class TowardDirectionCard extends StatelessWidget {
                                       ),
                                     ),
                                   )),
-
-
                                 ],
                               ),
                             ),
@@ -94,9 +93,10 @@ class TowardDirectionCard extends StatelessWidget {
                           Expanded(
                             child: Column(
                               children: [
-                                Expanded(child: Image.asset('assets/images/customer_care.png')),
                                 Expanded(
-
+                                    child: Image.asset(
+                                        'assets/images/customer_care.png')),
+                                Expanded(
                                     child: Text(
                                   'Emergency Call',
                                   style: TextStyle(
@@ -105,15 +105,12 @@ class TowardDirectionCard extends StatelessWidget {
                                     color: AppColors.kRedSecondary,
                                   ),
                                 )),
-
                               ],
                             ),
                           ),
-
                         ],
-                      )
-                      ),
-                    ),
+                      )),
+                ),
               ],
             ),
           )),
