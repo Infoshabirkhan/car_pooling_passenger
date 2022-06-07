@@ -1,13 +1,9 @@
-// To parse this JSON data, do
-//
-//     final SettingsModel = SettingsModelFromMap(jsonString);
-
 import 'dart:convert';
 
-SettingsModel SettingsModelFromMap(String str) =>
+SettingsModel settingsModelFromMap(String str) =>
     SettingsModel.fromMap(json.decode(str));
 
-String SettingsModelToMap(SettingsModel data) => json.encode(data.toMap());
+String settingsModelToMap(SettingsModel data) => json.encode(data.toMap());
 
 class SettingsModel {
   SettingsModel({

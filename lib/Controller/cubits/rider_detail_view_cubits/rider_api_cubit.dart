@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:car_pooling_passanger/Controller/repositary/rider_detail_repo.dart';
 import 'package:car_pooling_passanger/model/rider_details_model.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'rider_api_state.dart';
 
@@ -13,7 +13,7 @@ class RiderApiCubit extends Cubit<RiderApiState> {
 
     var data = await RiderDetailRepo.getData();
 
-    if (data != null) {
+    if (data.isNotEmpty) {
       emit(RiderApiLoaded(model: data));
     } else {
       emit(RiderApiError(error: 'Something went Wrong'));

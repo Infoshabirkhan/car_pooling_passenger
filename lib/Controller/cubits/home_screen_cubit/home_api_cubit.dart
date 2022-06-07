@@ -1,8 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:car_pooling_passanger/Controller/repositary/home_repo.dart';
 import 'package:car_pooling_passanger/Model/home_models.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'home_api_state.dart';
 

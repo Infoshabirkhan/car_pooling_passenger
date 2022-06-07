@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:car_pooling_passanger/Controller/repositary/settings_repo.dart';
 import 'package:car_pooling_passanger/Model/settings_model.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'setting_api_state.dart';
 

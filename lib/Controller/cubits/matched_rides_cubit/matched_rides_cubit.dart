@@ -12,7 +12,7 @@ class MatchedRidesCubit extends Cubit<MatchedRidesState> {
     emit(MatchedRidesLoading());
 
     var data = await MatchedRidesRepo.getData();
-    if (data != null) {
+    if (data.isNotEmpty) {
       emit(MatchedRidesLoaded(model: data));
     } else {
       emit(MatchedRidesError(error: 'Something went Wrong'));

@@ -97,56 +97,54 @@ class RidersLandscapeCard extends StatelessWidget {
             Expanded(
                 child: Row(
               children: [
-                Spacer(),
+                const Spacer(),
                 Expanded(
-                    child: Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                          // flex: 2,
-                          child: Row(
-                        children: [
-                          Expanded(
-                            child: Icon(
-                              AppIcons.seatBooked,
-                              size: 7.sp,
-                              color: AppColors.kBlueIcon,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                            // flex: 2,
+                            child: Row(
+                          children: [
+                            Expanded(
+                              child: Icon(
+                                AppIcons.seatBooked,
+                                size: 7.sp,
+                                color: AppColors.kBlueIcon,
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            child: Icon(
-                              AppIcons.seatBooked,
-                              size: 7.sp,
-                              color: AppColors.kBlueIcon,
+                            Expanded(
+                              child: Icon(
+                                AppIcons.seatBooked,
+                                size: 7.sp,
+                                color: AppColors.kBlueIcon,
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            child: Icon(
-                              AppIcons.emptySeat,
-                              size: 7.sp,
-                              color: AppColors.kBlueIcon,
+                            Expanded(
+                              child: Icon(
+                                AppIcons.emptySeat,
+                                size: 7.sp,
+                                color: AppColors.kBlueIcon,
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            child: Icon(
-                              AppIcons.emptySeat,
-                              size: 7.sp,
-                              color: AppColors.kBlueIcon,
+                            Expanded(
+                              child: Icon(
+                                AppIcons.emptySeat,
+                                size: 7.sp,
+                                color: AppColors.kBlueIcon,
+                              ),
                             ),
+                          ],
+                        )),
+                        Expanded(
+                            child: Text(
+                          'Seats Available: 2',
+                          style: TextStyle(
+                            fontSize: 6.sp,
                           ),
-                        ],
-                      )),
-                      Expanded(
-                          child: Text(
-                        'Seats Available: 2',
-                        style: TextStyle(
-                          fontSize: 6.sp,
-                        ),
-                      ))
-                    ],
-                  ),
-                )),
+                        ))
+                      ],
+                    )),
                 const Spacer(),
                 Expanded(
                     child: Column(

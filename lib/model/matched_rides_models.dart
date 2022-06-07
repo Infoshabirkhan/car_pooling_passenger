@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final matchedRidesModel = matchedRidesModelFromJson(jsonString);
-
 import 'dart:convert';
 
 class MatchedRidesModel {

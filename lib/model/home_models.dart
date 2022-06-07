@@ -1,13 +1,9 @@
-// To parse this JSON data, do
-//
-//     final HomeModel = HomeModelFromMap(jsonString);
-
 import 'dart:convert';
 
-List<HomeModel> HomeModelFromMap(String str) =>
+List<HomeModel> homeModelFromMap(String str) =>
     List<HomeModel>.from(json.decode(str).map((x) => HomeModel.fromMap(x)));
 
-String HomeModelToMap(List<HomeModel> data) =>
+String homeModelToMap(List<HomeModel> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toMap())));
 
 class HomeModel {

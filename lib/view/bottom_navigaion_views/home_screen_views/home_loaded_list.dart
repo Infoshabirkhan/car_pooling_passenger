@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../Model/home_models.dart';
 import '../../../Model/utils/appcolors.dart';
-import '../../../Model/utils/appicons.dart';
 import '../my_static_properites.dart';
 
 class HomeLoadedList extends StatelessWidget {
