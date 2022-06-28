@@ -97,7 +97,7 @@ class SearchRideLandscapeView extends StatelessWidget {
                 child: CustomButton(
                   height: 80,
                   textSize: 8,
-                  ontap: onTap,
+                  onTap: onTap,
                   text: 'Find Rides',
                   color: AppColors.kBlue,
                 )),

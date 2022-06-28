@@ -95,7 +95,7 @@ class SearchRidesView extends StatelessWidget {
                 right: 40.w,
                 left: 40.w,
                 child: CustomButton(
-                  ontap: onTap,
+                  onTap: onTap,
                   text: 'Find Rides',
                   color: AppColors.kBlue,
                 )),

@@ -65,10 +65,10 @@ class LoginLandscapeView extends StatelessWidget {
           height: 100.h,
         ),
         CustomButton(
-            height: 80,
+            height: 80.h,
             textSize: 9,
             text: 'Login',
-            ontap: () {
+            onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const VerificationCodeScreen();
               }));

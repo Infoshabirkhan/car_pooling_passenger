@@ -245,7 +245,7 @@ class DeliveryContent extends StatelessWidget {
           ),
           Center(
             child: CustomButton(
-              ontap: () {
+              onTap: () {
                 /// It will navigate it to the Match rider Screen
                 /// Match rider is on index 7 in bottom navigation
 

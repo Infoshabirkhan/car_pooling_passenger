@@ -154,7 +154,7 @@ class BookingViewContent extends StatelessWidget {
           left: 20.w,
           right: 20.w,
           child: CustomButton(
-            ontap: () {
+            onTap: () {
               /// It will navigate it to the Match rider screen
               /// Match rider is on index 7 in bottom navigation screen
 

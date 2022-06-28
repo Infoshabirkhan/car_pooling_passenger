@@ -183,7 +183,7 @@ class RiderDetailLandscapeLoadedList extends StatelessWidget {
                             text: state == false
                                 ? 'Send Request'
                                 : 'Cancel Request',
-                            ontap: state == true
+                            onTap: state == true
                                 ? () {
                                     MyBottomNavigation.pageController
                                         .jumpToPage(4);

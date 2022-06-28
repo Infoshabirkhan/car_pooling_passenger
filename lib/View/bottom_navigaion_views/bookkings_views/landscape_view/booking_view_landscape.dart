@@ -155,7 +155,7 @@ class BookingViewLanscape extends StatelessWidget {
           child: CustomButton(
             height: 80,
             textSize: 8,
-            ontap: () {
+            onTap: () {
               /// It will navigate it to the Match rider screen
               /// Match rider is on index 7 in bottom navigation screen
 

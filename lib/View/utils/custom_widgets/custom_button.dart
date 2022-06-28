@@ -6,13 +6,13 @@ class CustomButton extends StatefulWidget {
   final double? height;
   final int? textSize;
   final String text;
-  final VoidCallback ontap;
+  final VoidCallback onTap;
   final Color color;
 
   const CustomButton(
       {Key? key,
       required this.text,
-      required this.ontap,
+      required this.onTap,
       required this.color,
       this.height = 51,
       this.textSize = 20})
@@ -26,7 +26,7 @@ class _CustomButtonState extends State<CustomButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: widget.ontap,
+      onTap: widget.onTap,
       child: Container(
           width: 296.w,
           height: widget.height!.h,

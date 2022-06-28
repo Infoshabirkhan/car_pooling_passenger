@@ -7,9 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'Controller/cubits/booking_cubit/booking_cubit.dart';
-
 import 'Controller/cubits/delivery_view_cubits/time_cubit.dart';
 import 'Controller/cubits/rider_detail_view_cubits/rider_api_cubit.dart';
 

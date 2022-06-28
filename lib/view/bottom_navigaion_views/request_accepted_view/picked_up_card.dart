@@ -170,7 +170,7 @@ class PickedUpCard extends StatelessWidget {
                                         child: CustomButton(
                                           text: 'No',
                                           color: AppColors.kBlue,
-                                          ontap: () {},
+                                          onTap: () {},
                                         ))),
                                 const Spacer(),
                                 Expanded(
@@ -179,7 +179,7 @@ class PickedUpCard extends StatelessWidget {
                                         child: CustomButton(
                                           text: 'Yes',
                                           color: AppColors.kBlue,
-                                          ontap: () {},
+                                          onTap: () {},
                                         ))),
                                 const Spacer(),
                               ],

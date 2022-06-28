@@ -171,7 +171,7 @@ class PickedUpLandscapeCard extends StatelessWidget {
                                           textSize: 8,
                                           text: 'No',
                                           color: AppColors.kBlue,
-                                          ontap: () {},
+                                          onTap: () {},
                                         ))),
                                 const Spacer(),
                                 Expanded(
@@ -182,7 +182,7 @@ class PickedUpLandscapeCard extends StatelessWidget {
                                           textSize: 8,
                                           text: 'Yes',
                                           color: AppColors.kBlue,
-                                          ontap: () {},
+                                          onTap: () {},
                                         ))),
                                 const Spacer(),
                               ],

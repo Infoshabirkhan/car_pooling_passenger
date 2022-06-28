@@ -173,7 +173,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               // },),
               CustomButton(
                   text: 'Save',
-                  ontap: () {
+                  onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return const BottomNavigationScreen();

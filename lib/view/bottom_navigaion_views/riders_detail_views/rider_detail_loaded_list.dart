@@ -176,7 +176,7 @@ class RiderDetailLoadedList extends StatelessWidget {
               padding: EdgeInsets.only(right: 39.sp),
               child: CustomButton(
                   text: state == false ? 'Send Request' : 'Cancel Request',
-                  ontap: state == true
+                  onTap: state == true
                       ? () {
                           MyBottomNavigation.pageController.jumpToPage(4);
                         }

@@ -66,7 +66,7 @@ class LoginPotraitView extends StatelessWidget {
         ),
         CustomButton(
             text: 'Login',
-            ontap: () {
+            onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const VerificationCodeScreen();
               }));
